@@ -1,0 +1,51 @@
+# openlaw-am configuration.
+#
+# Everything that is not a secret lives here. The API key stays in .env — it is
+# the one value that must never be committed.
+#
+# Any setting can still be overridden by an environment variable (the `env` name
+# listed beside each one), which is what makes the on-prem swap a one-liner:
+#   OPENLAW_BASE_URL=http://localhost:11434/v1 OPENLAW_MODEL=gemma3 uv run python rag.py "..."
+
+[embedding]
+# D4. e5-family finetune, so the query:/passage: prefixes below are mandatory —
+# dropping them costs a lot of retrieval accuracy, silently.
+model = "Metric-AI/armenian-text-embeddings-2-large"  # env: OPENLAW_EMBED_MODEL
+dim = 1024
+query_prefix = "query: "
+passage_prefix = "passage: "
+
+[chunking]
+# The model truncates at 512 tokens without warning. 512 - 2 special - "passage: "
+# - title (max 53 tokens observed) leaves 400 for the body. Sized in tokens, not
+# characters: Armenian runs ~4.1 chars/token and that ratio varies too much to fake.
+max_tokens = 400
+overlap_tokens = 50
+
+[weaviate]
+host = "localhost"      # env: OPENLAW_WEAVIATE_HOST
+port = 8080             # env: OPENLAW_WEAVIATE_PORT
+collection = "Article"
+
+[retrieval]
+# Measured on the 18 labour benchmark questions at k=8:
+#   bm25   (alpha 0.0) -> hit@1 22%  hit@3 39%  hit@8 61%
+#   vector (alpha 1.0) -> hit@1 39%  hit@3 67%  hit@8 72%
+#   hybrid (alpha 0.6) -> hit@1 44%  hit@3 72%  hit@8 72%
+# 0.5-0.7 is a flat optimum; 0.6 sits mid-plateau rather than on a single-question spike.
+mode = "hybrid"         # env: OPENLAW_SEARCH_MODE — "hybrid" | "vector" | "bm25"
+alpha = 0.6             # env: OPENLAW_HYBRID_ALPHA — 1.0 = pure vector, 0.0 = pure BM25
+top_k = 8
+title_boost = 2         # BM25 weight on the article title vs its body
+
+[generation]
+base_url = "https://openrouter.ai/api/v1"   # env: OPENLAW_BASE_URL
+model = "deepseek/deepseek-v4-pro"          # env: OPENLAW_MODEL
+max_output_tokens = 800
+temperature = 0.1
+
+[paths]
+raw = "data/raw"
+corpus = "data/corpus.json"
+chunks = "data/chunks.jsonl"
+embeddings = "data/embeddings"

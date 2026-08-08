@@ -10,15 +10,16 @@ Usage:
 """
 import html
 import json
-import os
 import re
 import sys
 from functools import lru_cache
 from pathlib import Path
 
-RAW = Path("data/raw")
-CORPUS = Path("data/corpus.json")
-OUT = Path("data/chunks.jsonl")
+from config import get
+
+RAW = Path(get("paths.raw"))
+CORPUS = Path(get("paths.corpus"))
+OUT = Path(get("paths.chunks"))
 
 # The embedding model truncates at 512 tokens, silently. Measured on the Labor Code:
 # at article granularity 40/288 chunks blew the limit and 12% of the corpus was
@@ -26,9 +27,9 @@ OUT = Path("data/chunks.jsonl")
 # So chunks are sized in *tokens*, not chars (Armenian runs ~4.1 chars/token, and
 # that ratio is too variable to fake with a char cap).
 # 512 - 2 special - "passage: " - title (max 53 tok observed) leaves 400 for the body.
-MODEL = os.getenv("OPENLAW_EMBED_MODEL", "Metric-AI/armenian-text-embeddings-2-large")
-MAX_TOKENS = 400
-OVERLAP_TOKENS = 50
+MODEL = get("embedding.model", env="OPENLAW_EMBED_MODEL")
+MAX_TOKENS = get("chunking.max_tokens")
+OVERLAP_TOKENS = get("chunking.overlap_tokens")
 
 SENTENCE = re.compile(r"(?<=[։:])\s+")  # Armenian full stop U+0589, and ASCII colon
 

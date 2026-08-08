@@ -12,23 +12,33 @@ Usage:
     uv run python index.py --query "..."   # retrieval smoke test (PLAN step 1.4)
 """
 import json
-import os
 import sys
 from pathlib import Path
 
-CHUNKS = Path("data/chunks.jsonl")
-EMB_DIR = Path("data/embeddings")
-COLLECTION = "Article"
+from config import get
 
-MODEL = os.getenv("OPENLAW_EMBED_MODEL", "Metric-AI/armenian-text-embeddings-2-large")
-HOST = os.getenv("OPENLAW_WEAVIATE_HOST", "localhost")
-PORT = int(os.getenv("OPENLAW_WEAVIATE_PORT", "8080"))
-DIM = 1024
+CHUNKS = Path(get("paths.chunks"))
+EMB_DIR = Path(get("paths.embeddings"))
+COLLECTION = get("weaviate.collection")
+
+MODEL = get("embedding.model", env="OPENLAW_EMBED_MODEL")
+QUERY_PREFIX = get("embedding.query_prefix")
+PASSAGE_PREFIX = get("embedding.passage_prefix")
+DIM = get("embedding.dim")
+
+HOST = get("weaviate.host", env="OPENLAW_WEAVIATE_HOST")
+PORT = get("weaviate.port", env="OPENLAW_WEAVIATE_PORT")
+
+SEARCH_MODE = get("retrieval.mode", env="OPENLAW_SEARCH_MODE")
+HYBRID_ALPHA = get("retrieval.alpha", env="OPENLAW_HYBRID_ALPHA")
+TOP_K = get("retrieval.top_k")
+TITLE_BOOST = get("retrieval.title_boost")
+BM25_PROPS = [f"title^{TITLE_BOOST}", "text"]
 
 
 def passage(chunk: dict) -> str:
-    """Exactly what gets embedded. Must match the GPU-side script byte for byte."""
-    return f"passage: {chunk['title']}\n{chunk['text']}"
+    """Exactly what gets embedded. Must match any external embedding script byte for byte."""
+    return f"{PASSAGE_PREFIX}{chunk['title']}\n{chunk['text']}"
 
 
 def load_chunks() -> list[dict]:
@@ -127,27 +137,64 @@ def build() -> None:
         client.close()
 
 
-def query(text: str, k: int = 5) -> None:
-    """Vector search. 'query: ' prefix — the other half of the e5 convention."""
-    vec = encoder().encode([f"query: {text}"], normalize_embeddings=True)[0]
+def score_of(obj) -> float:
+    """near_vector reports distance, bm25/hybrid report score — normalise to one number."""
+    meta = obj.metadata
+    if getattr(meta, "distance", None) is not None:
+        return 1 - meta.distance
+    return getattr(meta, "score", None) or 0.0
+
+
+def search(coll, question: str, mode: str | None = None, alpha: float | None = None, k: int = TOP_K):
+    """One entry point for all three retrieval modes.
+
+    Note the query text differs per leg: BM25 gets the bare question, while the
+    vector leg gets the 'query: ' prefix the e5 convention requires. Hybrid needs
+    both, which is why the prefix is applied here and not by the caller.
+    """
+    mode = mode or SEARCH_MODE
+    alpha = HYBRID_ALPHA if alpha is None else alpha
+
+    if mode == "bm25":
+        return coll.query.bm25(
+            query=question, query_properties=BM25_PROPS, limit=k, return_metadata=["score"]
+        ).objects
+
+    vec = list(
+        map(float, encoder().encode([f"{QUERY_PREFIX}{question}"], normalize_embeddings=True)[0])
+    )
+    if mode == "vector":
+        return coll.query.near_vector(
+            near_vector=vec, limit=k, return_metadata=["distance"]
+        ).objects
+    return coll.query.hybrid(
+        query=question,
+        vector=vec,
+        alpha=alpha,
+        query_properties=BM25_PROPS,
+        limit=k,
+        return_metadata=["score"],
+    ).objects
+
+
+def query(text: str, k: int = 5, mode: str | None = None) -> None:
     client = connect()
     try:
         coll = client.collections.get(COLLECTION)
-        res = coll.query.near_vector(
-            near_vector=list(map(float, vec)), limit=k, return_metadata=["distance"]
-        )
-        print(f'\n"{text}"')
-        for i, o in enumerate(res.objects, 1):
-            p = o.properties
-            print(
-                f"  {i}. {p['cite_id']:<26} sim={1 - o.metadata.distance:.3f}  {p['title'][:52]}"
-            )
+        objs = search(coll, text, mode=mode, k=k)
+        print(f'\n"{text}"  [{mode or SEARCH_MODE}]')
+        for i, o in enumerate(objs, 1):
+            print(f"  {i}. {o.properties['cite_id']:<26} {score_of(o):.3f}  {o.properties['title'][:52]}")
     finally:
         client.close()
 
 
+def _flag(name: str, default=None):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+
+
 if __name__ == "__main__":
     if "--query" in sys.argv:
-        query(sys.argv[sys.argv.index("--query") + 1])
+        query(_flag("--query"), k=int(_flag("--k", 5)), mode=_flag("--mode"))
     else:
         build()

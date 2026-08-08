@@ -13,6 +13,7 @@ import time
 import streamlit as st
 
 import rag
+from config import get
 
 st.set_page_config(page_title="openlaw-am — ՀՀ իրավական օգնական", page_icon="⚖️", layout="wide")
 
@@ -55,13 +56,23 @@ st.caption(
 with st.sidebar:
     st.subheader("Կարգավորումներ")
     top_k = st.slider("Որքա՞ն հոդված վերցնել (top-k)", 3, 15, rag.TOP_K)
+    mode = st.radio(
+        "Որոնման եղանակ",
+        ["hybrid", "vector", "bm25"],
+        format_func={"hybrid": "Հիբրիդ (BM25 + վեկտոր)", "vector": "Վեկտորային", "bm25": "BM25 (բանալի բառեր)"}.get,
+        help="Չափված 18 հարցի վրա (hit@3)՝ հիբրիդ 72%, վեկտոր 67%, BM25 39%",
+    )
+    alpha = st.slider(
+        "alpha (1 = վեկտոր, 0 = BM25)", 0.0, 1.0, get("retrieval.alpha"), 0.05,
+        disabled=mode != "hybrid",
+    )
     st.divider()
     st.subheader("Ընթացիկ կորպուս")
     st.markdown(
-        "- **ՀՀ Աշխատանքային օրենսգիրք** — 286 հոդված\n"
-        "- Տեքստը՝ ARLIS, ուժի մեջ 10.07.2026\n"
-        "- Մոդել՝ `deepseek-v4-pro`\n"
-        "- Embeddings՝ `armenian-text-embeddings-2-large`"
+        f"- **ՀՀ Աշխատանքային օրենսգիրք** — 286 հոդված\n"
+        f"- Տեքստը՝ ARLIS, ուժի մեջ 10.07.2026\n"
+        f"- Մոդել՝ `{get('generation.model', env='OPENLAW_MODEL')}`\n"
+        f"- Embeddings՝ `{get('embedding.model', env='OPENLAW_EMBED_MODEL').split('/')[-1]}`"
     )
     st.info(
         "Կորպուսում ներառված է միայն Աշխատանքային օրենսգիրքը։ "
@@ -88,14 +99,14 @@ if st.button("Հարցնել", type="primary") or (question and question != st.s
 
     start = time.time()
     with st.spinner("Որոնում և պատասխանի կազմում…"):
-        result = rag.answer(question, k=top_k)
+        result = rag.answer(question, k=top_k, mode=mode, alpha=alpha)
     elapsed = time.time() - start
 
     left, right = st.columns([3, 2])
 
     with left:
         st.subheader("Պատասխան")
-        refused = "բավարար չեն" in result["answer"]
+        refused = rag.REFUSAL_MARKER in result["answer"]
         if refused:
             st.warning("Համակարգը հրաժարվեց պատասխանել՝ կորպուսում բավարար հիմք չկա։")
         st.markdown(cite_links(result["answer"], result["retrieved"]))
