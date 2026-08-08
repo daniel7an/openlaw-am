@@ -26,33 +26,61 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-from config import prompt
+from config import get, prompt
 
 load_dotenv()
 
 QA_PATH = Path("eval/qa_dataset.json")
 OUT_DIR = Path("results")
 
-# [Հոդված 83], [Հոդված 3.1], optional «րդ» / spaces
+# [Հոդված 83], [Հոդված 3.1], optional «րդ» / spaces.
+# Also accepts a qualifier after the number — models routinely cite the *part* as
+# well, e.g. [Հոդված 178, մաս 1]. Requiring "]" straight after the number scored
+# those as zero citations, i.e. penalised the model for being more precise than
+# the format asked for. Verified against real deepseek output on qa_003/021/023.
 CITE_RE = re.compile(
-    r"\[\s*Հոդված\s+(\d+(?:\.\d+)*)\s*(?:-?րդ)?\s*\]",
+    r"\[\s*Հոդված\s+(\d+(?:\.\d+)*)\s*(?:-?րդ)?\s*(?:[,։:][^\]]*)?\]",
     re.IGNORECASE,
 )
 
-JUDGE_MODEL = os.getenv("GEMINI_JUDGE_MODEL", "gemini-3.6-flash")
+# Secrets come from the environment. Everything else is a flag, so a run is fully
+# described by the command line and reproducible from the results file.
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 JUDGE_SYSTEM = prompt("judge.system")
 JUDGE_USER = prompt("judge.user")
 
+DEFAULT_JUDGE = "gemini-3.6-flash"
 
-def labor_pure_questions(path: Path = QA_PATH) -> list[dict]:
+
+def indexed_cite_ids() -> set[str]:
+    """Every cite_id present in the current chunk set."""
+    path = Path(get("paths.chunks"))
+    return {
+        json.loads(line)["cite_id"]
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line
+    }
+
+
+def select_questions(scope: str, path: Path = QA_PATH) -> list[dict]:
+    """Pick the question set to score.
+
+    covered  — every gold article is in the index. The honest default: questions
+               whose sources we simply do not hold measure corpus gaps, not the model.
+    labor    — the original pure-labor subset (9), kept for comparison with earlier runs.
+    all      — all 50, including ones no model can answer from this corpus.
+    """
     qs = json.loads(path.read_text(encoding="utf-8"))
-    out = []
-    for q in qs:
-        ids = q.get("expected_article_ids") or []
-        if ids and all(i.startswith("labor-code-") for i in ids):
-            out.append(q)
-    return out
+    if scope == "all":
+        return qs
+    if scope == "labor":
+        return [
+            q for q in qs
+            if (q.get("expected_article_ids") or [])
+            and all(i.startswith("labor-code-") for i in q["expected_article_ids"])
+        ]
+    have = indexed_cite_ids()
+    return [q for q in qs if set(q.get("expected_article_ids") or []) <= have and q.get("expected_article_ids")]
 
 
 def article_num(cite_id: str) -> str | None:
@@ -113,7 +141,7 @@ def retrieval_hits(retrieved: list[dict], expected_ids: list[str]) -> dict:
     }
 
 
-def gemini_judge(question: str, gold: str, system_answer: str) -> dict:
+def gemini_judge(question: str, gold: str, system_answer: str, judge_model: str = DEFAULT_JUDGE) -> dict:
     if not GEMINI_KEY:
         return {
             "correctness": None,
@@ -124,7 +152,7 @@ def gemini_judge(question: str, gold: str, system_answer: str) -> dict:
 
     url = (
         f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{JUDGE_MODEL}:generateContent"
+        f"{judge_model}:generateContent"
     )
     user = JUDGE_USER.format(
         question=question, gold=gold, system_answer=system_answer
@@ -217,9 +245,10 @@ def _by_difficulty(rows: list[dict]) -> dict:
     return out
 
 
-def print_report(summary: dict, rows: list[dict]) -> None:
-    print("\n=== Pure Labor-Code eval ===")
-    print(f"n={summary['n']}  model={os.getenv('OPENLAW_MODEL')}  judge={JUDGE_MODEL}")
+def print_report(summary: dict, rows: list[dict], args) -> None:
+    print(f"\n=== eval (scope={args.scope}) ===")
+    print(f"n={summary['n']}  model={args.model}  judge={args.judge_model}")
+    print(f"retrieval  mode={args.search_mode or 'default'} alpha={args.alpha or 'default'} k={args.k}")
     r = summary["retrieval"]
     print(
         f"retrieval  hit@1={r['hit@1']:.0%}  hit@3={r['hit@3']:.0%}  "
@@ -257,23 +286,85 @@ def print_report(summary: dict, rows: list[dict]) -> None:
             print(f"           └─ {j['rationale'][:160]}")
 
 
-def run(limit: int | None = None) -> Path:
+def rescore(path: Path, with_judge: bool = False, judge_model: str = DEFAULT_JUDGE) -> None:
+    """Recompute metrics from a stored run — no model calls.
+
+    Answers are saved verbatim, so a scorer fix (e.g. the CITE_RE part-qualifier
+    bug) can be applied to past runs instead of paying to regenerate them.
+    """
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    for row in payload["rows"]:
+        retrieved = [{"article": a} for a in row["citations"]["retrieved_articles"]]
+        row["citations"] = citation_metrics(
+            row["system_answer"], row["expected_article_ids"], retrieved
+        )
+    if with_judge:
+        # Judge scores can be filled in after the fact — the answers are stored, so a
+        # run made before GEMINI_API_KEY existed doesn't have to be repeated.
+        if not GEMINI_KEY:
+            sys.exit("--with-judge needs GEMINI_API_KEY in .env")
+        todo = [r for r in payload["rows"] if r["judge"].get("correctness") is None]
+        print(f"judging {len(todo)} rows with {judge_model}…")
+        for i, row in enumerate(todo, 1):
+            row["judge"] = gemini_judge(
+                row["question_armenian"], row["gold_summary"], row["system_answer"], judge_model
+            )
+            print(f"  [{i}/{len(todo)}] {row['id']} -> {row['judge'].get('correctness')}")
+            time.sleep(1.0)
+        payload["meta"]["judge_model"] = judge_model
+
+    payload["summary"] = summarize(payload["rows"])
+    payload["meta"]["rescored"] = True
+    out = Path(path).with_name(Path(path).stem + "_rescored.json")
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    s = payload["summary"]
+    print(f"\n=== rescored: {Path(path).name} ===")
+    print(f"model={payload['meta'].get('answer_model')}  n={s['n']}")
+    r = s["retrieval"]
+    print(f"retrieval  hit@1={r['hit@1']:.0%}  hit@3={r['hit@3']:.0%}  hit@5={r['hit@5']:.0%}")
+    print(
+        f"citations  recall={s['citation_recall_mean']:.0%}  "
+        f"precision_vs_gold={s['citation_precision_vs_gold_mean']:.0%}  "
+        f"exact_match={s['exact_citation_match_rate']:.0%}  "
+        f"halluc_rate={s['hallucinated_citation_rate_mean']:.0%}"
+    )
+    if any(r["judge"].get("correctness") is not None for r in payload["rows"]):
+        print(
+            f"judge      mean={s['judge_correctness_mean']:.2f}/2  "
+            f"fully_correct={s['judge_fully_correct_rate']:.0%}  "
+            f"faithful={s['judge_faithfulness_rate']:.0%}  dist={s['judge_correctness_dist']}"
+        )
+    print(f"cost/lat   tokens~{s['tokens_mean']:.0f}/q  latency~{s['latency_s_mean']:.1f}s/q")
+    print(f"wrote {out}")
+
+
+def run(args) -> Path:
     from rag import answer
 
-    questions = labor_pure_questions()
+    limit = args.limit
+    questions = select_questions(args.scope)
     if limit is not None:
         questions = questions[:limit]
     if not questions:
         sys.exit("No pure labor-code questions found.")
 
-    print(f"Evaluating {len(questions)} pure labor QAs…")
+    print(f"Evaluating {len(questions)} questions (scope={args.scope})…")
     rows = []
     for i, q in enumerate(questions, 1):
         q_hy = q["question_armenian"]
         print(f"\n[{i}/{len(questions)}] {q['id']} ({q['difficulty']})")
         t0 = time.perf_counter()
         try:
-            result = answer(q_hy)
+            result = answer(
+                q_hy,
+                k=args.k,
+                mode=args.search_mode,
+                alpha=args.alpha,
+                model=args.model,
+                base_url=args.base_url,
+                max_tokens=args.max_tokens,
+            )
             err = None
         except Exception as e:
             result = {
@@ -292,7 +383,7 @@ def run(limit: int | None = None) -> Path:
         )
         retrieval = retrieval_hits(result["retrieved"], q["expected_article_ids"])
         judge = (
-            gemini_judge(q_hy, q["correct_answer_summary"], result["answer"])
+            gemini_judge(q_hy, q["correct_answer_summary"], result["answer"], args.judge_model)
             if result["answer"]
             else {
                 "correctness": 0,
@@ -324,22 +415,29 @@ def run(limit: int | None = None) -> Path:
             f"  hit@5={retrieval['hit@5']}  cite_recall={cites['citation_recall']:.0%}  "
             f"judge={judge.get('correctness')}  {latency:.1f}s"
         )
-        time.sleep(1.0)  # be kind to free-tier rate limits
+        time.sleep(args.sleep)  # be kind to free-tier rate limits
 
     summary = summarize(rows)
-    print_report(summary, rows)
+    print_report(summary, rows, args)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out = OUT_DIR / f"labor_pure_eval_{stamp}.json"
+    tag = re.sub(r"[^a-z0-9]+", "-", (args.model or "default").lower()).strip("-")
+    out = Path(args.out) if args.out else OUT_DIR / f"{args.scope}_{tag}_{stamp}.json"
     payload = {
         "meta": {
             "created_at": stamp,
-            "scope": "pure_labor_code",
+            "scope": args.scope,
             "n": len(rows),
-            "answer_model": os.getenv("OPENLAW_MODEL"),
-            "judge_model": JUDGE_MODEL,
-            "embed_model": os.getenv("OPENLAW_EMBED_MODEL"),
+            "answer_model": args.model,
+            "base_url": args.base_url,
+            "judge_model": args.judge_model,
+            "embed_model": get("embedding.model", env="OPENLAW_EMBED_MODEL"),
+            "index": get("weaviate.alias", env="OPENLAW_COLLECTION"),
+            "top_k": args.k,
+            "search_mode": args.search_mode or get("retrieval.mode"),
+            "alpha": args.alpha if args.alpha is not None else get("retrieval.alpha"),
+            "max_tokens": args.max_tokens or get("generation.max_output_tokens"),
         },
         "summary": summary,
         "rows": rows,
@@ -350,7 +448,29 @@ def run(limit: int | None = None) -> Path:
 
 
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(description=__doc__)
+    p = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    p.add_argument("--model", default=get("generation.model"),
+                   help="answering model id (default: config.toml generation.model)")
+    p.add_argument("--base-url", default=get("generation.base_url"),
+                   help="OpenAI-compatible endpoint (default: config.toml generation.base_url)")
+    p.add_argument("--judge-model", default=DEFAULT_JUDGE, help="Gemini judge model")
     p.add_argument("--limit", type=int, default=None, help="only first N questions")
-    args = p.parse_args()
-    run(limit=args.limit)
+    p.add_argument("--scope", default="covered", choices=["covered", "labor", "all"],
+                   help="covered=gold articles all indexed (default); labor=pure-labour 9; all=50")
+    p.add_argument("--k", type=int, default=get("retrieval.top_k"), help="articles retrieved")
+    p.add_argument("--search-mode", default=None, choices=["hybrid", "vector", "bm25"])
+    p.add_argument("--alpha", type=float, default=None, help="hybrid alpha, 1=vector 0=bm25")
+    p.add_argument("--max-tokens", type=int, default=None, help="answer token ceiling")
+    p.add_argument("--sleep", type=float, default=1.0, help="pause between questions")
+    p.add_argument("--out", default=None, help="explicit results path")
+    p.add_argument("--rescore", default=None,
+                   help="recompute metrics for an existing results file (no answer-model calls)")
+    p.add_argument("--with-judge", action="store_true",
+                   help="with --rescore: fill in missing judge verdicts (needs GEMINI_API_KEY)")
+    parsed = p.parse_args()
+    if parsed.rescore:
+        rescore(Path(parsed.rescore), parsed.with_judge, parsed.judge_model)
+    else:
+        run(parsed)

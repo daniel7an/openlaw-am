@@ -22,10 +22,24 @@ passage_prefix = "passage: "
 max_tokens = 400
 overlap_tokens = 50
 
+# The title is embedded alongside the body ("passage: {title}\n{text}"), so it competes
+# for the same 512. Administrative-offence titles reach 140+ tokens, which pushed chunks
+# over the limit when the body budget was a flat constant — the per-article budget is
+# model_limit - reserve - len(title), capped at max_tokens.
+model_limit = 512      # hard ceiling of the embedding model
+reserve_tokens = 12    # BOS/EOS + "passage: " + newline, with slack
+
 [weaviate]
 host = "localhost"      # env: OPENLAW_WEAVIATE_HOST
 port = 8080             # env: OPENLAW_WEAVIATE_PORT
-collection = "Article"
+
+# Indexes are versioned. Each build creates a NEW collection (Article_v1, Article_v2, ...)
+# and never mutates an existing one; the `alias` is then repointed at it. Queries only
+# ever name the alias, so switching or rolling back a corpus is atomic and needs no code
+# change. Old versions stay queryable by their real name, which is what makes a
+# before/after comparison on the benchmark possible.
+alias = "Article"                  # env: OPENLAW_COLLECTION — what queries resolve through
+collection_prefix = "Article_"     # versions auto-name as Article_v1, v2... or take --name
 
 [retrieval]
 # Measured on the 18 labour benchmark questions at k=8:
@@ -55,3 +69,4 @@ raw = "data/raw"
 corpus = "data/corpus.json"
 chunks = "data/chunks.jsonl"
 embeddings = "data/embeddings"
+index_manifest = "data/index_versions.json"   # what each index version contains

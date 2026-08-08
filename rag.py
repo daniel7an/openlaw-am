@@ -24,12 +24,12 @@ USER = prompt("answer.user")
 REFUSAL_MARKER = prompt("answer.refusal_marker")
 
 
-def client():
+def client(base_url: str | None = None):
     from openai import OpenAI
 
-    if not API_KEY:
-        sys.exit("No API key. Put OPENROUTER_API_KEY=... in .env")
-    return OpenAI(base_url=BASE_URL, api_key=API_KEY)
+    # Self-hosted vLLM is unauthenticated, but the OpenAI client rejects an empty
+    # key — any non-empty placeholder satisfies it.
+    return OpenAI(base_url=base_url or BASE_URL, api_key=API_KEY or "EMPTY")
 
 
 def retrieve(question: str, k: int = TOP_K, mode: str | None = None, alpha: float | None = None) -> list[dict]:
@@ -87,7 +87,18 @@ def context_block(articles: list[dict]) -> str:
     return "\n\n".join(out)
 
 
-def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float | None = None) -> dict:
+def answer(
+    question: str,
+    k: int = TOP_K,
+    mode: str | None = None,
+    alpha: float | None = None,
+    model: str | None = None,
+    base_url: str | None = None,
+    max_tokens: int | None = None,
+) -> dict:
+    """Retrieve, then answer. Backend is a parameter so callers (eval.py) can
+    compare models without mutating process environment."""
+    model = model or MODEL
     articles = retrieve(question, k, mode=mode, alpha=alpha)
     user_msg = USER.format(question=question, context=context_block(articles))
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user_msg}]
@@ -95,10 +106,10 @@ def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float 
     # Reasoning models emit a hidden reasoning trace first; if it eats the whole
     # budget the answer comes back empty. Retry once with room rather than
     # returning nothing to the user.
-    budget = MAX_OUTPUT_TOKENS
+    budget = max_tokens or MAX_OUTPUT_TOKENS
     for attempt in range(2):
-        resp = client().chat.completions.create(
-            model=MODEL, messages=messages, max_tokens=budget, temperature=TEMPERATURE
+        resp = client(base_url).chat.completions.create(
+            model=model, messages=messages, max_tokens=budget, temperature=TEMPERATURE
         )
         text = resp.choices[0].message.content
         if text and text.strip():
@@ -116,6 +127,7 @@ def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float 
     details = getattr(usage, "completion_tokens_details", None)
     return {
         "question": question,
+        "model": model,
         "answer": text,
         "retrieved": articles,
         "prompt_tokens": usage.prompt_tokens,

@@ -5,8 +5,9 @@ eval unit are all `Հոդված N`. Oversized articles are split into overlappin
 that share a cite_id, so a citation still points at the article, not the part.
 
 Usage:
-    uv run python parse.py            # every act in data/raw/ that's in corpus.json
-    uv run python parse.py 176082     # just this one
+    uv run python parse.py               # every act in data/raw/ that's in corpus.json
+    uv run python parse.py 176082        # just this one
+    uv run python parse.py --type code   # every code (constitution | code | law)
 """
 import html
 import json
@@ -30,6 +31,18 @@ OUT = Path(get("paths.chunks"))
 MODEL = get("embedding.model", env="OPENLAW_EMBED_MODEL")
 MAX_TOKENS = get("chunking.max_tokens")
 OVERLAP_TOKENS = get("chunking.overlap_tokens")
+MODEL_LIMIT = get("chunking.model_limit")
+RESERVE = get("chunking.reserve_tokens")
+
+
+def body_budget(title: str) -> int:
+    """Body tokens allowed for this article.
+
+    What gets embedded is "passage: {title}\\n{text}", so the title competes with the
+    body for the model's 512. Administrative-offence titles run to 140+ tokens, which
+    is what pushed 4 chunks over the limit when the budget was a flat constant.
+    """
+    return max(64, min(MAX_TOKENS, MODEL_LIMIT - RESERVE - ntokens(title)))
 
 SENTENCE = re.compile(r"(?<=[։:])\s+")  # Armenian full stop U+0589, and ASCII colon
 
@@ -75,16 +88,35 @@ def clean(fragment: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 
-def units(text: str) -> list[str]:
-    """Paragraphs, falling back to sentences for any paragraph that alone overflows."""
+def hard_split(text: str, budget: int = MAX_TOKENS) -> list[str]:
+    """Last-resort token-window split for a single sentence that busts the budget.
+
+    Tax and criminal-procedure articles contain sentences of 600+ tokens; without
+    this they were emitted whole and silently truncated at embed time.
+    """
+    tk = tokenizer()
+    ids = tk(text, add_special_tokens=False)["input_ids"]
+    return [
+        tk.decode(ids[i : i + budget], skip_special_tokens=True).strip()
+        for i in range(0, len(ids), budget)
+    ]
+
+
+def units(text: str, budget: int = MAX_TOKENS) -> list[str]:
+    """Paragraphs, falling back to sentences, then to a hard token window."""
     out = []
     for para in (p for p in text.split("\n") if p.strip()):
-        if ntokens(para) <= MAX_TOKENS:
+        if ntokens(para) <= budget:
             out.append(para)
             continue
-        sentence, buf = SENTENCE.split(para), ""
-        for s in sentence:
-            if buf and ntokens(f"{buf} {s}") > MAX_TOKENS:
+        buf = ""
+        for s in SENTENCE.split(para):
+            if ntokens(s) > budget:  # one sentence over budget on its own
+                if buf:
+                    out.append(buf)
+                    buf = ""
+                out.extend(hard_split(s, budget))
+            elif buf and ntokens(f"{buf} {s}") > budget:
                 out.append(buf)
                 buf = s
             else:
@@ -94,18 +126,18 @@ def units(text: str) -> list[str]:
     return out
 
 
-def split_long(text: str) -> list[str]:
+def split_long(text: str, budget: int = MAX_TOKENS) -> list[str]:
     """Pack paragraphs into <=MAX_TOKENS parts, overlapping by ~OVERLAP_TOKENS.
 
     Splits on natural boundaries rather than a token window, so no part starts
     mid-sentence — matters when the part is what the LLM ends up reading.
     """
-    if ntokens(text) <= MAX_TOKENS:
+    if ntokens(text) <= budget:
         return [text]
 
     parts, buf = [], []
-    for unit in units(text):
-        if buf and ntokens("\n".join(buf + [unit])) > MAX_TOKENS:
+    for unit in units(text, budget):
+        if buf and ntokens("\n".join(buf + [unit])) > budget:
             parts.append("\n".join(buf))
             # Carry back trailing paragraphs as overlap so a rule split across the
             # boundary is still whole in one of the parts.
@@ -157,7 +189,7 @@ def parse_act(docid: str, meta: dict) -> list[dict]:
     chunks: list[dict] = []
 
     def add(cid: str, cite: str, article: str, title: str, text: str, repealed: bool):
-        parts = split_long(text)
+        parts = split_long(text, body_budget(title))
         for i, part in enumerate(parts, 1):
             rec = {
                 "id": cid if len(parts) == 1 else f"{cid}#p{i}",
@@ -191,13 +223,44 @@ def parse_act(docid: str, meta: dict) -> list[dict]:
         repealed = bool(REPEALED.match(title) or REPEALED.search(text[:200]))
         add(cid, cite, num, title, text, repealed)
 
-    return chunks
+    return dedupe(chunks)
+
+
+def dedupe(chunks: list[dict]) -> list[dict]:
+    """Drop heading-only stubs and keep the fullest chunk per id.
+
+    The criminal and administrative-offence codes repeat every article heading in a
+    contents listing, which the article regex reads as a second occurrence. That
+    produced 46 duplicate ids whose bodies were just the heading line — noise that
+    would compete with the real article at retrieval time.
+    """
+    best: dict[str, dict] = {}
+    for c in chunks:
+        body = c["text"]
+        for lead in (f"Հոդված {c['article']}.", c["title"]):
+            if lead and body.startswith(lead):
+                body = body[len(lead) :].lstrip()
+        if not body.strip():  # heading with no article text
+            continue
+        keep = best.get(c["id"])
+        if keep is None or len(c["text"]) > len(keep["text"]):
+            best[c["id"]] = c
+    return list(best.values())
 
 
 def main() -> None:
     corpus = json.loads(CORPUS.read_text())
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
-    docids = args or [d for d in corpus if (RAW / f"{d}.html").exists()]
+
+    if "--type" in sys.argv:
+        wanted = sys.argv[sys.argv.index("--type") + 1]
+        docids = [d for d, m in corpus.items() if m.get("type") == wanted]
+        if not docids:
+            sys.exit(f"no documents of type {wanted!r} in {CORPUS}")
+        args = [a for a in args if a != wanted]
+    else:
+        docids = args or [d for d in corpus if (RAW / f"{d}.html").exists()]
+    docids = args or docids
 
     all_chunks: list[dict] = []
     for docid in docids:
@@ -205,6 +268,11 @@ def main() -> None:
             print(f"  {docid}: no raw HTML, run scrape.py first")
             continue
         chunks = parse_act(docid, corpus[docid])
+        if not chunks:
+            # e.g. 22512: repealed outright, /latest serves a one-line stub with no
+            # articles and no preamble worth keeping.
+            print(f"  {docid} ({corpus[docid]['slug']}): no content — skipped")
+            continue
         articles = len({c["cite_id"] for c in chunks if c["article"]})
         repealed = sum(1 for c in chunks if c.get("repealed"))
         longest = max(len(c["text"]) for c in chunks)

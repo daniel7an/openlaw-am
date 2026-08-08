@@ -7,19 +7,31 @@ e.g. produced on a GPU box — they are used instead of encoding locally.
 ⚠️ This is an e5-family model: the "passage: " / "query: " prefixes are mandatory.
 Dropping them costs a lot of retrieval accuracy, silently.
 
+Indexes are versioned and every build gets an explicit name — nothing is ever
+overwritten, and the `Article` alias decides which version queries actually hit.
+
 Usage:
-    uv run python index.py                 # embed + (re)load the collection
-    uv run python index.py --query "..."   # retrieval smoke test (PLAN step 1.4)
+    uv run python index.py --name all_codes        # build + activate
+    uv run python index.py --name x --no-activate  # build, keep serving the old one
+    uv run python index.py --versions              # list, * marks active
+    uv run python index.py --activate labor_only   # atomic switch / rollback
+    uv run python index.py --drop old_name
+    uv run python index.py --query "..."           # retrieval smoke test
 """
 import json
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 from config import get
 
 CHUNKS = Path(get("paths.chunks"))
 EMB_DIR = Path(get("paths.embeddings"))
-COLLECTION = get("weaviate.collection")
+MANIFEST = Path(get("paths.index_manifest"))
+
+# Queries resolve through the alias; builds write to a new versioned collection.
+COLLECTION = get("weaviate.alias", env="OPENLAW_COLLECTION")
+PREFIX = get("weaviate.collection_prefix")
 
 MODEL = get("embedding.model", env="OPENLAW_EMBED_MODEL")
 QUERY_PREFIX = get("embedding.query_prefix")
@@ -45,7 +57,9 @@ def load_chunks() -> list[dict]:
     return [json.loads(line) for line in CHUNKS.read_text(encoding="utf-8").splitlines() if line]
 
 
+@lru_cache(maxsize=1)
 def encoder():
+    """Cached: without this the 2.2GB model was reloaded on every single query."""
     from sentence_transformers import SentenceTransformer
 
     return SentenceTransformer(MODEL)
@@ -76,7 +90,45 @@ def connect():
     return weaviate.connect_to_local(host=HOST, port=PORT)
 
 
-def build() -> None:
+def versions(client) -> list[str]:
+    """Existing index versions. Names are chosen explicitly, never generated."""
+    return sorted(n for n in client.collections.list_all() if n.startswith(PREFIX))
+
+
+def active_version(client) -> str | None:
+    if not client.alias.exists(alias_name=COLLECTION):
+        return None
+    return client.alias.get(alias_name=COLLECTION).collection
+
+
+def activate(client, name: str) -> None:
+    """Point the alias at `name`. Atomic: queries switch over with no downtime."""
+    if client.alias.exists(alias_name=COLLECTION):
+        client.alias.update(alias_name=COLLECTION, new_target_collection=name)
+    else:
+        client.alias.create(alias_name=COLLECTION, target_collection=name)
+
+
+def record(name: str, chunks: list[dict], activated: bool) -> None:
+    """Append this build to the manifest, so a version's contents stay explainable."""
+    from collections import Counter
+
+    entries = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else []
+    entries = [e for e in entries if e["version"] != name]
+    entries.append(
+        {
+            "version": name,
+            "chunks": len(chunks),
+            "articles": len({c["cite_id"] for c in chunks if c["article"]}),
+            "documents": dict(Counter(c["slug"] for c in chunks)),
+            "embed_model": MODEL,
+            "activated": activated,
+        }
+    )
+    MANIFEST.write_text(json.dumps(entries, ensure_ascii=False, indent=2))
+
+
+def build(name: str, activate_new: bool = True) -> None:
     from weaviate.classes.config import Configure, DataType, Property, VectorDistances
 
     chunks = load_chunks()
@@ -85,11 +137,14 @@ def build() -> None:
 
     client = connect()
     try:
-        # Idempotent: the collection is rebuilt from scratch on every run.
-        if client.collections.exists(COLLECTION):
-            client.collections.delete(COLLECTION)
+        existing = versions(client)
+        name = name if name.startswith(PREFIX) else f"{PREFIX}{name}"
+        if name in existing:
+            sys.exit(f"{name} already exists — drop it first or choose another name")
+        print(f"  building {name} (existing: {', '.join(existing) or 'none'})")
+
         client.collections.create(
-            COLLECTION,
+            name,
             vector_config=Configure.Vectors.self_provided(
                 vector_index_config=Configure.VectorIndex.hnsw(
                     distance_metric=VectorDistances.COSINE
@@ -109,7 +164,7 @@ def build() -> None:
             ],
         )
 
-        coll = client.collections.get(COLLECTION)
+        coll = client.collections.get(name)
         with coll.batch.fixed_size(batch_size=100) as batch:
             for chunk, vec in zip(chunks, vecs):
                 batch.add_object(
@@ -132,7 +187,34 @@ def build() -> None:
             print("   ", coll.batch.failed_objects[0].message)
 
         count = coll.aggregate.over_all(total_count=True).total_count
-        print(f"  loaded {count} objects into {COLLECTION} (expected {len(chunks)})")
+        print(f"  loaded {count} objects into {name} (expected {len(chunks)})")
+
+        # Only repoint the alias once the new index is known good — a half-loaded
+        # index must never become the one the demo queries.
+        ok = count == len(chunks) and not coll.batch.failed_objects
+        if activate_new and ok:
+            previous = active_version(client)
+            activate(client, name)
+            print(f"  alias {COLLECTION} -> {name}" + (f" (was {previous})" if previous else ""))
+        elif not ok:
+            print(f"  ⚠️  {name} incomplete — alias left pointing at {active_version(client)}")
+        record(name, chunks, activated=bool(activate_new and ok))
+    finally:
+        client.close()
+
+
+def show_versions() -> None:
+    client = connect()
+    try:
+        current = active_version(client)
+        manifest = {e["version"]: e for e in (json.loads(MANIFEST.read_text()) if MANIFEST.exists() else [])}
+        for v in versions(client):
+            n = client.collections.get(v).aggregate.over_all(total_count=True).total_count
+            docs = manifest.get(v, {}).get("documents", {})
+            mark = "* active" if v == current else "        "
+            print(f"  {mark}  {v:<12} {n:>6} chunks  {len(docs)} docs: {', '.join(sorted(docs))[:70]}")
+        if not versions(client):
+            print("  no index versions yet — run: uv run python index.py")
     finally:
         client.close()
 
@@ -196,5 +278,37 @@ def _flag(name: str, default=None):
 if __name__ == "__main__":
     if "--query" in sys.argv:
         query(_flag("--query"), k=int(_flag("--k", 5)), mode=_flag("--mode"))
+    elif "--versions" in sys.argv:
+        show_versions()
+    elif "--activate" in sys.argv:
+        target = _flag("--activate")
+        target = target if target.startswith(PREFIX) else f"{PREFIX}{target}"
+        c = connect()
+        try:
+            if target not in versions(c):
+                sys.exit(f"{target} does not exist. Known: {', '.join(versions(c))}")
+            activate(c, target)
+            print(f"  alias {COLLECTION} -> {target}")
+        finally:
+            c.close()
+    elif "--drop" in sys.argv:
+        target = _flag("--drop")
+        target = target if target.startswith(PREFIX) else f"{PREFIX}{target}"
+        c = connect()
+        try:
+            if target == active_version(c):
+                sys.exit(f"{target} is active — activate another version before dropping it")
+            c.collections.delete(target)
+            print(f"  dropped {target}")
+        finally:
+            c.close()
     else:
-        build()
+        name = _flag("--name")
+        if not name:
+            sys.exit(
+                "Index names are explicit — pass one:\n"
+                "  uv run python index.py --name all_codes\n"
+                "  uv run python index.py --name all_codes --no-activate\n"
+                "  uv run python index.py --versions | --activate NAME | --drop NAME"
+            )
+        build(name, activate_new="--no-activate" not in sys.argv)
