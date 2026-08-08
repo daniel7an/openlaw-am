@@ -1,0 +1,15 @@
+[project]
+name = "openlaw-am"
+version = "0.1.0"
+description = "Open, on-prem legal assistant for Armenian law — grounded in ARLIS, benchmarked in public"
+requires-python = ">=3.11"
+dependencies = [
+    "sentence-transformers>=3.0",
+    "weaviate-client>=4.9",
+    "openai>=1.40",
+    "python-dotenv>=1.0",
+    "rank-bm25>=0.2",
+    "requests>=2.31",
+    "scrapy>=2.17.0",
+    "streamlit>=1.61.1",
+]

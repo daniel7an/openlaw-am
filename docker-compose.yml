@@ -1,0 +1,18 @@
+# Weaviate for openlaw-am. BYO vectors: we embed client-side with
+# Metric-AI/armenian-text-embeddings-2-large (D4), so no vectorizer module here —
+# that keeps the embedding model a one-line swap in .env.
+services:
+  weaviate:
+    image: semitechnologies/weaviate:1.38.8
+    ports:
+      - "8080:8080"   # REST
+      - "50051:50051" # gRPC (weaviate-client v4 uses this for batch insert)
+    restart: on-failure
+    environment:
+      DEFAULT_VECTORIZER_MODULE: none
+      ENABLE_MODULES: ""
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: /var/lib/weaviate
+      QUERY_DEFAULTS_LIMIT: 25
+    volumes:
+      - ./data/weaviate:/var/lib/weaviate

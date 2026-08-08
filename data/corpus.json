@@ -1,0 +1,22 @@
+{
+  "176082": {"slug": "labor-code", "article_level": true, "name": "RA Labor Code", "name_hy": "ՀՀ Աշխատանքային օրենսգիրք", "phase": 1},
+  "172116": {"slug": "civil-code", "article_level": true, "name": "RA Civil Code", "name_hy": "ՀՀ Քաղաքացիական օրենսգիրք", "phase": 2},
+  "176085": {"slug": "tax-code", "article_level": true, "name": "RA Tax Code", "name_hy": "ՀՀ Հարկային օրենսգիրք", "phase": 2},
+  "143723": {"slug": "constitution", "article_level": true, "name": "RA Constitution", "name_hy": "ՀՀ Սահմանադրություն", "phase": 2},
+  "75780": {"slug": "constitution", "article_level": true, "name": "RA Constitution (amended)", "name_hy": "ՀՀ Սահմանադրություն (փոփոխություններով)", "phase": 2},
+  "176079": {"slug": "criminal-code", "article_level": true, "name": "RA Criminal Code", "name_hy": "ՀՀ Քրեական օրենսգիրք", "phase": 2},
+  "176083": {"slug": "criminal-procedure-code", "article_level": true, "name": "RA Criminal Procedure Code", "name_hy": "ՀՀ Քրեական դատավարության օրենսգիրք", "phase": 2},
+  "176093": {"slug": "admin-offenses-code", "article_level": true, "name": "RA Code on Administrative Offenses", "name_hy": "Վարչական իրավախախտումների վերաբերյալ ՀՀ օրենսգիրք", "phase": 2},
+  "165000": {"slug": "law-165000", "article_level": false, "name": "Law on Minimum Monthly Wage", "phase": 2},
+  "94713": {"slug": "law-94713", "article_level": false, "name": "Law on Minimum Monthly Wage (earlier)", "phase": 2},
+  "21443": {"slug": "law-21443", "article_level": false, "name": "Min. wage law amendment", "phase": 2},
+  "22458": {"slug": "law-22458", "article_level": false, "name": "Law on Organizing and Conducting Inspections", "phase": 2},
+  "22493": {"slug": "law-22493", "article_level": false, "name": "Law on Education", "phase": 2},
+  "22512": {"slug": "law-22512", "article_level": false, "name": "Law on Rights of the Child", "phase": 2},
+  "22836": {"slug": "law-22836", "article_level": false, "name": "Law on Advertising", "phase": 2},
+  "22044": {"slug": "law-22044", "article_level": false, "name": "Law on Advertising amendment", "phase": 2},
+  "175792": {"slug": "law-175792", "article_level": false, "name": "Labor Code amendment act", "phase": 2},
+  "21674": {"slug": "law-21674", "article_level": false, "name": "Labor Code amendment act (older)", "phase": 2},
+  "175790": {"slug": "law-175790", "article_level": false, "name": "Tax Code amendment act", "phase": 2},
+  "21676": {"slug": "law-21676", "article_level": false, "name": "Tax service law amendment", "phase": 2}
+}

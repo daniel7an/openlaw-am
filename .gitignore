@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/index/
+data/chunks.jsonl
+data/weaviate/
+data/search/
+results/
+.DS_Store

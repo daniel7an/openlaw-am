@@ -1,0 +1,681 @@
+[
+  {
+    "id": "qa_001",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u0580\u056b \u0570\u0561\u057d\u056f\u0561\u0581\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568",
+    "question_english": "What is the concept of an employment contract?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-83"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 83 of the Labor Code defines the employment contract as an agreement between employer and employee establishing mutual rights and obligations.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_002",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u056f\u0561\u0580\u0563\u056b \u0567 \u056f\u0576\u0584\u057e\u0578\u0582\u0574 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u056b\u0580\u0568",
+    "question_english": "What is the procedure for concluding an employment contract?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-85"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 85 of the Labor Code specifies the procedure for concluding an employment contract, including written form requirements.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_003",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0561\u0577\u056d\u0561\u057f\u0561\u057e\u0561\u0580\u0571\u0568 \u0568\u057d\u057f \u0540\u0540 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b",
+    "question_english": "What is wages/salary according to the RA Labor Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-178"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 178 of the Labor Code defines wages as the compensation the employer pays the employee for work performed.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_004",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u057d\u0565\u0583\u0561\u056f\u0561\u0576\u0578\u0582\u0569\u0575\u0561\u0576 \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0568 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0570\u0561\u0574\u0561\u0571\u0561\u0575\u0576",
+    "question_english": "What is the right of ownership according to the Civil Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-163"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 163 of the Civil Code defines property ownership as the right to possess, use, and dispose of property.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_005",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0563\u0580\u0561\u057e\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u056b \u0570\u0561\u057d\u056f\u0561\u0581\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568",
+    "question_english": "What is the concept of pledge (mortgage) rights?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-226"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 226 of the Civil Code defines pledge as a security interest where the creditor has the right to receive satisfaction from the pledged property.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_006",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u057a\u0561\u0580\u057f\u0561\u057e\u0578\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0561\u057d\u056f\u0561\u0581\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u0582\u0574",
+    "question_english": "What is the concept of obligation in the Civil Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-345"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 345 of the Civil Code defines an obligation as a legal relationship where one party (debtor) must perform an action or refrain from acting for the other party (creditor).",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_007",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u0574\u0561\u0576 \u0561\u057c\u0561\u0580\u056f\u0561\u0576",
+    "question_english": "What is the subject of regulation of the Tax Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-1"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 1 of the Tax Code defines its subject as regulating the system of taxes and fees in the Republic of Armenia.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_008",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0565\u0576 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0561\u0580\u057f\u0578\u0576\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u0568",
+    "question_english": "What are tax privileges/exemptions?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-19"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 19 of the Tax Code defines tax privileges as exemptions or reduced rates granted to specific categories of taxpayers.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_009",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0563\u0578\u0580\u056e\u0561\u056f\u0561\u056c\u0568",
+    "question_english": "What is a tax agent?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-29"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 29 of the Tax Code defines a tax agent as a person obligated by law to calculate, withhold, and transfer taxes on behalf of a taxpayer.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_010",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u0580\u056b \u0561\u0566\u0561\u057f\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u0582\u0574",
+    "question_english": "What is freedom of contract in the Civil Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-437"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 437 of the Civil Code establishes that parties are free to conclude contracts and determine their terms, limited only by mandatory rules.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_011",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u057e\u0576\u0561\u057d\u056b \u0570\u0561\u057f\u0578\u0582\u0581\u0574\u0561\u0576 \u0568\u0576\u0564\u0570\u0561\u0576\u0578\u0582\u0580 \u0570\u056b\u0574\u0584\u0565\u0580\u0568",
+    "question_english": "What are the general grounds for liability for damage compensation?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-1058"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 1058 of the Civil Code establishes general tort liability: a person who causes damage to another must compensate it in full unless exempted by law.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_012",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u056f\u0561\u0580\u0563\u0561\u057a\u0561\u0570\u0578\u0582\u0569\u0575\u0561\u0576 \u056f\u0578\u057a\u056b\u057f \u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0568",
+    "question_english": "What constitutes a gross violation of labor discipline?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-221"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 221 of the Labor Code lists gross violations of labor discipline including absence without valid reason, appearing intoxicated, and others.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_013",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0561\u0574\u0565\u0576\u0561\u0574\u0575\u0561 \u0561\u0580\u0571\u0561\u056f\u0578\u0582\u0580\u0564\u056b \u057f\u0587\u0578\u0572\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568",
+    "question_english": "What is the duration of annual leave?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-162"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 162 of the Labor Code establishes that the minimum annual leave is 20 working days, with extended leave for certain categories of workers.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_014",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0565\u056f\u0561\u0574\u057f\u0561\u0575\u056b\u0576 \u0570\u0561\u0580\u056f\u056b \u0564\u0580\u0578\u0582\u0575\u0584\u0561\u0579\u0561\u0583\u0568",
+    "question_english": "What is the income tax rate?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-150"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 150 of the Tax Code establishes income tax rates. The flat rate is 20% for employment income.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_015",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0570\u0561\u0576\u0563\u057d\u057f\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0568 \u0568\u057d\u057f \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576",
+    "question_english": "What is the right to rest according to the Constitution?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=75780"],
+    "expected_article_ids": ["constitution-art-33"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 33 of the Constitution guarantees the right to rest, including maximum working hours, weekly rest, and paid annual leave.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_016",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0570\u056b\u0574\u0584\u0565\u0580\u0578\u057e \u0567 \u057a\u0561\u0577\u057f\u057a\u0561\u0576\u057e\u0578\u0582\u0574 \u057d\u0565\u0583\u0561\u056f\u0561\u0576\u0578\u0582\u0569\u0575\u0561\u0576 \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562 \u0587 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e",
+    "question_english": "How is property right protected under the Constitution vs the Civil Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=172116"
+    ],
+    "expected_article_ids": ["constitution-art-8", "civil-code-art-163"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Constitution Art 8 guarantees property rights as a fundamental right. Civil Code Art 163 elaborates on ownership rights (possess, use, dispose). The Constitution has supreme authority.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_017",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0570\u0561\u0580\u0561\u0562\u0565\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u056f\u0561 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0563\u0565\u0580\u0561\u056f\u0561\u0575\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0568 \u0561\u0577\u056d\u0561\u057f\u0561\u057e\u0561\u0580\u0571\u056b \u0570\u0561\u0580\u0581\u0578\u0582\u0574",
+    "question_english": "What is the relationship between the Constitution's supremacy and the Labor Code on wages?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-6", "labor-code-art-178"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 6 establishes constitutional supremacy. Labor Code Art 178 specifies wage details but cannot contradict constitutional principles. Constitution prevails in any conflict.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_018",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u057a\u0561\u0580\u057f\u0561\u057e\u0578\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u056b \u056f\u0561\u057f\u0561\u0580\u0574\u0561\u0576 \u0570\u0561\u0580\u0581\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0570\u0561\u0574\u0561\u0571\u0561\u0575\u0576",
+    "question_english": "How is the matter of fulfilling tax obligations regulated under both the Constitution and Tax Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=176085"
+    ],
+    "expected_article_ids": ["constitution-art-45", "tax-code-art-319"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 45 establishes the duty to pay taxes. Tax Code Art 319 details tax obligation procedures. Constitution sets the principle, Code implements the details.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_019",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u057f\u0561\u0580\u0562\u0565\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u056f\u0561 \u0570\u0561\u0576\u0563\u057d\u057f\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0574\u056b\u057b\u0587",
+    "question_english": "What difference exists between the right to rest in the Constitution vs the Labor Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-33", "labor-code-art-150"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 33 guarantees the right to rest as a fundamental right. Labor Code Art 150 defines rest time categories. The Constitution is the higher authority.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_020",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u057f\u0561\u0580\u0562\u0565\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u056f\u0561 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u0580\u056b \u0561\u0566\u0561\u057f\u0578\u0582\u0569\u0575\u0561\u0576 \u057d\u056f\u0566\u0562\u0578\u0582\u0576\u0584\u056b \u0574\u056b\u057b\u0587 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0587 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0574\u056b\u057b\u0587",
+    "question_english": "What is the difference in the freedom of contract principle between the Constitution and the Civil Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=172116"
+    ],
+    "expected_article_ids": ["constitution-art-31", "civil-code-art-437"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 31 guarantees the freedom of economic activity. Civil Code Art 437 implements freedom of contract. The constitutional guarantee is the overriding principle.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_021",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u0580\u056b \u056c\u0578\u0582\u056e\u0578\u0582\u0574\u0568 \u0563\u0578\u0580\u056e\u0561\u057f\u0578\u0582\u056b \u0576\u0561\u056d\u0561\u0571\u0565\u057c\u0576\u0578\u0582\u0569\u0575\u0561\u0574\u0562",
+    "question_english": "How is termination of an employment contract at the employer's initiative regulated?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-113"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 113 of the Labor Code lists the specific grounds for employer-initiated termination, including redundancy, incompetence, and disciplinary violations.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_022",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u057d\u0561\u0570\u0574\u0561\u0576\u0561\u0583\u0561\u056f\u0578\u0582\u0574\u0576\u0565\u0580 \u056f\u0561\u0576 \u0561\u0577\u056d\u0561\u057f\u0561\u057e\u0561\u0580\u0571\u056b\u0581 \u057a\u0561\u0570\u0578\u0582\u0574\u0576\u0565\u0580 \u056f\u0561\u057f\u0561\u0580\u0565\u056c\u0578\u0582 \u0570\u0561\u0574\u0561\u0580",
+    "question_english": "What are the limitations on deductions from wages?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-213", "labor-code-art-214"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Art 213 lists grounds for wage deductions. Art 214 limits total deductions to 50% of the employee's monthly salary.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_023",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u057e\u0561\u0580\u0571\u0561\u057f\u0580\u057e\u0578\u0582\u0574 \u0561\u0580\u057f\u0561\u056a\u0561\u0574\u0575\u0561 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0568 \u0587 \u0563\u056b\u0577\u0565\u0580\u0561\u0575\u056b\u0576 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0568",
+    "question_english": "How is overtime work and night work compensated?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-184"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 184 of the Labor Code requires overtime pay at 150% of the regular rate and night work pay at 130% of the regular rate.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_024",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u056f\u0561\u0580\u0563\u056b \u0567 \u056f\u056b\u0580\u0561\u057c\u057e\u0578\u0582\u0574 \u056f\u0561\u0580\u0563\u0561\u057a\u0561\u0570\u0561\u056f\u0561\u0576 \u057f\u0578\u0582\u0575\u056a\u0568",
+    "question_english": "What is the procedure for applying disciplinary sanctions?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176082"],
+    "expected_article_ids": ["labor-code-art-226", "labor-code-art-227"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Art 226 sets the procedure: employer must request a written explanation before imposing sanctions. Art 227 sets time limits: within one month of discovery and six months of commission.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_025",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u056b\u0580\u0561\u057e\u0561\u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0568 \u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u057a\u0561\u057f\u0561\u057d\u056d\u0561\u0576\u0561\u057f\u057e\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568",
+    "question_english": "What constitutes a tax offense and what is tax liability?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-397"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 397 of the Tax Code defines a tax offense as an unlawful action (or inaction) by a taxpayer that violates tax legislation, and establishes the basis for tax liability.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_026",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u057a\u0561\u057f\u0561\u057d\u056d\u0561\u0576\u0561\u057f\u057e\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u0567 \u057d\u0561\u0570\u0574\u0561\u0576\u057e\u0561\u056e \u0564\u0580\u0561\u0574\u0561\u056f\u0561\u0576 \u057a\u0561\u0580\u057f\u0561\u057e\u0578\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 \u0579\u056f\u0561\u057f\u0561\u0580\u0565\u056c\u0578\u0582 \u0570\u0561\u0574\u0561\u0580",
+    "question_english": "What is the liability for failing to fulfill a monetary obligation?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-411"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 411 of the Civil Code establishes that for failing to fulfill a monetary obligation, the debtor must pay interest on the outstanding amount.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_027",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u057a\u0561\u0575\u0574\u0561\u0576\u0576\u0565\u0580 \u056f\u0561\u0576 \u0561\u057a\u0561\u0570\u0578\u057e\u0561\u0563\u0580\u0561\u056f\u0561\u0576 \u057a\u0561\u0575\u0574\u0561\u0576\u0561\u0563\u0580\u056b \u0570\u0561\u0574\u0561\u0580",
+    "question_english": "What are the mandatory terms of an insurance contract?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-998"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 998 of the Civil Code lists mandatory terms: the insured object, insured event, insurance amount, and contract term.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_028",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0576\u0578\u057f\u0561\u0580\u056b \u056f\u0578\u0572\u0574\u056b\u0581 \u057e\u0561\u057e\u0565\u0580\u0561\u0581\u057e\u0561\u056e \u0563\u0578\u0580\u056e\u0561\u0580\u0584\u0576\u0565\u0580\u0568",
+    "question_english": "What are notarized transactions?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-299"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 299 of the Civil Code specifies which transactions must be notarized, including real estate transactions and certain high-value contracts.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_029",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0565\u056f\u0561\u0574\u057f\u0561\u0575\u056b\u0576 \u0570\u0561\u0580\u056f\u0578\u057e \u0570\u0561\u0580\u056f\u0574\u0561\u0576 \u0562\u0561\u0566\u0561\u0576",
+    "question_english": "What is the tax base for income tax?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-143"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 143 of the Tax Code defines the income tax base as the taxpayer's total income minus deductions allowed by law.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_030",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0561\u057a\u0585\u0580\u056b\u0576\u056b \u0563\u0578\u0580\u056e\u0578\u0582\u0576\u0565\u0578\u0582\u0569\u0575\u0561\u0574\u0562 \u0566\u0562\u0561\u0572\u057e\u0565\u056c\u0568 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u0582\u0574",
+    "question_english": "What is engaging in illegal activity according to the Tax Code?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=176085"],
+    "expected_article_ids": ["tax-code-art-407"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 407 of the Tax Code defines illegal economic activity and its tax consequences, including penalties for unregistered businesses.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_031",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u057a\u0565\u057f\u0561\u056f\u0561\u0576 \u0587 \u057f\u0565\u0572\u0561\u056f\u0561\u0576 \u056b\u0576\u0584\u0576\u0561\u056f\u0561\u057c\u0561\u057e\u0561\u0580\u0574\u0561\u0576 \u0574\u0561\u0580\u0574\u056b\u0576\u0576\u0565\u0580\u056b \u057a\u0561\u057f\u0561\u057d\u056d\u0561\u0576\u0561\u057f\u057e\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 \u057e\u0576\u0561\u057d\u056b \u0570\u0561\u0574\u0561\u0580",
+    "question_english": "What is the liability of state and local self-governance bodies for damages?",
+    "expected_arlis_urls": ["https://www.arlis.am/DocumentView.aspx?docid=172116"],
+    "expected_article_ids": ["civil-code-art-1063"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Article 1063 of the Civil Code establishes that the state and local self-governance bodies are liable for damages caused by their officials' unlawful actions.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_032",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0565\u0576 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u056b\u0580\u0561\u057e\u0561\u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0576\u0565\u0580\u056b \u0570\u0561\u0574\u0561\u0580 \u057d\u0561\u0570\u0574\u0561\u0576\u057e\u0561\u056e \u057e\u0561\u0580\u0579\u0561\u056f\u0561\u0576 \u057f\u0578\u0582\u0563\u0561\u0576\u0584\u0576\u0565\u0580\u0568 \u0568\u057d\u057f \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0587 \u057e\u0561\u0580\u0579\u0561\u056f\u0561\u0576 \u056b\u0580\u0561\u057e\u0561\u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0576\u0565\u0580\u056b \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b",
+    "question_english": "What administrative penalties exist for labor law violations in both the Labor Code and the Administrative Offenses Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=176082",
+      "https://www.arlis.am/DocumentView.aspx?docid=176093"
+    ],
+    "expected_article_ids": ["labor-code-art-221", "admin-offenses-code-art-41"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Labor Code Art 221 defines gross violations internally. Admin Offenses Code Art 41 sets administrative fines for labor law violations by employers. Both Codes have equal hierarchy.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "qa_033",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0567 \u0576\u057e\u0561\u0566\u0561\u0563\u0578\u0582\u0575\u0576 \u0561\u0577\u056d\u0561\u057f\u0561\u057e\u0561\u0580\u0571\u0568 \u0540\u0540-\u0578\u0582\u0574 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576, \u0585\u0580\u0565\u0576\u0584\u056b \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0570\u0561\u0574\u0561\u0571\u0561\u0575\u0576",
+    "question_english": "What is the minimum wage in Armenia according to the Constitution, the law, and the Labor Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=165000",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-33", "law-165000", "labor-code-art-178"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 33 guarantees fair wages. Law-165000 sets the specific minimum wage amount. Labor Code Art 178 defines the wage concept. Constitution > Law > Code in hierarchy, but all align.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_034",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0570\u0561\u0580\u0561\u0562\u0565\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u056f\u0561 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u056e\u0561\u057c\u0561\u0575\u0578\u0582\u0569\u0575\u0561\u0576 \u0585\u0580\u0565\u0576\u0584\u0568 \u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0568 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0574\u0561\u0580\u0574\u056b\u0576\u0576\u0565\u0580\u056b \u056b\u0580\u0561\u057e\u0561\u057d\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0561\u0580\u0581\u0578\u0582\u0574",
+    "question_english": "What is the relationship between the Tax Service Law and the Tax Code regarding the jurisdiction of tax authorities?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=21676",
+      "https://www.arlis.am/DocumentView.aspx?docid=176085"
+    ],
+    "expected_article_ids": ["law-21676", "tax-code-art-1"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "The Tax Service Law (2005) regulates the tax service organization. The Tax Code (2016) is newer and more comprehensive, taking precedence on substantive tax matters as the higher-level Code.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_035",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u0583\u0578\u056d\u057e\u0565\u056c \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0578\u0564\u057e\u0561\u056e 43-\u0568 \u0570\u056b\u0574\u0576\u0561\u056f\u0561\u0576 \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u056b \u057d\u0561\u0570\u0574\u0561\u0576\u0561\u0583\u0561\u056f\u0574\u0561\u0576 \u0574\u0561\u057d\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0561\u0575\u056b\u0576 \u0564\u0580\u0578\u0582\u0575\u0569\u0576\u0565\u0580\u056b \u056f\u056b\u0580\u0561\u057c\u0574\u0561\u0576 \u0570\u0565\u057f",
+    "question_english": "How has Constitution Article 43 on restricting fundamental rights interacted with the application of Code-level provisions?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-43", "labor-code-art-140"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 43 allows restrictions on rights only by law for specific purposes. Labor Code Art 140 on reduced working hours is a permissible restriction. Constitution sets the test; Code implements specific restrictions.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_036",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u0583\u0578\u056d\u057e\u0565\u056c \u0576\u057e\u0561\u0566\u0561\u0563\u0578\u0582\u0575\u0576 \u0561\u0577\u056d\u0561\u057f\u0561\u057e\u0561\u0580\u0571\u056b \u0585\u0580\u0565\u0576\u0584\u0568 \u056a\u0561\u0574\u0561\u0576\u0561\u056f\u056b \u0568\u0576\u0569\u0561\u0581\u0584\u0578\u0582\u0574",
+    "question_english": "How has the minimum wage law changed over time?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=165000",
+      "https://www.arlis.am/DocumentView.aspx?docid=94713",
+      "https://www.arlis.am/DocumentView.aspx?docid=21443"
+    ],
+    "expected_article_ids": ["law-165000", "law-94713", "law-21443"],
+    "expected_hierarchy_level": "Law",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "The minimum wage law has been amended multiple times. Law-21443 (2005) amended the original. Law-94713 and law-165000 are subsequent versions. The most recent version (law-165000 or its amendments) prevails.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_037",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u0583\u0578\u056d\u057e\u0565\u056c \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0568 \u056a\u0561\u0574\u0561\u0576\u0561\u056f\u056b \u0568\u0576\u0569\u0561\u0581\u0584\u0578\u0582\u0574",
+    "question_english": "How has the Labor Code been amended over time?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=176082",
+      "https://www.arlis.am/DocumentView.aspx?docid=175792",
+      "https://www.arlis.am/DocumentView.aspx?docid=21674"
+    ],
+    "expected_article_ids": ["labor-code-art-2", "law-175792", "law-21674"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "The Labor Code (2004) has been amended by multiple laws. Law-21674 (2005) and law-175792 (2023) are amendment laws. The current consolidated version (docid=176082) incorporates all amendments.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_038",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u0583\u0578\u056d\u057e\u0565\u056c \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0568 \u056a\u0561\u0574\u0561\u0576\u0561\u056f\u056b \u0568\u0576\u0569\u0561\u0581\u0584\u0578\u0582\u0574",
+    "question_english": "How has the Tax Code been amended over time?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=176085",
+      "https://www.arlis.am/DocumentView.aspx?docid=175790"
+    ],
+    "expected_article_ids": ["tax-code-art-1", "law-175790"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "The Tax Code (2016) has been amended by multiple laws. Law-175790 (2023) is a recent amendment. The current consolidated version (docid=176085) incorporates all amendments.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_039",
+    "question_armenian": "\u0535\u0580\u0562 \u056f\u0561\u0576 \u0570\u0561\u056f\u0561\u057d\u0578\u0582\u0569\u0575\u0578\u0582\u0576 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0574\u0561\u0580\u0574\u056b\u0576\u0576\u0565\u0580\u056b \u057e\u0561\u0580\u0579\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0574\u056b\u057b\u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0570\u057d\u056f\u0578\u0572\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0561\u0580\u0581\u0578\u0582\u0574",
+    "question_english": "When there is a conflict between the Tax Code and the Administrative Offenses Code regarding tax oversight, which prevails?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=176085",
+      "https://www.arlis.am/DocumentView.aspx?docid=176093"
+    ],
+    "expected_article_ids": ["tax-code-art-379", "admin-offenses-code-art-182.6"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Both are Codes (equal hierarchy). Tax Code Art 379 (2016) on cash register requirements is more recent and specific than Admin Offenses Code Art 182.6 (1985). The more recent specific law prevails (lex specialis and lex posterior).",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_040",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0570\u056b\u0574\u0576\u0561\u056f\u0561\u0576 \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u056b \u057d\u0561\u0570\u0574\u0561\u0576\u0561\u0583\u0561\u056f\u0578\u0582\u0574\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0576, \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0574\u0561\u056f\u0561\u0580\u0564\u0561\u056f\u0576\u0565\u0580\u0578\u057e",
+    "question_english": "How is the restriction of fundamental rights regulated at the level of the Constitution, the Civil Code, and the Labor Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=172116",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-43", "civil-code-art-1", "labor-code-art-3"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 43 sets the standard: rights can only be restricted by law for specified purposes. Civil Code Art 1 and Labor Code Art 3 establish principles consistent with this. Constitution > Code in hierarchy.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_041",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u057e\u0576\u0561\u057d\u056b \u0570\u0561\u057f\u0578\u0582\u0581\u0574\u0561\u0576 \u0570\u0561\u0580\u0581\u0568 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0570\u0561\u0580\u0561\u0562\u0565\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u0578\u0582\u0574 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0570\u0561\u0574\u0561\u0571\u0561\u0575\u0576",
+    "question_english": "How is damage compensation regulated in employment relations under both the Civil Code and the Labor Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=172116",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["civil-code-art-1058", "civil-code-art-17", "labor-code-art-178"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Civil Code Art 1058 sets general tort liability rules. Art 17 defines damages. Labor Code Art 178 sets specific employment damage rules. Labor Code is lex specialis for employment relations.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_042",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0570\u057d\u056f\u0578\u0572\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0561\u0580\u0581\u0568 \u057d\u057f\u0578\u0582\u0563\u0578\u0582\u0574\u0576\u0565\u0580\u056b \u0585\u0580\u0565\u0576\u0584\u056b, \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0587 \u057e\u0561\u0580\u0579\u0561\u056f\u0561\u0576 \u056b\u0580\u0561\u057e\u0561\u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0576\u0565\u0580\u056b \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u056b \u0574\u0561\u056f\u0561\u0580\u0564\u0561\u056f\u0576\u0565\u0580\u0578\u057e",
+    "question_english": "How is tax oversight regulated at the level of the Inspections Law, Tax Code, and Administrative Offenses Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=22458",
+      "https://www.arlis.am/DocumentView.aspx?docid=176085",
+      "https://www.arlis.am/DocumentView.aspx?docid=176093"
+    ],
+    "expected_article_ids": ["law-22458", "tax-code-art-379", "admin-offenses-code-art-244-3"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "The Inspections Law (2000) governs inspections generally. Tax Code (2016, Code level) has specific tax oversight provisions. Admin Offenses Code (1985, Code level) lists penalties. Code > Law hierarchy; Tax Code is most recent and specific.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_043",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0565\u0580\u0565\u056d\u0561\u0575\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562, \u0565\u0580\u0565\u056d\u0561\u0575\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u056b \u0585\u0580\u0565\u0576\u0584\u0578\u057e \u0587 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e",
+    "question_english": "How are children's rights regulated under the Constitution, the Children's Rights Law, and the Labor Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=22512",
+      "https://www.arlis.am/DocumentView.aspx?docid=176082"
+    ],
+    "expected_article_ids": ["constitution-art-36", "law-22512", "labor-code-art-140"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 36 establishes parents' rights and duties. Children's Rights Law (1996) provides comprehensive protections. Labor Code Art 140 protects minors' working hours. Constitution > Law > Code-level restrictions.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_044",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0563\u0578\u057e\u0561\u0566\u0564\u056b \u0570\u0561\u0580\u0581\u0568 \u0563\u0578\u057e\u0561\u0566\u0564\u056b \u0585\u0580\u0565\u0576\u0584\u0578\u057e \u0587 \u0564\u0580\u0561 \u0583\u0578\u0583\u0578\u056d\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580\u0578\u057e",
+    "question_english": "How is advertising regulated by the Advertising Law and its amendments?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=22836",
+      "https://www.arlis.am/DocumentView.aspx?docid=22044"
+    ],
+    "expected_article_ids": ["law-22836", "law-22044"],
+    "expected_hierarchy_level": "Law",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "The Advertising Law (1996, law-22836) established the original framework. Law-22044 (2005) amended it. The amended version prevails under lex posterior.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_045",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0584\u0580\u0565\u0561\u056f\u0561\u0576 \u057e\u0561\u0580\u0578\u0582\u0575\u0569\u056b \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562, \u0584\u0580\u0565\u0561\u056f\u0561\u0576 \u0564\u0561\u057f\u0561\u057e\u0561\u0580\u0578\u0582\u0569\u0575\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e \u0587 \u0584\u0580\u0565\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e",
+    "question_english": "How are criminal procedure rights regulated under the Constitution, the Criminal Procedure Code, and the Criminal Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=176083",
+      "https://www.arlis.am/DocumentView.aspx?docid=176079"
+    ],
+    "expected_article_ids": ["constitution-art-18", "criminal-procedure-code-art-1", "criminal-code-art-246"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 18 guarantees fair trial rights. Criminal Procedure Code Art 1 implements procedural rights. Criminal Code Art 246 defines specific offenses. Constitution > Code in hierarchy.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_046",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u056f\u0561\u057a \u056f\u0561 \u0570\u0561\u0577\u057e\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0583\u0561\u057d\u057f\u0561\u0569\u0572\u0569\u056b \u0587 \u0570\u057d\u056f\u056b\u0579 \u0564\u0580\u0561\u0574\u0561\u0580\u056f\u0572\u0561\u0575\u056b\u0576 \u0574\u0565\u0584\u0565\u0576\u0561\u0576\u0565\u0580\u056b \u056f\u056b\u0580\u0561\u057c\u0578\u0582\u0569\u0575\u0561\u0576 \u0574\u056b\u057b\u0587 \u0570\u0561\u0580\u056f\u0561\u0575\u056b\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u0582\u0574 \u0587 \u057e\u0561\u0580\u0579\u0561\u056f\u0561\u0576 \u056b\u0580\u0561\u057e\u0561\u056d\u0561\u056d\u057f\u0578\u0582\u0574\u0576\u0565\u0580\u056b \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u0582\u0574",
+    "question_english": "What is the relationship between accounting documents and cash register machine requirements in the Tax Code vs Administrative Offenses Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=176085",
+      "https://www.arlis.am/DocumentView.aspx?docid=176093"
+    ],
+    "expected_article_ids": ["tax-code-art-55", "tax-code-art-380", "admin-offenses-code-art-170-5"],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Tax Code Arts 55 and 380 define accounting and cash register requirements (2016). Admin Offenses Code Art 170-5 sets penalties for violations (1985). Both are Codes; Tax Code is newer and more specific on requirements.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_047",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0563\u0578\u0582\u0575\u0584\u056b \u0576\u056f\u0561\u057f\u0574\u0561\u0574\u0562 \u056b\u0580\u0561\u057e\u0578\u0582\u0576\u0584\u0576\u0565\u0580\u056b \u057a\u0565\u057f\u0561\u056f\u0561\u0576 \u0563\u0580\u0561\u0576\u0581\u0574\u0561\u0576 \u0570\u0561\u0580\u0581\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562 \u0587 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e",
+    "question_english": "How is the state registration of property rights regulated under the Constitution and the Civil Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=172116"
+    ],
+    "expected_article_ids": ["constitution-art-8", "civil-code-art-163", "civil-code-art-235"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 8 guarantees property rights. Civil Code Art 163 defines ownership. Art 235 specifies pledge registration requirements. Constitution sets the principle; Civil Code implements registration procedures.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_048",
+    "question_armenian": "\u053b\u055e\u0576\u0579 \u0570\u056b\u0574\u0584\u0565\u0580\u0578\u057e \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u056f\u0580\u0569\u0578\u0582\u0569\u0575\u0561\u0576 \u0570\u0561\u0580\u0581\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562 \u0587 \u056f\u0580\u0569\u0578\u0582\u0569\u0575\u0561\u0576 \u0585\u0580\u0565\u0576\u0584\u0578\u057e",
+    "question_english": "How is the right to education regulated under the Constitution and the Education Law?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=22493"
+    ],
+    "expected_article_ids": ["constitution-art-38", "law-22493"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 38 guarantees the right to education and free secondary education. Education Law (1999) details implementation. Constitution > Law in hierarchy.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_049",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u0583\u0578\u056d\u057e\u0565\u056c \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0568 2005-\u056b\u0581 2015 \u0569\u057e\u0561\u056f\u0561\u0576\u056b\u0576",
+    "question_english": "How did the Constitution change from 2005 to 2015?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=143723"
+    ],
+    "expected_article_ids": ["constitution-75780", "constitution-143723"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": true,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "The 2005 Constitution (docid=75780) was significantly amended in 2015 (docid=143723), shifting from a presidential to a parliamentary system. The 2015 version is the current Constitution.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "qa_050",
+    "question_armenian": "\u053b\u055e\u0576\u0579\u057a\u0565\u057d \u0567 \u056f\u0561\u0580\u0563\u0561\u057e\u0578\u0580\u057e\u0578\u0582\u0574 \u0563\u0580\u0561\u057e\u0561\u0564\u0580\u057e\u0561\u056e \u0562\u0576\u0561\u056f\u0565\u056c\u056b \u057f\u0561\u0576 \u056f\u0561\u0574 \u0562\u0576\u0561\u056f\u0561\u0580\u0561\u0576\u056b \u057e\u0580\u0561 \u0562\u057c\u0576\u0561\u0563\u0561\u0576\u0571\u0578\u0582\u0574 \u057f\u0561\u0580\u0561\u056e\u0565\u056c\u0578\u0582 \u0570\u0561\u0580\u0581\u0568 \u054d\u0561\u0570\u0574\u0561\u0576\u0561\u0564\u0580\u0578\u0582\u0569\u0575\u0561\u0574\u0562 \u0587 \u0584\u0561\u0572\u0561\u0584\u0561\u0581\u056b\u0561\u056f\u0561\u0576 \u0585\u0580\u0565\u0576\u057d\u0563\u0580\u0584\u0578\u057e",
+    "question_english": "How is foreclosure on a pledged residential house or apartment regulated under the Constitution and the Civil Code?",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/DocumentView.aspx?docid=75780",
+      "https://www.arlis.am/DocumentView.aspx?docid=172116"
+    ],
+    "expected_article_ids": ["constitution-art-24", "civil-code-art-272"],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": true,
+    "correct_answer_summary": "Constitution Art 24 protects the inviolability of the home. Civil Code Art 272 allows foreclosure on pledged residential property under specific conditions. Constitutional rights limit how aggressively foreclosure can be applied.",
+    "difficulty": "hard"
+  }
+]
