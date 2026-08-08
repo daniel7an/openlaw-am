@@ -16,10 +16,11 @@ query_prefix = "query: "
 passage_prefix = "passage: "
 
 [chunking]
-# The model truncates at 512 tokens without warning. 512 - 2 special - "passage: "
-# - title (max 53 tokens observed) leaves 400 for the body. Sized in tokens, not
+# The model truncates at 512 tokens without warning. Sized in tokens, not
 # characters: Armenian runs ~4.1 chars/token and that ratio varies too much to fake.
-max_tokens = 400
+# 511 is deliberately >= the dynamic ceiling (model_limit - reserve - title), so that
+# term is what actually binds: bodies get every token the title leaves free (~500 max).
+max_tokens = 511
 overlap_tokens = 50
 
 # The title is embedded alongside the body ("passage: {title}\n{text}"), so it competes
@@ -41,6 +42,12 @@ port = 8080             # env: OPENLAW_WEAVIATE_PORT
 alias = "Article"                  # env: OPENLAW_COLLECTION — what queries resolve through
 collection_prefix = "Article_"     # versions auto-name as Article_v1, v2... or take --name
 
+# The dashboard picks a version and queries that collection DIRECTLY, deliberately
+# bypassing the alias — switching index in the UI is a per-session view change and must
+# not repoint the alias out from under the CLI, eval.py, or anyone else hitting the box.
+# This is only where the picker starts; "" means start on whatever the alias points at.
+ui_default = "Article_all_codex_better_chunking"   # env: OPENLAW_UI_COLLECTION
+
 [retrieval]
 # Measured on the 18 labour benchmark questions at k=8:
 #   bm25   (alpha 0.0) -> hit@1 22%  hit@3 39%  hit@8 61%
@@ -61,7 +68,32 @@ temperature = 0.1
 # reasoning trace before writing any answer (260 reasoning + ~356 answer on a typical
 # question). At 800 this intermittently returned an EMPTY answer — the budget ran out
 # mid-reasoning. This ceiling must cover reasoning + answer, not just the answer.
-max_output_tokens = 2000
+max_output_tokens = 4000
+
+# Backends the dashboard can switch between at runtime. `model` / `base_url` above stay
+# the defaults for the CLI and eval.py; these only drive the picker in app.py. They
+# mirror the two targets in run_eval.sh, so a number seen in the demo and a number from
+# the benchmark come from the same endpoint.
+#
+# Costs are USD per 1M tokens, used for the per-question cost readout. A self-hosted
+# backend sets them to 0 and the UI says "self-hosted" instead of a price.
+[[generation.backends]]
+name = "DeepSeek V4 Pro (hosted)"
+model = "deepseek/deepseek-v4-pro"
+base_url = "https://openrouter.ai/api/v1"
+prompt_cost = 0.435
+completion_cost = 0.87
+note = "Reasoning model, served through OpenRouter."
+
+[[generation.backends]]
+name = "Gemma 4 26B (on-prem)"
+model = "google/gemma-4-26B-A4B-it"   # case-sensitive: vLLM matches the name exactly
+base_url = "http://localhost:18000/v1"
+api_key = "EMPTY"                     # vLLM is unauthenticated; the client needs a non-empty key
+prompt_cost = 0.0
+completion_cost = 0.0
+note = "Self-hosted vLLM on spark-alpha, reached through an SSH tunnel."
+hint = "ssh -N -L 18000:localhost:8000 spark-alpha"
 
 
 [paths]

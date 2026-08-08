@@ -81,3 +81,34 @@ GOLD ANSWER SUMMARY (English):
 SYSTEM ANSWER (Armenian):
 {system_answer}
 """
+
+[judge_binary]
+# Binary correctness judge, run through an OpenAI-compatible endpoint (DeepSeek by
+# default) rather than Gemini — the Gemini free tier caps at 20 requests/minute,
+# which cannot sustain a multi-run sweep.
+# The gold reference is the benchmark's English summary — the ar-lex_graph dataset
+# carries no Armenian gold answers, so the summary is the only ground truth there is.
+# Placeholders: {question}, {gold}, {system_answer}.
+system = """You are a strict evaluator of an Armenian legal Q&A system.
+
+You receive: the user question (Armenian), a gold answer summary (English), and the system's answer (Armenian).
+
+Judge ONLY factual correctness relative to the gold summary. Ignore style, length, formatting and politeness. Citations like [Հոդված N] are good practice but do not by themselves make an answer correct.
+
+Return ONLY valid JSON, no markdown fences:
+{"score": 1, "rationale": "one short sentence"}
+
+score = 1 when the answer conveys the substance of the gold summary without material legal error.
+score = 0 when it is wrong, off-topic, contradicts the gold summary, or refuses while the answer was available in the provided context.
+
+If the answer correctly states that the cited provision has been repealed and the gold summary describes its former content, score 1 — current law wins over a stale gold summary."""
+
+user = """QUESTION (Armenian):
+{question}
+
+GOLD ANSWER SUMMARY (English):
+{gold}
+
+SYSTEM ANSWER (Armenian):
+{system_answer}
+"""

@@ -12,4 +12,11 @@ dependencies = [
     "requests>=2.31",
     "scrapy>=2.17.0",
     "streamlit>=1.61.1",
+    "matplotlib>=3.11.1",
+]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.1",
+    "openpyxl>=3.1.5",
 ]

@@ -88,18 +88,61 @@ def clean(fragment: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 
-def hard_split(text: str, budget: int = MAX_TOKENS) -> list[str]:
-    """Last-resort token-window split for a single sentence that busts the budget.
+# A single sentence can exceed the whole budget (600+-token monsters in the tax and
+# criminal-procedure codes). Those must be cut somewhere — but at the coarsest
+# boundary that fits, never at an arbitrary token position: list items (;), then
+# clauses (, and the Armenian բութ ՝), then plain whitespace. Whatever happens,
+# a chunk never starts or ends mid-word.
+FALLBACK_SEPS = (
+    re.compile(r"(?<=;)\s+"),
+    re.compile(r"(?<=[,՝])\s+"),
+    re.compile(r"\s+"),
+)
 
-    Tax and criminal-procedure articles contain sentences of 600+ tokens; without
-    this they were emitted whole and silently truncated at embed time.
+
+def hard_split(text: str, budget: int = MAX_TOKENS, _level: int = 0) -> list[str]:
+    """Split one over-budget sentence at the coarsest boundary that fits."""
+    if ntokens(text) <= budget:
+        return [text]
+    if _level == len(FALLBACK_SEPS):
+        return token_window(text, budget)
+    out, buf = [], ""
+    for piece in FALLBACK_SEPS[_level].split(text):
+        if ntokens(piece) > budget:  # still too big at this granularity
+            if buf:
+                out.append(buf)
+                buf = ""
+            out.extend(hard_split(piece, budget, _level + 1))
+        elif buf and ntokens(f"{buf} {piece}") > budget:
+            out.append(buf)
+            buf = piece
+        else:
+            buf = f"{buf} {piece}".strip()
+    if buf:
+        out.append(buf)
+    return out
+
+
+def token_window(text: str, budget: int) -> list[str]:
+    """Absolute last resort: a single whitespace-free run longer than the budget.
+
+    No current document hits this; it exists so the 512-token contract cannot
+    break no matter what the source text does.
     """
     tk = tokenizer()
     ids = tk(text, add_special_tokens=False)["input_ids"]
-    return [
-        tk.decode(ids[i : i + budget], skip_special_tokens=True).strip()
-        for i in range(0, len(ids), budget)
-    ]
+    out, i = [], 0
+    while i < len(ids):
+        # decode→re-encode is not idempotent: a window of `budget` ids can re-tokenize
+        # to more than `budget` tokens. Shrink the window until the *text* fits.
+        take = min(budget, len(ids) - i)
+        piece = tk.decode(ids[i : i + take], skip_special_tokens=True).strip()
+        while take > 1 and ntokens(piece) > budget:
+            take -= max(1, ntokens(piece) - budget)
+            piece = tk.decode(ids[i : i + take], skip_special_tokens=True).strip()
+        out.append(piece)
+        i += take
+    return out
 
 
 def units(text: str, budget: int = MAX_TOKENS) -> list[str]:
@@ -147,7 +190,9 @@ def split_long(text: str, budget: int = MAX_TOKENS) -> list[str]:
                     break
                 tail.insert(0, prev)
                 total += ntokens(prev)
-            buf = tail
+            # Overlap is a nicety, the budget is a contract: when the carried tail
+            # plus the incoming unit would not fit, start the part without overlap.
+            buf = tail if ntokens("\n".join(tail + [unit])) <= budget else []
         buf.append(unit)
     if buf:
         parts.append("\n".join(buf))

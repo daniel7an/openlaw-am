@@ -154,8 +154,10 @@ def load_chunk_index():
 def parse_post(path):
     sel = Selector((RAW / path).read_text())
     title = (sel.css("h1::text").get() or sel.css("title::text").get() or "").strip()
+    # the post's own date lives in the article header byline; .entry-date divs
+    # elsewhere on the page are latest-news widgets showing today's date
     date = None
-    m = re.search(r"(\d{4}-\d{2}-\d{2})", " ".join(sel.css(".entry-date ::text").getall()))
+    m = re.search(r"(\d{4}-\d{2}-\d{2})", " ".join(sel.css(".article-header .byline ::text").getall()))
     if m:
         date = m.group(1)
     body = " ".join(t.strip() for t in sel.css("section.entry-content ::text").getall() if t.strip())

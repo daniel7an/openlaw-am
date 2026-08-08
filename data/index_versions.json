@@ -1,0 +1,53 @@
+[
+  {
+    "version": "Article_v1",
+    "chunks": 373,
+    "articles": 286,
+    "documents": {
+      "labor-code": 373
+    },
+    "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
+    "activated": true
+  },
+  {
+    "version": "Article_all_codes",
+    "chunks": 5388,
+    "articles": 3564,
+    "documents": {
+      "labor-code": 369,
+      "civil-code": 1527,
+      "tax-code": 1250,
+      "criminal-code": 727,
+      "criminal-procedure-code": 634,
+      "admin-offenses-code": 881
+    },
+    "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
+    "activated": true
+  },
+  {
+    "version": "Article_all_docs",
+    "chunks": 5985,
+    "articles": 3935,
+    "documents": {
+      "labor-code": 369,
+      "civil-code": 1527,
+      "tax-code": 1250,
+      "constitution-current": 223,
+      "constitution": 148,
+      "criminal-code": 727,
+      "criminal-procedure-code": 634,
+      "admin-offenses-code": 881,
+      "law-165000": 7,
+      "law-94713": 7,
+      "law-21443": 4,
+      "law-22458": 55,
+      "law-22493": 88,
+      "law-22836": 46,
+      "law-22044": 3,
+      "law-175792": 3,
+      "law-21676": 13
+    },
+    "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
+    "activated": false
+  }
+]

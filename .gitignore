@@ -6,6 +6,8 @@ data/raw/
 data/index/
 data/weaviate/
 data/search/
+data/iravaban/
 results/
 .DS_Store
 .tools/
+*.pdf

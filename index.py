@@ -115,6 +115,11 @@ def record(name: str, chunks: list[dict], activated: bool) -> None:
 
     entries = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else []
     entries = [e for e in entries if e["version"] != name]
+    # Only one version can be behind the alias, so a new activation clears the rest —
+    # otherwise the manifest accumulates several entries all claiming to be active.
+    if activated:
+        for e in entries:
+            e["activated"] = False
     entries.append(
         {
             "version": name,
