@@ -1,0 +1,22 @@
+# Streamlit server settings for the demo app.
+
+[server]
+# Bind to loopback only. Headless mode otherwise listens on every interface, which
+# on a shared/conference network means strangers can hit the app and spend the
+# OpenRouter key. For a projector demo localhost is all we need.
+address = "127.0.0.1"
+port = 8501
+headless = true
+
+# Re-run app.py on save. Note this does NOT reload imported modules — after editing
+# rag.py / index.py / config.py you must restart the server, or Streamlit keeps the
+# stale module from sys.modules.
+runOnSave = true
+
+# Keep the watcher out of site-packages. It walks every transformers submodule
+# otherwise, and the lazy image-processor imports raise torchvision errors that
+# flood the log (harmless, but they bury real tracebacks).
+folderWatchDenyList = [".venv", "data", ".git"]
+
+[browser]
+gatherUsageStats = false

@@ -7,35 +7,21 @@ question the model is required to say so rather than improvise.
 Usage:
     uv run python rag.py "Ի՞նչ է աշխատանքային պայմանագրի հասկացությունը"
 """
-import os
 import sys
 from collections import OrderedDict
 
-from dotenv import load_dotenv
+from config import api_key, get, prompt
 
-load_dotenv()
+API_KEY = api_key()
+BASE_URL = get("generation.base_url", env="OPENLAW_BASE_URL")
+MODEL = get("generation.model", env="OPENLAW_MODEL")
+TEMPERATURE = get("generation.temperature")
+MAX_OUTPUT_TOKENS = get("generation.max_output_tokens")
+TOP_K = get("retrieval.top_k")
 
-# The team's .env carries the raw OpenRouter name; accept both spellings.
-API_KEY = os.getenv("OPENLAW_API_KEY") or os.getenv("OPENROUTER_API_KEY")
-BASE_URL = os.getenv("OPENLAW_BASE_URL", "https://openrouter.ai/api/v1")
-MODEL = os.getenv("OPENLAW_MODEL", "deepseek/deepseek-v4-pro")
-
-TOP_K = 8
-MAX_OUTPUT_TOKENS = 800
-
-SYSTEM = """Դու Հայաստանի Հանրապետության օրենսդրության վերաբերյալ տեղեկատվական օգնական ես:
-
-ԿԱՆՈՆՆԵՐ՝
-1. Պատասխանիր ՄԻԱՅՆ հայերենով:
-2. Օգտագործիր ԲԱՑԱՌԱՊԵՍ ներքևում տրված հոդվածները: Մի՛ հենվիր սեփական հիշողությանդ վրա:
-3. ՅՈՒՐԱՔԱՆՉՅՈՒՐ պնդում պետք է ուղեկցվի աղբյուրի հղումով՝ [Հոդված N] ձևաչափով:
-4. Եթե տրված հոդվածները բավարար չեն հարցին պատասխանելու համար, ուղղակիորեն ասա՝
-   «Տրամադրված հոդվածները բավարար չեն այս հարցին պատասխանելու համար», և նշիր, թե
-   ՀՀ օրենսդրության որ բնագավառում կամ որ ակտում պետք է փնտրել պատասխանը:
-   Այս դեպքում ՄԻ՛ հորինիր հոդվածի համարներ:
-5. Եթե հոդվածը կամ դրա մասն ուժը կորցրել է, պարտադիր նշիր դա:
-6. Մի՛ տուր իրավաբանական խորհրդատվություն. տուր տեղեկատվություն՝ հղումներով:
-7. Պատասխանը թող լինի հակիրճ և կառուցվածքային:"""
+SYSTEM = prompt("answer.system")
+USER = prompt("answer.user")
+REFUSAL_MARKER = prompt("answer.refusal_marker")
 
 
 def client():
@@ -46,24 +32,21 @@ def client():
     return OpenAI(base_url=BASE_URL, api_key=API_KEY)
 
 
-def retrieve(question: str, k: int = TOP_K) -> list[dict]:
-    """Vector search, then regroup parts back under their article.
+def retrieve(question: str, k: int = TOP_K, mode: str | None = None, alpha: float | None = None) -> list[dict]:
+    """Hybrid search by default, then regroup parts back under their article.
 
     Chunks are sub-article sized (512-token model limit), so two parts of the same
     article can both hit. Presenting them as one [Հոդված N] block keeps the model
     from treating them as separate authorities.
     """
-    from index import COLLECTION, connect, encoder
+    from index import COLLECTION, connect, score_of, search
 
-    vec = encoder().encode([f"query: {question}"], normalize_embeddings=True)[0]
     client_ = connect()
     try:
         coll = client_.collections.get(COLLECTION)
-        res = coll.query.near_vector(
-            near_vector=list(map(float, vec)), limit=k, return_metadata=["distance"]
-        )
+        objs = search(coll, question, mode=mode, alpha=alpha, k=k)
         grouped: OrderedDict[str, dict] = OrderedDict()
-        for o in res.objects:
+        for o in objs:
             p = o.properties
             art = grouped.setdefault(
                 p["cite_id"],
@@ -75,7 +58,7 @@ def retrieve(question: str, k: int = TOP_K) -> list[dict]:
                     "repealed": p.get("repealed"),
                     "has_repealed_parts": p.get("has_repealed_parts"),
                     "texts": [],
-                    "score": 1 - o.metadata.distance,
+                    "score": score_of(o),
                 },
             )
             art["texts"].append(p["text"])
@@ -85,41 +68,61 @@ def retrieve(question: str, k: int = TOP_K) -> list[dict]:
 
 
 def context_block(articles: list[dict]) -> str:
+    block = prompt("context.block")
     out = []
     for a in articles:
-        label = f"Հոդված {a['article']}" if a["article"] else a["title"]
         flags = ""
         if a.get("repealed"):
-            flags = " [ՈՒԺԸ ԿՈՐՑՐԵԼ Է]"
+            flags = prompt("context.repealed_flag")
         elif a.get("has_repealed_parts"):
-            flags = " [ՈՒՇԱԴՐՈՒԹՅՈՒՆ՝ հոդվածի որոշ մասեր ուժը կորցրել են]"
-        body = "\n".join(a["texts"])
-        out.append(f"=== [{label}]{flags} {a['title']}\n{body}")
+            flags = prompt("context.partly_repealed_flag")
+        out.append(
+            block.format(
+                label=f"Հոդված {a['article']}" if a["article"] else a["title"],
+                flags=flags,
+                title=a["title"],
+                body="\n".join(a["texts"]),
+            )
+        )
     return "\n\n".join(out)
 
 
-def answer(question: str, k: int = TOP_K) -> dict:
-    articles = retrieve(question, k)
-    prompt = (
-        f"ՀԱՐՑ՝ {question}\n\n"
-        f"ՀԱՍԱՆԵԼԻ ՀՈԴՎԱԾՆԵՐ՝\n\n{context_block(articles)}\n\n"
-        f"Պատասխանիր հարցին՝ հենվելով բացառապես վերոնշյալ հոդվածների վրա, "
-        f"յուրաքանչյուր պնդման կողքին նշելով [Հոդված N]:"
-    )
-    resp = client().chat.completions.create(
-        model=MODEL,
-        messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}],
-        max_tokens=MAX_OUTPUT_TOKENS,
-        temperature=0.1,
-    )
+def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float | None = None) -> dict:
+    articles = retrieve(question, k, mode=mode, alpha=alpha)
+    user_msg = USER.format(question=question, context=context_block(articles))
+    messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user_msg}]
+
+    # Reasoning models emit a hidden reasoning trace first; if it eats the whole
+    # budget the answer comes back empty. Retry once with room rather than
+    # returning nothing to the user.
+    budget = MAX_OUTPUT_TOKENS
+    for attempt in range(2):
+        resp = client().chat.completions.create(
+            model=MODEL, messages=messages, max_tokens=budget, temperature=TEMPERATURE
+        )
+        text = resp.choices[0].message.content
+        if text and text.strip():
+            break
+        budget *= 2
+        print(
+            f"  empty answer (finish_reason={resp.choices[0].finish_reason}, "
+            f"reasoning burned the budget) — retrying with max_tokens={budget}",
+            file=sys.stderr,
+        )
+    else:
+        text = "Չհաջողվեց ստանալ պատասխան մոդելից: Փորձեք կրկին:"
+
     usage = resp.usage
+    details = getattr(usage, "completion_tokens_details", None)
     return {
         "question": question,
-        "answer": resp.choices[0].message.content,
+        "answer": text,
         "retrieved": articles,
         "prompt_tokens": usage.prompt_tokens,
         "completion_tokens": usage.completion_tokens,
+        "reasoning_tokens": getattr(details, "reasoning_tokens", 0) or 0,
         "total_tokens": usage.total_tokens,
+        "finish_reason": resp.choices[0].finish_reason,
     }
 
 
@@ -131,4 +134,7 @@ if __name__ == "__main__":
     print("— Աղբյուրներ —")
     for a in r["retrieved"]:
         print(f"  [{a['cite_id']}] {a['title'][:60]}  ({a['score']:.3f})  {a['url']}")
-    print(f"\ntokens: {r['prompt_tokens']} in + {r['completion_tokens']} out = {r['total_tokens']}")
+    print(
+        f"\ntokens: {r['prompt_tokens']} in + {r['completion_tokens']} out "
+        f"({r['reasoning_tokens']} reasoning) = {r['total_tokens']}  [{r['finish_reason']}]"
+    )

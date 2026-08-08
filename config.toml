@@ -41,8 +41,14 @@ title_boost = 2         # BM25 weight on the article title vs its body
 [generation]
 base_url = "https://openrouter.ai/api/v1"   # env: OPENLAW_BASE_URL
 model = "deepseek/deepseek-v4-pro"          # env: OPENLAW_MODEL
-max_output_tokens = 800
 temperature = 0.1
+
+# ⚠️ deepseek-v4-pro is a REASONING model: it burns completion tokens on a hidden
+# reasoning trace before writing any answer (260 reasoning + ~356 answer on a typical
+# question). At 800 this intermittently returned an EMPTY answer — the budget ran out
+# mid-reasoning. This ceiling must cover reasoning + answer, not just the answer.
+max_output_tokens = 2000
+
 
 [paths]
 raw = "data/raw"
