@@ -1,15 +1,14 @@
 """Evaluate pure Labor-Code QAs: citation metrics + Gemini LLM-as-judge.
 
 Filters eval/qa_dataset.json to questions whose expected_article_ids are all
-labor-code-* (currently 9). For each: run rag.answer, score citations against
-gold + retrieved context, then ask gemini-2.5-flash for a 0/1/2 correctness
-verdict given question + gold summary + system answer.
-
-Judge default is gemini-3.6-flash (gemini-2.5-flash is blocked for new API keys).
+labor-code-* (currently 9). Supports single-model and multi-model comparison
+(retrieval is shared; only the generator changes).
 
 Usage:
-    uv run python eval.py              # full pure-labor run → results/
-    uv run python eval.py --limit 2    # smoke
+    uv run python eval.py                         # default model from config
+    uv run python eval.py --limit 2               # smoke
+    uv run python eval.py --compare               # all [eval].models
+    uv run python eval.py --compare --models a,b  # subset
 """
 from __future__ import annotations
 
@@ -20,6 +19,7 @@ import re
 import sys
 import time
 from collections import Counter
+from collections.abc import Callable
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -622,6 +622,12 @@ def run(args) -> Path:
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nWrote {out}")
     return out
+
+
+def list_saved_comparisons() -> list[Path]:
+    if not OUT_DIR.exists():
+        return []
+    return sorted(OUT_DIR.glob("labor_compare_*.json"), reverse=True)
 
 
 if __name__ == "__main__":

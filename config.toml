@@ -95,6 +95,14 @@ completion_cost = 0.0
 note = "Self-hosted vLLM on spark-alpha, reached through an SSH tunnel."
 hint = "ssh -N -L 18000:localhost:8000 spark-alpha"
 
+[eval]
+# Answer models compared in the Streamlit Eval page / `uv run python eval.py --compare`.
+# All go through generation.base_url (OpenRouter by default). Edit freely.
+models = [
+  "deepseek/deepseek-v4-pro",
+  "openai/gpt-4o-mini",
+  "google/gemini-2.5-flash",
+]
 
 [paths]
 raw = "data/raw"

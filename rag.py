@@ -131,6 +131,7 @@ def generate(
     model = model or MODEL
     user_msg = USER.format(question=question, context=context_block(articles))
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user_msg}]
+    use_model = model or MODEL
 
     # Reasoning models emit a hidden reasoning trace first; if it eats the whole
     # budget the answer comes back empty. Retry once with room rather than
