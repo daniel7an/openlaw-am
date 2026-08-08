@@ -1,0 +1,472 @@
+[
+    {
+      "id": "iravaban_labor_001",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/564157.html",
+      "question_armenian": "Ի՞նչ պարտականություններ և իրավունքներ ունի գործատուն աշխատողների ներկայացուցիչների նկատմամբ։",
+      "question_english": "What duties and rights does an employer have toward employee representatives?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-26"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Աշխատանքային օրենսգրքի 26-րդ հոդվածով գործատուն պարտավոր է հարգել աշխատողների ներկայացուցիչների իրավունքները, չխոչընդոտել նրանց գործունեությանը, իսկ աշխատողների իրավական վիճակի վրա ազդող որոշումների դեպքում խորհրդակցել նրանց հետ և օրենքով նախատեսված դեպքերում ստանալ նրանց համաձայնությունը։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_002",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/552476.html",
+      "question_armenian": "Ի՞նչ է հեռավար աշխատանքը և ի՞նչ պայմանով կարող է այն իրականացվել։",
+      "question_english": "What is remote work and under what condition may it be performed?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-106.1"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Հեռավար աշխատանքը աշխատողի աշխատանքային պարտականությունների կատարումն է առանց աշխատանքի վայր ներկայանալու։ Այն կատարվում է աշխատողի և գործատուի փոխադարձ համաձայնությամբ, եթե աշխատանքի բնույթը թույլ է տալիս աշխատանքը կատարել հեռավար եղանակով։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_003",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/547114.html",
+      "question_armenian": "Ո՞ր աշխատանքներն են արգելվում մինչև 18 տարեկան անձանց համար։",
+      "question_english": "What types of work are prohibited for persons under 18?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-257"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Աշխատանքային օրենսգրքի 257-րդ հոդվածը սահմանում է մինչև 18 տարեկան անձանց համար արգելված աշխատանքների շրջանակը՝ ներառյալ նրանց առողջության, անվտանգության կամ բարոյական զարգացման համար վտանգավոր որոշ աշխատանքներ։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_004",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/563097.html",
+      "question_armenian": "Ե՞րբ և ինչպե՞ս է տրամադրվում ամենամյա արձակուրդը և ո՞վ ունի արձակուրդի ժամանակն ընտրելու իրավունք։",
+      "question_english": "When and how is annual leave granted, and who has the right to choose its timing?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-164"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Ամենամյա արձակուրդը տրամադրվում է աշխատողի դիմումի հիման վրա գործատուի անհատական իրավական ակտով։ Առաջին աշխատանքային տարվա համար այն, որպես կանոն, տրամադրվում է վեց ամիս անընդմեջ աշխատելուց հետո, իսկ հոդված 164-ը որոշ աշխատողների համար սահմանում է ավելի վաղ արձակուրդի և արձակուրդի ժամանակն ընտրելու հատուկ իրավունքներ։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_005",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/562890.html",
+      "question_armenian": "Աշխատանքից ազատվելու դեպքում ե՞րբ պետք է գործատուն կատարի վերջնահաշվարկը։",
+      "question_english": "When must an employer make the final settlement when an employee leaves employment?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-112",
+        "labor-code-art-130"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "112-րդ հոդվածը կարգավորում է աշխատողի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման ծանուցումը, իսկ 130-րդ հոդվածը՝ աշխատանքային պայմանագրի լուծման դեպքում վերջնահաշվարկի կատարման կարգը։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_006",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/562638.html",
+      "question_armenian": "Ե՞րբ կարող է գործատուն աշխատանքային պայմանագիրը լուծել առանց աշխատողին նախապես ծանուցելու։",
+      "question_english": "When may an employer terminate an employment contract without prior notice to the employee?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-113",
+        "labor-code-art-114",
+        "labor-code-art-115",
+        "labor-code-art-123"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "123-րդ հոդվածը սահմանում է 113-րդ հոդվածով նախատեսված այն հիմքերը, որոնց դեպքում գործատուն կարող է պայմանագիրը լուծել առանց նախնական ծանուցման։ Այլ հիմքերի դեպքում կիրառվում են 115-րդ հոդվածի ծանուցման ժամկետները, իսկ 114-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ ազատման որոշ արգելքներ։",
+      "difficulty": "hard"
+    },
+    {
+      "id": "iravaban_labor_007",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/563381.html",
+      "question_armenian": "Ո՞ր դեպքերում է գործատուն պարտավոր աշխատողի պահանջով տրամադրել չվճարվող արձակուրդ։",
+      "question_english": "In what circumstances must an employer grant unpaid leave at the employee's request?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-171",
+        "labor-code-art-176",
+        "labor-code-art-217"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "176-րդ հոդվածը սահմանում է աշխատողի պահանջով պարտադիր տրամադրվող չվճարվող արձակուրդի դեպքերը, այդ թվում՝ որոշ ընտանեկան և խնամքի հանգամանքներ։ 171-րդ հոդվածը չվճարվող արձակուրդը դասում է նպատակային արձակուրդների շարքին, իսկ 217-րդ հոդվածը նախատեսում է գործատուի համապատասխան պարտականությունը։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_008",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/563214.html",
+      "question_armenian": "Կարո՞ղ է չօգտագործված ամենամյա արձակուրդը փոխարինվել դրամական հատուցմամբ, և ի՞նչ հետևանքներ կան արձակուրդը ժամանակին չտրամադրելու դեպքում։",
+      "question_english": "Can unused annual leave be replaced with monetary compensation, and what are the consequences of failing to grant leave on time?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-167",
+        "labor-code-art-168",
+        "labor-code-art-169",
+        "labor-code-art-170"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Աշխատանքային օրենսգրքի 167-170-րդ հոդվածները կարգավորում են արձակուրդի տեղափոխումը, արձակուրդային վճարումը և չօգտագործված արձակուրդի դրամական հատուցումը։ Որպես կանոն ամենամյա արձակուրդը դրամական հատուցմամբ չի փոխարինվում, բացառությամբ աշխատանքային պայմանագրի լուծման հետ կապված օրենքով նախատեսված դեպքերի։",
+      "difficulty": "hard"
+    },
+    {
+      "id": "iravaban_labor_009",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/551292.html",
+      "question_armenian": "Ո՞ր դեպքերում կարող է գործատուն աշխատողին չթույլատրել աշխատանքի և այդ ժամանակահատվածի համար չվճարել աշխատավարձ։",
+      "question_english": "When may an employer prevent an employee from working and not pay wages for that period?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-108"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "108-րդ հոդվածով գործատուն աշխատողին չի թույլատրում կատարել աշխատանքային պարտականությունները և չի վճարում աշխատավարձ, մասնավորապես, երբ աշխատողը գտնվում է ալկոհոլի, թմրամիջոցի կամ հոգեներգործուն նյութի ազդեցության տակ կամ առկա է օրենքով նախատեսված այլ հիմք։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_010",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/550480.html",
+      "question_armenian": "Ե՞րբ և ի՞նչ չափով է աշխատողը պարտավոր հատուցել գործատուին պատճառած նյութական վնասը։",
+      "question_english": "When and to what extent must an employee compensate an employer for material damage?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-237",
+        "labor-code-art-238",
+        "labor-code-art-239",
+        "labor-code-art-240",
+        "labor-code-art-241"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "237-241-րդ հոդվածները կարգավորում են աշխատողի նյութական պատասխանատվության հիմքերը, հատուցման սահմանները, լրիվ նյութական պատասխանատվության դեպքերը և համապատասխան պայմանագրերի ու վնասի հատուցման կանոնները։ Սովորական դեպքերում պատասխանատվությունը սահմանափակվում է օրենքով, իսկ որոշ հատուկ դեպքերում հնարավոր է լրիվ հատուցում։",
+      "difficulty": "hard"
+    },
+    {
+      "id": "iravaban_labor_011",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/555461.html",
+      "question_armenian": "Ե՞րբ կարող է գործատուն փոխել աշխատանքի էական պայմանները և ինչպե՞ս կարող է աշխատողը պաշտպանել իր իրավունքները։",
+      "question_english": "When may an employer change essential working conditions, and how may the employee protect their rights?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-105",
+        "labor-code-art-109",
+        "labor-code-art-113",
+        "labor-code-art-115"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "105-րդ հոդվածը թույլ է տալիս որոշ պայմաններում փոփոխել աշխատանքի էական պայմանները, իսկ աշխատանքային հարաբերությունների հետագա դադարեցման և աշխատողի ծանուցման հարցերը փոխկապակցված են 109-րդ, 113-րդ և 115-րդ հոդվածների հետ։",
+      "difficulty": "hard"
+    },
+    {
+      "id": "iravaban_labor_012",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/545398.html",
+      "question_armenian": "Որքա՞ն է աշխատանքային օրվա տևողությունը ոչ աշխատանքային տոնական և հիշատակի օրերի նախօրյակին։",
+      "question_english": "How long is the working day on the eve of non-working holidays and memorial days?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-139",
+        "labor-code-art-147"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "147-րդ հոդվածով ոչ աշխատանքային տոնական և հիշատակի օրերի նախօրյակին աշխատանքային օրվա տևողությունը, որպես կանոն, կրճատվում է մեկ ժամով։ 139-րդ հոդվածը սահմանում է աշխատաժամանակի ընդհանուր նորմալ տևողությունը։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_013",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/532721.html",
+      "question_armenian": "Ի՞նչ փաստաթղթեր են անհրաժեշտ աշխատանքի ընդունվելու և աշխատանքային պայմանագիր կնքելու համար։",
+      "question_english": "What documents are required when being hired and concluding an employment contract?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-89"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "89-րդ հոդվածը սահմանում է աշխատանքային պայմանագիր կնքելիս ներկայացվող փաստաթղթերի շրջանակը և դրանց հետ կապված գործատուի պարտականությունները։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_014",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/530552.html",
+      "question_armenian": "Ո՞ր դեպքերում կարող է գործատուն իր նախաձեռնությամբ լուծել աշխատողի հետ կնքված աշխատանքային պայմանագիրը։",
+      "question_english": "In what circumstances may an employer terminate an employment contract on its own initiative?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-113"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "113-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման սպառիչ հիմքերը, ներառյալ կազմակերպության լուծարումը, հաստիքների կրճատումը և օրենքով սահմանված աշխատողի վարքագծին կամ աշխատանքային կարողություններին վերաբերող այլ հիմքեր։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_015",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/529086.html",
+      "question_armenian": "Ի՞նչ է համատեղությամբ աշխատանքը և ի՞նչ աշխատաժամանակի սահմանափակումներ են գործում համատեղությամբ աշխատողի համար։",
+      "question_english": "What is concurrent employment and what working-time limits apply to an employee working concurrently?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-99",
+        "labor-code-art-139"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "99-րդ հոդվածը համատեղությամբ աշխատանքը սահմանում է որպես հիմնական աշխատանքից ազատ ժամանակ նույն կամ այլ գործատուի մոտ աշխատանքային պայմանագրով կատարվող աշխատանք։ 139-րդ հոդվածը սահմանում է աշխատաժամանակի ընդհանուր և առավելագույն սահմանափակումները։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_016",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/528956.html",
+      "question_armenian": "Ի՞նչ է աշխատանքի վայրը՝ ըստ ՀՀ աշխատանքային օրենսգրքի։",
+      "question_english": "What is a workplace under the RA Labor Code?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-18.1"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "18.1-րդ հոդվածով աշխատանքի վայրն այն տեղն է, որտեղ աշխատողը կատարում է աշխատանքային պայմանագրով սահմանված աշխատանքային գործառույթները և որը ուղղակի կամ անուղղակի գտնվում է գործատուի կառավարման կամ հսկողության ներքո։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_017",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/526242.html",
+      "question_armenian": "Ո՞ր դեպքերում են աշխատողներին տրամադրվում լրացուցիչ և հատուկ ընդմիջումներ։",
+      "question_english": "In what circumstances are employees granted additional and special breaks?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-153"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "153-րդ հոդվածը նախատեսում է լրացուցիչ և հատուկ ընդմիջումներ՝ հաշվի առնելով աշխատողի տարիքը և աշխատանքի պայմանները, այդ թվում՝ ծայրահեղ ջերմաստիճանի, ծանր ֆիզիկական կամ մտավոր ու հուզական գերլարված աշխատանքի պայմաններում։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_018",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/530261.html",
+      "question_armenian": "Ինչպե՞ս է իրականացվում ամենամյա արձակուրդի տեղափոխումը կամ երկարաձգումը։",
+      "question_english": "How is annual leave transferred or extended?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-167",
+        "labor-code-art-171"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "167-րդ հոդվածը կարգավորում է ամենամյա արձակուրդի տեղափոխումը և երկարաձգումը, այդ թվում՝ ժամանակավոր անաշխատունակության կամ նպատակային արձակուրդի իրավունքի առաջացման դեպքում։ 171-րդ հոդվածը սահմանում է նպատակային արձակուրդների տեսակները։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_019",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/530416.html",
+      "question_armenian": "Ի՞նչ է աշխատանքային պայմանագիրը։",
+      "question_english": "What is an employment contract?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-83"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "83-րդ հոդվածով աշխատանքային պայմանագիրը աշխատողի և գործատուի միջև համաձայնություն է, որով աշխատողը պարտավորվում է կատարել որոշակի աշխատանք և պահպանել աշխատանքային կարգապահությունը, իսկ գործատուն՝ տրամադրել աշխատանք, վճարել աշխատավարձ և ապահովել սահմանված աշխատանքային պայմանները։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_020",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/524077.html",
+      "question_armenian": "Ինչպե՞ս է վարձատրվում արտաժամյա և գիշերային աշխատանքը։",
+      "question_english": "How are overtime and night work remunerated?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-184"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "184-րդ հոդվածով արտաժամյա աշխատանքի յուրաքանչյուր ժամի համար վճարվում է ժամային դրույքաչափից բացի առնվազն 50 տոկոս հավելում, իսկ գիշերային աշխատանքի յուրաքանչյուր ժամի համար՝ օրենքով նախատեսված բացառություններով առնվազն 30 տոկոս հավելում։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_021",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/564161.html",
+      "question_armenian": "Ի՞նչ հիմքերով կարող են ծագել, փոփոխվել և դադարել աշխատանքային իրավունքներն ու պարտականությունները։",
+      "question_english": "On what grounds may labor rights and obligations arise, change and terminate?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-36"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "36-րդ հոդվածը սահմանում է աշխատանքային իրավունքների և պարտականությունների ծագման, փոփոխման և դադարման հիմքերը՝ ներառյալ օրենքը, աշխատանքային իրավունքի նորմեր պարունակող այլ ակտերը, աշխատանքային և կոլեկտիվ պայմանագրերը և իրավական նշանակություն ունեցող գործողությունները։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_022",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/529247.html",
+      "question_armenian": "Ի՞նչ աշխատանք կարող են կատարել մինչև 18 տարեկան անձինք։",
+      "question_english": "What work may persons under 18 perform?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-171"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Անչափահասների աշխատանքի հնարավորությունները սահմանափակվում են նրանց տարիքով, զարգացման առանձնահատկություններով և օրենքով արգելված աշխատանքներով, իսկ առանձին տարիքային խմբերի համար նախատեսված են հատուկ պայմաններ։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_023",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/530455.html",
+      "question_armenian": "Ի՞նչ է գործադուլը՝ ըստ ՀՀ աշխատանքային օրենսգրքի։",
+      "question_english": "What is a strike under the RA Labor Code?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-73"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "73-րդ հոդվածով գործադուլը աշխատողների կոլեկտիվի կամ որոշակի խմբի կոլեկտիվ գործողությունների միջոցով աշխատանքների լրիվ կամ մասնակի ժամանակավոր դադարեցումն է՝ աշխատողների տնտեսական, սոցիալական կամ աշխատանքային շահերի պաշտպանության նպատակով։",
+      "difficulty": "easy"
+    },
+    {
+      "id": "iravaban_labor_024",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/518707.html",
+      "question_armenian": "Ո՞ր դեպքերում գործատուն իր նախաձեռնությամբ չի կարող լուծել աշխատանքային պայմանագիրը։",
+      "question_english": "In what circumstances may an employer not terminate an employment contract on its own initiative?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-art-113",
+        "labor-code-art-114"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "114-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման արգելքները, այդ թվում՝ որոշ դեպքերում ժամանակավոր անաշխատունակության, արձակուրդի և հղիության ժամանակահատվածներում, իսկ 113-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ լուծման հիմքերը և համապատասխան բացառությունները։",
+      "difficulty": "medium"
+    },
+    {
+      "id": "iravaban_labor_025",
+      "case_number": null,
+      "datalex_url": null,
+      "source_url": "https://iravaban.net/547736.html",
+      "question_armenian": "Ո՞վ է փորձնակը և պարտադի՞ր է արդյոք փորձնակության համար վարձատրությունը։",
+      "question_english": "Who is an intern/trainee and is remuneration for an internship mandatory?",
+      "facts_summary": null,
+      "expected_arlis_urls": [],
+      "expected_article_ids": [
+        "labor-code-internship-provision"
+      ],
+      "expected_hierarchy_level": "Code",
+      "has_temporal_conflict": false,
+      "has_hierarchy_conflict": false,
+      "correct_answer_summary": "Փորձնակը կրթության ընթացքում կամ ավարտելուց հետո օրենքով սահմանված ժամանակահատվածում գործատուի մոտ աշխատանքային փորձառություն ձեռք բերելու նպատակով ներգրավված անձն է։ Փորձնակության պայմանագիրը կնքվում է գրավոր, իսկ վարձատրության հարցը որոշվում է կողմերի համաձայնությամբ։",
+      "difficulty": "easy"
+    }
+  ]

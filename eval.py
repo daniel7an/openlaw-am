@@ -1,15 +1,14 @@
 """Evaluate pure Labor-Code QAs: citation metrics + Gemini LLM-as-judge.
 
 Filters eval/qa_dataset.json to questions whose expected_article_ids are all
-labor-code-* (currently 9). For each: run rag.answer, score citations against
-gold + retrieved context, then ask gemini-2.5-flash for a 0/1/2 correctness
-verdict given question + gold summary + system answer.
-
-Judge default is gemini-3.6-flash (gemini-2.5-flash is blocked for new API keys).
+labor-code-* (currently 9). Supports single-model and multi-model comparison
+(retrieval is shared; only the generator changes).
 
 Usage:
-    uv run python eval.py              # full pure-labor run → results/
-    uv run python eval.py --limit 2    # smoke
+    uv run python eval.py                         # default model from config
+    uv run python eval.py --limit 2               # smoke
+    uv run python eval.py --compare               # all [eval].models
+    uv run python eval.py --compare --models a,b  # subset
 """
 from __future__ import annotations
 
@@ -20,13 +19,14 @@ import re
 import sys
 import time
 from collections import Counter
+from collections.abc import Callable
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
 
-from config import prompt
+from config import get, prompt
 
 load_dotenv()
 
@@ -43,6 +43,15 @@ JUDGE_MODEL = os.getenv("GEMINI_JUDGE_MODEL", "gemini-3.6-flash")
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
 JUDGE_SYSTEM = prompt("judge.system")
 JUDGE_USER = prompt("judge.user")
+
+ProgressCb = Callable[[str, float], None]  # message, fraction 0..1
+
+
+def default_models() -> list[str]:
+    models = get("eval.models", default=None)
+    if models:
+        return list(models)
+    return [get("generation.model", env="OPENLAW_MODEL")]
 
 
 def labor_pure_questions(path: Path = QA_PATH) -> list[dict]:
@@ -73,12 +82,9 @@ def citation_metrics(answer: str, expected_ids: list[str], retrieved: list[dict]
 
     exp_set, cit_set, ret_set = set(expected_nums), set(cited), set(retrieved_nums)
 
-    # Gold citation coverage
     hit_expected = exp_set & cit_set
     recall = len(hit_expected) / len(exp_set) if exp_set else 0.0
-    # Among cited, how many are expected
     precision_vs_gold = len(hit_expected) / len(cit_set) if cit_set else 0.0
-    # Citations not present in retrieved context → hallucinated relative to grounding
     hallucinated = sorted(cit_set - ret_set)
     supported = sorted(cit_set & ret_set)
     halluc_rate = len(hallucinated) / len(cit_set) if cit_set else 0.0
@@ -103,7 +109,6 @@ def retrieval_hits(retrieved: list[dict], expected_ids: list[str]) -> dict:
     def hit_at(k: int) -> bool:
         return bool(exp & set(ranked[:k]))
 
-    # After regrouping, rank is by first-seen chunk score order from rag.retrieve
     return {
         "retrieved_cite_ids": ranked,
         "hit@1": hit_at(1),
@@ -189,7 +194,7 @@ def summarize(rows: list[dict]) -> dict:
         "exact_citation_match_rate": avg([float(c["exact_citation_match"]) for c in cites]),
         "hallucinated_citation_rate_mean": avg([c["hallucinated_citation_rate"] for c in cites]),
         "judge_correctness_mean": avg([j["correctness"] for j in judges]),
-        "judge_correctness_dist": dict(Counter(j["correctness"] for j in judges)),
+        "judge_correctness_dist": {str(k): v for k, v in Counter(j["correctness"] for j in judges).items()},
         "judge_fully_correct_rate": avg([float(j["correctness"] == 2) for j in judges]),
         "judge_faithfulness_rate": avg([float(j["faithfulness"]) for j in judges]),
         "latency_s_mean": avg([r["latency_s"] for r in rows]),
@@ -217,9 +222,191 @@ def _by_difficulty(rows: list[dict]) -> dict:
     return out
 
 
-def print_report(summary: dict, rows: list[dict]) -> None:
+def comparison_table(results_by_model: dict[str, dict]) -> list[dict]:
+    """One row per model with the headline citation + correctness metrics."""
+    rows = []
+    for model, payload in results_by_model.items():
+        s = payload["summary"]
+        rows.append(
+            {
+                "model": model,
+                "n": s["n"],
+                "hit@5": s["retrieval"]["hit@5"],
+                "citation_recall": s["citation_recall_mean"],
+                "citation_precision": s["citation_precision_vs_gold_mean"],
+                "exact_citation_match": s["exact_citation_match_rate"],
+                "hallucinated_citation_rate": s["hallucinated_citation_rate_mean"],
+                "judge_mean_0_2": s["judge_correctness_mean"],
+                "judge_fully_correct": s["judge_fully_correct_rate"],
+                "judge_faithfulness": s["judge_faithfulness_rate"],
+                "latency_s": s["latency_s_mean"],
+                "tokens": s["tokens_mean"],
+            }
+        )
+    return rows
+
+
+def evaluate_questions(
+    questions: list[dict],
+    model: str,
+    *,
+    articles_by_qid: dict[str, list[dict]] | None = None,
+    progress: ProgressCb | None = None,
+    sleep_s: float = 0.5,
+) -> dict:
+    """Run one model over the given questions. Optionally reuse precomputed retrieval."""
+    from rag import answer, retrieve
+
+    rows = []
+    n = len(questions)
+    for i, q in enumerate(questions):
+        q_hy = q["question_armenian"]
+        qid = q["id"]
+        if progress:
+            progress(f"{model} · {qid} ({i + 1}/{n})", (i) / max(n, 1))
+
+        t0 = time.perf_counter()
+        try:
+            arts = None if articles_by_qid is None else articles_by_qid.get(qid)
+            if arts is None and articles_by_qid is not None:
+                arts = retrieve(q_hy)
+                articles_by_qid[qid] = arts
+            result = answer(q_hy, model=model, articles=arts)
+            err = None
+        except Exception as e:
+            result = {
+                "answer": "",
+                "retrieved": articles_by_qid.get(qid, []) if articles_by_qid else [],
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+            }
+            err = str(e)
+        latency = time.perf_counter() - t0
+
+        cites = citation_metrics(
+            result["answer"], q["expected_article_ids"], result["retrieved"]
+        )
+        retrieval = retrieval_hits(result["retrieved"], q["expected_article_ids"])
+        judge = (
+            gemini_judge(q_hy, q["correct_answer_summary"], result["answer"])
+            if result["answer"]
+            else {
+                "correctness": 0,
+                "faithfulness": 0,
+                "rationale": f"empty answer ({err})",
+                "error": err,
+            }
+        )
+
+        rows.append(
+            {
+                "id": qid,
+                "difficulty": q["difficulty"],
+                "question_armenian": q_hy,
+                "question_english": q.get("question_english"),
+                "expected_article_ids": q["expected_article_ids"],
+                "gold_summary": q["correct_answer_summary"],
+                "system_answer": result["answer"],
+                "retrieval": retrieval,
+                "citations": cites,
+                "judge": judge,
+                "latency_s": round(latency, 3),
+                "prompt_tokens": result["prompt_tokens"],
+                "completion_tokens": result["completion_tokens"],
+                "total_tokens": result["total_tokens"],
+                "error": err,
+            }
+        )
+        if sleep_s:
+            time.sleep(sleep_s)
+
+    if progress:
+        progress(f"{model} · done", 1.0)
+
+    summary = summarize(rows)
+    return {
+        "meta": {
+            "answer_model": model,
+            "judge_model": JUDGE_MODEL,
+            "embed_model": get("embedding.model", env="OPENLAW_EMBED_MODEL"),
+            "n": len(rows),
+            "scope": "pure_labor_code",
+        },
+        "summary": summary,
+        "rows": rows,
+    }
+
+
+def compare_models(
+    models: list[str] | None = None,
+    limit: int | None = None,
+    *,
+    progress: ProgressCb | None = None,
+    save: bool = True,
+) -> dict:
+    """Evaluate each model on the same pure-labor questions; share retrieval."""
+    from rag import retrieve
+
+    models = models or default_models()
+    questions = labor_pure_questions()
+    if limit is not None:
+        questions = questions[:limit]
+    if not questions:
+        raise RuntimeError("No pure labor-code questions found.")
+    if not models:
+        raise RuntimeError("No models to evaluate.")
+
+    articles_by_qid: dict[str, list[dict]] = {}
+    # Prefetch retrieval once (model-independent).
+    for i, q in enumerate(questions):
+        if progress:
+            progress(
+                f"retrieval · {q['id']} ({i + 1}/{len(questions)})",
+                0.05 * (i / max(len(questions), 1)),
+            )
+        articles_by_qid[q["id"]] = retrieve(q["question_armenian"])
+
+    results_by_model: dict[str, dict] = {}
+    for mi, model in enumerate(models):
+
+        def _cb(msg: str, frac: float, _mi=mi, _n=len(models)):
+            if progress:
+                # Reserve 5% for retrieval, rest split across models.
+                progress(msg, 0.05 + 0.95 * ((_mi + frac) / _n))
+
+        results_by_model[model] = evaluate_questions(
+            questions, model, articles_by_qid=articles_by_qid, progress=_cb
+        )
+
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    payload = {
+        "meta": {
+            "created_at": stamp,
+            "scope": "pure_labor_code",
+            "models": models,
+            "n_questions": len(questions),
+            "judge_model": JUDGE_MODEL,
+            "embed_model": get("embedding.model", env="OPENLAW_EMBED_MODEL"),
+        },
+        "comparison": comparison_table(results_by_model),
+        "results_by_model": results_by_model,
+    }
+
+    if save:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        out = OUT_DIR / f"labor_compare_{stamp}.json"
+        out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        payload["meta"]["path"] = str(out)
+
+    if progress:
+        progress("done", 1.0)
+    return payload
+
+
+def print_report(summary: dict, rows: list[dict], model: str | None = None) -> None:
     print("\n=== Pure Labor-Code eval ===")
-    print(f"n={summary['n']}  model={os.getenv('OPENLAW_MODEL')}  judge={JUDGE_MODEL}")
+    print(f"n={summary['n']}  model={model or '?'}  judge={JUDGE_MODEL}")
     r = summary["retrieval"]
     print(
         f"retrieval  hit@1={r['hit@1']:.0%}  hit@3={r['hit@3']:.0%}  "
@@ -257,100 +444,68 @@ def print_report(summary: dict, rows: list[dict]) -> None:
             print(f"           └─ {j['rationale'][:160]}")
 
 
-def run(limit: int | None = None) -> Path:
-    from rag import answer
-
+def run(limit: int | None = None, model: str | None = None) -> Path:
+    """Single-model CLI run (back-compat)."""
+    model = model or get("generation.model", env="OPENLAW_MODEL")
     questions = labor_pure_questions()
     if limit is not None:
         questions = questions[:limit]
     if not questions:
         sys.exit("No pure labor-code questions found.")
 
-    print(f"Evaluating {len(questions)} pure labor QAs…")
-    rows = []
-    for i, q in enumerate(questions, 1):
-        q_hy = q["question_armenian"]
-        print(f"\n[{i}/{len(questions)}] {q['id']} ({q['difficulty']})")
-        t0 = time.perf_counter()
-        try:
-            result = answer(q_hy)
-            err = None
-        except Exception as e:
-            result = {
-                "answer": "",
-                "retrieved": [],
-                "prompt_tokens": 0,
-                "completion_tokens": 0,
-                "total_tokens": 0,
-            }
-            err = str(e)
-            print(f"  ⚠️  rag failed: {e}")
-        latency = time.perf_counter() - t0
-
-        cites = citation_metrics(
-            result["answer"], q["expected_article_ids"], result["retrieved"]
-        )
-        retrieval = retrieval_hits(result["retrieved"], q["expected_article_ids"])
-        judge = (
-            gemini_judge(q_hy, q["correct_answer_summary"], result["answer"])
-            if result["answer"]
-            else {
-                "correctness": 0,
-                "faithfulness": 0,
-                "rationale": f"empty answer ({err})",
-                "error": err,
-            }
-        )
-
-        row = {
-            "id": q["id"],
-            "difficulty": q["difficulty"],
-            "question_armenian": q_hy,
-            "question_english": q.get("question_english"),
-            "expected_article_ids": q["expected_article_ids"],
-            "gold_summary": q["correct_answer_summary"],
-            "system_answer": result["answer"],
-            "retrieval": retrieval,
-            "citations": cites,
-            "judge": judge,
-            "latency_s": round(latency, 3),
-            "prompt_tokens": result["prompt_tokens"],
-            "completion_tokens": result["completion_tokens"],
-            "total_tokens": result["total_tokens"],
-            "error": err,
-        }
-        rows.append(row)
-        print(
-            f"  hit@5={retrieval['hit@5']}  cite_recall={cites['citation_recall']:.0%}  "
-            f"judge={judge.get('correctness')}  {latency:.1f}s"
-        )
-        time.sleep(1.0)  # be kind to free-tier rate limits
-
-    summary = summarize(rows)
-    print_report(summary, rows)
+    print(f"Evaluating {len(questions)} pure labor QAs with {model}…")
+    payload = evaluate_questions(questions, model, progress=lambda m, f: print(f"  {m}"))
+    print_report(payload["summary"], payload["rows"], model=model)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out = OUT_DIR / f"labor_pure_eval_{stamp}.json"
-    payload = {
-        "meta": {
-            "created_at": stamp,
-            "scope": "pure_labor_code",
-            "n": len(rows),
-            "answer_model": os.getenv("OPENLAW_MODEL"),
-            "judge_model": JUDGE_MODEL,
-            "embed_model": os.getenv("OPENLAW_EMBED_MODEL"),
-        },
-        "summary": summary,
-        "rows": rows,
-    }
-    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    out.write_text(
+        json.dumps(
+            {
+                "meta": {**payload["meta"], "created_at": stamp},
+                "summary": payload["summary"],
+                "rows": payload["rows"],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     print(f"\nWrote {out}")
     return out
+
+
+def list_saved_comparisons() -> list[Path]:
+    if not OUT_DIR.exists():
+        return []
+    return sorted(OUT_DIR.glob("labor_compare_*.json"), reverse=True)
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--limit", type=int, default=None, help="only first N questions")
+    p.add_argument("--compare", action="store_true", help="run all [eval].models")
+    p.add_argument(
+        "--models",
+        type=str,
+        default=None,
+        help="comma-separated OpenRouter model ids (with --compare)",
+    )
     args = p.parse_args()
-    run(limit=args.limit)
+    if args.compare:
+        models = [m.strip() for m in args.models.split(",")] if args.models else None
+        payload = compare_models(models=models, limit=args.limit)
+        print("\n=== Comparison ===")
+        for row in payload["comparison"]:
+            print(
+                f"  {row['model']:<40} "
+                f"judge={row['judge_mean_0_2']:.2f}  "
+                f"cite_r={row['citation_recall']:.0%}  "
+                f"cite_p={row['citation_precision']:.0%}  "
+                f"exact={row['exact_citation_match']:.0%}  "
+                f"full={row['judge_fully_correct']:.0%}"
+            )
+        print(f"\nWrote {payload['meta'].get('path')}")
+    else:
+        run(limit=args.limit)

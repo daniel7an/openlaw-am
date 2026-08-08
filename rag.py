@@ -87,10 +87,20 @@ def context_block(articles: list[dict]) -> str:
     return "\n\n".join(out)
 
 
-def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float | None = None) -> dict:
-    articles = retrieve(question, k, mode=mode, alpha=alpha)
+def answer(
+    question: str,
+    k: int = TOP_K,
+    mode: str | None = None,
+    alpha: float | None = None,
+    model: str | None = None,
+    articles: list[dict] | None = None,
+) -> dict:
+    """Generate a grounded answer. `model` / `articles` let eval reuse retrieval across models."""
+    if articles is None:
+        articles = retrieve(question, k, mode=mode, alpha=alpha)
     user_msg = USER.format(question=question, context=context_block(articles))
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user_msg}]
+    use_model = model or MODEL
 
     # Reasoning models emit a hidden reasoning trace first; if it eats the whole
     # budget the answer comes back empty. Retry once with room rather than
@@ -98,7 +108,7 @@ def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float 
     budget = MAX_OUTPUT_TOKENS
     for attempt in range(2):
         resp = client().chat.completions.create(
-            model=MODEL, messages=messages, max_tokens=budget, temperature=TEMPERATURE
+            model=use_model, messages=messages, max_tokens=budget, temperature=TEMPERATURE
         )
         text = resp.choices[0].message.content
         if text and text.strip():
@@ -118,6 +128,7 @@ def answer(question: str, k: int = TOP_K, mode: str | None = None, alpha: float 
         "question": question,
         "answer": text,
         "retrieved": articles,
+        "model": use_model,
         "prompt_tokens": usage.prompt_tokens,
         "completion_tokens": usage.completion_tokens,
         "reasoning_tokens": getattr(details, "reasoning_tokens", 0) or 0,

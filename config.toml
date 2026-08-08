@@ -49,6 +49,14 @@ temperature = 0.1
 # mid-reasoning. This ceiling must cover reasoning + answer, not just the answer.
 max_output_tokens = 2000
 
+[eval]
+# Answer models compared in the Streamlit Eval page / `uv run python eval.py --compare`.
+# All go through generation.base_url (OpenRouter by default). Edit freely.
+models = [
+  "deepseek/deepseek-v4-pro",
+  "openai/gpt-4o-mini",
+  "google/gemini-2.5-flash",
+]
 
 [paths]
 raw = "data/raw"
