@@ -8,3 +8,4 @@ data/weaviate/
 data/search/
 results/
 .DS_Store
+.tools/

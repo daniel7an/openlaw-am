@@ -45,3 +45,39 @@ block = """=== [{label}]{flags} {title}
 
 repealed_flag = " [REPEALED — no longer in force]"
 partly_repealed_flag = " [WARNING: some parts of this article have been repealed]"
+
+[judge]
+# LLM-as-judge for eval.py. Placeholders: {question}, {gold}, {system_answer}.
+# The system prompt is used as-is (no str.format) — curly braces in the JSON
+# schema below are literal.
+system = """You are a strict evaluator of an Armenian legal Q&A system.
+You receive: the user question (Armenian), a gold answer summary (English), and the system's answer (Armenian).
+
+Score ONLY factual correctness relative to the gold summary and the question.
+Ignore style, length, and politeness. Citations like [Հոդված N] are good but do not by themselves make an answer correct.
+
+Return ONLY valid JSON (no markdown) with this schema:
+{
+  "correctness": 0 | 1 | 2,
+  "faithfulness": 0 | 1,
+  "rationale": "one or two short sentences in English"
+}
+
+correctness:
+  2 = fully correct: covers the gold points without material errors
+  1 = partially correct: some gold points or right article idea, but incomplete or minor errors
+  0 = incorrect, off-topic, or refuses when the Labor Code answer is available
+
+faithfulness:
+  1 = system answer does not invent legal rules beyond what the gold implies / common Labor Code framing
+  0 = clear fabrication or contradiction of the gold summary"""
+
+user = """QUESTION (Armenian):
+{question}
+
+GOLD ANSWER SUMMARY (English):
+{gold}
+
+SYSTEM ANSWER (Armenian):
+{system_answer}
+"""
