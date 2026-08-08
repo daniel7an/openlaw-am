@@ -31,6 +31,7 @@ from config import get, prompt
 load_dotenv()
 
 QA_PATH = Path("eval/qa_dataset.json")
+IRAVABAN_PATH = Path("eval/iravaban_qa.json")
 OUT_DIR = Path("results")
 
 # [Հոդված 83], [Հոդված 3.1], optional «րդ» / spaces.
@@ -131,7 +132,14 @@ def select_questions(scope: str, path: Path = QA_PATH) -> list[dict]:
                whose sources we simply do not hold measure corpus gaps, not the model.
     labor    — the original pure-labor subset (9), kept for comparison with earlier runs.
     all      — all 50, including ones no model can answer from this corpus.
+    iravaban — benchmark 2: the merged iravaban.net set (eval/iravaban_qa.json),
+               under the same coverage filter, so entries whose golds await review
+               (repealed/renumbered articles) are held out automatically.
     """
+    if scope == "iravaban":
+        qs = json.loads(IRAVABAN_PATH.read_text(encoding="utf-8"))
+        have = indexed_cite_ids()
+        return [q for q in qs if q.get("expected_article_ids") and set(q["expected_article_ids"]) <= have]
     qs = json.loads(path.read_text(encoding="utf-8"))
     if scope == "all":
         return qs
@@ -630,8 +638,9 @@ if __name__ == "__main__":
     p.add_argument("--judge-base-url", default=get("generation.base_url"),
                    help="endpoint for the openai judge backend")
     p.add_argument("--limit", type=int, default=None, help="only first N questions")
-    p.add_argument("--scope", default="covered", choices=["covered", "labor", "all"],
-                   help="covered=gold articles all indexed (default); labor=pure-labour 9; all=50")
+    p.add_argument("--scope", default="covered", choices=["covered", "labor", "all", "iravaban"],
+                   help="covered=gold articles all indexed (default); labor=pure-labour 9; "
+                        "all=50; iravaban=benchmark 2 (merged iravaban.net set)")
     p.add_argument("--k", type=int, default=get("retrieval.top_k"), help="articles retrieved")
     p.add_argument("--search-mode", default=None, choices=["hybrid", "vector", "bm25"])
     p.add_argument("--alpha", type=float, default=None, help="hybrid alpha, 1=vector 0=bm25")
