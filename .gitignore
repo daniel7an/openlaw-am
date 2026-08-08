@@ -4,7 +4,6 @@ __pycache__/
 .env
 data/raw/
 data/index/
-data/chunks.jsonl
 data/weaviate/
 data/search/
 results/
