@@ -107,7 +107,7 @@ hint = "ssh -N -L 18000:localhost:8000 spark-alpha"
 name = "Gemma 4 26B · 4B active (hosted)"
 model = "google/gemma-4-26b-a4b-it"
 base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENLAW_BACKUP_API_KEY"   # the main account is provider-locked to deepseek
+api_key_env = "OPENROUTER_API_KEY_PERSONAL"   # OPENROUTER_API_KEY is provider-locked to deepseek
 note = "Same open model, served by a cloud provider"
 
 [eval]

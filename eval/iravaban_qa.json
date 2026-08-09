@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "iravaban_labor_001",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/564157.html",
+    "question_armenian": "Ի՞նչ պարտականություններ և իրավունքներ ունի գործատուն աշխատողների ներկայացուցիչների նկատմամբ։",
+    "question_english": "What duties and rights does an employer have toward employee representatives?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-26"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքային օրենսգրքի 26-րդ հոդվածով գործատուն պարտավոր է հարգել աշխատողների ներկայացուցիչների իրավունքները, չխոչընդոտել նրանց գործունեությանը, իսկ աշխատողների իրավական վիճակի վրա ազդող որոշումների դեպքում խորհրդակցել նրանց հետ և օրենքով նախատեսված դեպքերում ստանալ նրանց համաձայնությունը։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_002",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/552476.html",
+    "question_armenian": "Ի՞նչ է հեռավար աշխատանքը և ի՞նչ պայմանով կարող է այն իրականացվել։",
+    "question_english": "What is remote work and under what condition may it be performed?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-106.1"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Հեռավար աշխատանքը աշխատողի աշխատանքային պարտականությունների կատարումն է առանց աշխատանքի վայր ներկայանալու։ Այն կատարվում է աշխատողի և գործատուի փոխադարձ համաձայնությամբ, եթե աշխատանքի բնույթը թույլ է տալիս աշխատանքը կատարել հեռավար եղանակով։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_003",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/547114.html",
+    "question_armenian": "Ո՞ր աշխատանքներն են արգելվում մինչև 18 տարեկան անձանց համար։",
+    "question_english": "What types of work are prohibited for persons under 18?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-257"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքային օրենսգրքի 257-րդ հոդվածը սահմանում է մինչև 18 տարեկան անձանց համար արգելված աշխատանքների շրջանակը՝ ներառյալ նրանց առողջության, անվտանգության կամ բարոյական զարգացման համար վտանգավոր որոշ աշխատանքներ։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_004",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/563097.html",
+    "question_armenian": "Ե՞րբ և ինչպե՞ս է տրամադրվում ամենամյա արձակուրդը և ո՞վ ունի արձակուրդի ժամանակն ընտրելու իրավունք։",
+    "question_english": "When and how is annual leave granted, and who has the right to choose its timing?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-164"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ամենամյա արձակուրդը տրամադրվում է աշխատողի դիմումի հիման վրա գործատուի անհատական իրավական ակտով։ Առաջին աշխատանքային տարվա համար այն, որպես կանոն, տրամադրվում է վեց ամիս անընդմեջ աշխատելուց հետո, իսկ հոդված 164-ը որոշ աշխատողների համար սահմանում է ավելի վաղ արձակուրդի և արձակուրդի ժամանակն ընտրելու հատուկ իրավունքներ։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_005",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/562890.html",
+    "question_armenian": "Աշխատանքից ազատվելու դեպքում ե՞րբ պետք է գործատուն կատարի վերջնահաշվարկը։",
+    "question_english": "When must an employer make the final settlement when an employee leaves employment?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-112",
+      "labor-code-art-130"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "112-րդ հոդվածը կարգավորում է աշխատողի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման ծանուցումը, իսկ 130-րդ հոդվածը՝ աշխատանքային պայմանագրի լուծման դեպքում վերջնահաշվարկի կատարման կարգը։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_006",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/562638.html",
+    "question_armenian": "Ե՞րբ կարող է գործատուն աշխատանքային պայմանագիրը լուծել առանց աշխատողին նախապես ծանուցելու։",
+    "question_english": "When may an employer terminate an employment contract without prior notice to the employee?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-113",
+      "labor-code-art-114",
+      "labor-code-art-115",
+      "labor-code-art-123"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "123-րդ հոդվածը սահմանում է 113-րդ հոդվածով նախատեսված այն հիմքերը, որոնց դեպքում գործատուն կարող է պայմանագիրը լուծել առանց նախնական ծանուցման։ Այլ հիմքերի դեպքում կիրառվում են 115-րդ հոդվածի ծանուցման ժամկետները, իսկ 114-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ ազատման որոշ արգելքներ։",
+    "difficulty": "hard",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_007",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/563381.html",
+    "question_armenian": "Ո՞ր դեպքերում է գործատուն պարտավոր աշխատողի պահանջով տրամադրել չվճարվող արձակուրդ։",
+    "question_english": "In what circumstances must an employer grant unpaid leave at the employee's request?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-171",
+      "labor-code-art-176",
+      "labor-code-art-217"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "176-րդ հոդվածը սահմանում է աշխատողի պահանջով պարտադիր տրամադրվող չվճարվող արձակուրդի դեպքերը, այդ թվում՝ որոշ ընտանեկան և խնամքի հանգամանքներ։ 171-րդ հոդվածը չվճարվող արձակուրդը դասում է նպատակային արձակուրդների շարքին, իսկ 217-րդ հոդվածը նախատեսում է գործատուի համապատասխան պարտականությունը։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_008",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/563214.html",
+    "question_armenian": "Կարո՞ղ է չօգտագործված ամենամյա արձակուրդը փոխարինվել դրամական հատուցմամբ, և ի՞նչ հետևանքներ կան արձակուրդը ժամանակին չտրամադրելու դեպքում։",
+    "question_english": "Can unused annual leave be replaced with monetary compensation, and what are the consequences of failing to grant leave on time?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-167",
+      "labor-code-art-168",
+      "labor-code-art-169",
+      "labor-code-art-170"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքային օրենսգրքի 167-170-րդ հոդվածները կարգավորում են արձակուրդի տեղափոխումը, արձակուրդային վճարումը և չօգտագործված արձակուրդի դրամական հատուցումը։ Որպես կանոն ամենամյա արձակուրդը դրամական հատուցմամբ չի փոխարինվում, բացառությամբ աշխատանքային պայմանագրի լուծման հետ կապված օրենքով նախատեսված դեպքերի։",
+    "difficulty": "hard",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_009",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/551292.html",
+    "question_armenian": "Ո՞ր դեպքերում կարող է գործատուն աշխատողին չթույլատրել աշխատանքի և այդ ժամանակահատվածի համար չվճարել աշխատավարձ։",
+    "question_english": "When may an employer prevent an employee from working and not pay wages for that period?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-108"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "108-րդ հոդվածով գործատուն աշխատողին չի թույլատրում կատարել աշխատանքային պարտականությունները և չի վճարում աշխատավարձ, մասնավորապես, երբ աշխատողը գտնվում է ալկոհոլի, թմրամիջոցի կամ հոգեներգործուն նյութի ազդեցության տակ կամ առկա է օրենքով նախատեսված այլ հիմք։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_010",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/550480.html",
+    "question_armenian": "Ե՞րբ և ի՞նչ չափով է աշխատողը պարտավոր հատուցել գործատուին պատճառած նյութական վնասը։",
+    "question_english": "When and to what extent must an employee compensate an employer for material damage?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-237",
+      "labor-code-art-238",
+      "labor-code-art-239",
+      "labor-code-art-240",
+      "labor-code-art-241"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "237-241-րդ հոդվածները կարգավորում են աշխատողի նյութական պատասխանատվության հիմքերը, հատուցման սահմանները, լրիվ նյութական պատասխանատվության դեպքերը և համապատասխան պայմանագրերի ու վնասի հատուցման կանոնները։ Սովորական դեպքերում պատասխանատվությունը սահմանափակվում է օրենքով, իսկ որոշ հատուկ դեպքերում հնարավոր է լրիվ հատուցում։",
+    "difficulty": "hard",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_011",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/555461.html",
+    "question_armenian": "Ե՞րբ կարող է գործատուն փոխել աշխատանքի էական պայմանները և ինչպե՞ս կարող է աշխատողը պաշտպանել իր իրավունքները։",
+    "question_english": "When may an employer change essential working conditions, and how may the employee protect their rights?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-105",
+      "labor-code-art-109",
+      "labor-code-art-113",
+      "labor-code-art-115"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "105-րդ հոդվածը թույլ է տալիս որոշ պայմաններում փոփոխել աշխատանքի էական պայմանները, իսկ աշխատանքային հարաբերությունների հետագա դադարեցման և աշխատողի ծանուցման հարցերը փոխկապակցված են 109-րդ, 113-րդ և 115-րդ հոդվածների հետ։",
+    "difficulty": "hard",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_012",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/545398.html",
+    "question_armenian": "Որքա՞ն է աշխատանքային օրվա տևողությունը ոչ աշխատանքային տոնական և հիշատակի օրերի նախօրյակին։",
+    "question_english": "How long is the working day on the eve of non-working holidays and memorial days?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-139",
+      "labor-code-art-147"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "147-րդ հոդվածով ոչ աշխատանքային տոնական և հիշատակի օրերի նախօրյակին աշխատանքային օրվա տևողությունը, որպես կանոն, կրճատվում է մեկ ժամով։ 139-րդ հոդվածը սահմանում է աշխատաժամանակի ընդհանուր նորմալ տևողությունը։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_013",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/532721.html",
+    "question_armenian": "Ի՞նչ փաստաթղթեր են անհրաժեշտ աշխատանքի ընդունվելու և աշխատանքային պայմանագիր կնքելու համար։",
+    "question_english": "What documents are required when being hired and concluding an employment contract?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-89"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "89-րդ հոդվածը սահմանում է աշխատանքային պայմանագիր կնքելիս ներկայացվող փաստաթղթերի շրջանակը և դրանց հետ կապված գործատուի պարտականությունները։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_014",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/530552.html",
+    "question_armenian": "Ո՞ր դեպքերում կարող է գործատուն իր նախաձեռնությամբ լուծել աշխատողի հետ կնքված աշխատանքային պայմանագիրը։",
+    "question_english": "In what circumstances may an employer terminate an employment contract on its own initiative?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-113"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "113-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման սպառիչ հիմքերը, ներառյալ կազմակերպության լուծարումը, հաստիքների կրճատումը և օրենքով սահմանված աշխատողի վարքագծին կամ աշխատանքային կարողություններին վերաբերող այլ հիմքեր։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_015",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/529086.html",
+    "question_armenian": "Ի՞նչ է համատեղությամբ աշխատանքը և ի՞նչ աշխատաժամանակի սահմանափակումներ են գործում համատեղությամբ աշխատողի համար։",
+    "question_english": "What is concurrent employment and what working-time limits apply to an employee working concurrently?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-99",
+      "labor-code-art-139"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "99-րդ հոդվածը համատեղությամբ աշխատանքը սահմանում է որպես հիմնական աշխատանքից ազատ ժամանակ նույն կամ այլ գործատուի մոտ աշխատանքային պայմանագրով կատարվող աշխատանք։ 139-րդ հոդվածը սահմանում է աշխատաժամանակի ընդհանուր և առավելագույն սահմանափակումները։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_016",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/528956.html",
+    "question_armenian": "Ի՞նչ է աշխատանքի վայրը՝ ըստ ՀՀ աշխատանքային օրենսգրքի։",
+    "question_english": "What is a workplace under the RA Labor Code?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-18.1"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "18.1-րդ հոդվածով աշխատանքի վայրն այն տեղն է, որտեղ աշխատողը կատարում է աշխատանքային պայմանագրով սահմանված աշխատանքային գործառույթները և որը ուղղակի կամ անուղղակի գտնվում է գործատուի կառավարման կամ հսկողության ներքո։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_017",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/526242.html",
+    "question_armenian": "Ո՞ր դեպքերում են աշխատողներին տրամադրվում լրացուցիչ և հատուկ ընդմիջումներ։",
+    "question_english": "In what circumstances are employees granted additional and special breaks?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-153"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "153-րդ հոդվածը նախատեսում է լրացուցիչ և հատուկ ընդմիջումներ՝ հաշվի առնելով աշխատողի տարիքը և աշխատանքի պայմանները, այդ թվում՝ ծայրահեղ ջերմաստիճանի, ծանր ֆիզիկական կամ մտավոր ու հուզական գերլարված աշխատանքի պայմաններում։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_018",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/530261.html",
+    "question_armenian": "Ինչպե՞ս է իրականացվում ամենամյա արձակուրդի տեղափոխումը կամ երկարաձգումը։",
+    "question_english": "How is annual leave transferred or extended?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-167",
+      "labor-code-art-171"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "167-րդ հոդվածը կարգավորում է ամենամյա արձակուրդի տեղափոխումը և երկարաձգումը, այդ թվում՝ ժամանակավոր անաշխատունակության կամ նպատակային արձակուրդի իրավունքի առաջացման դեպքում։ 171-րդ հոդվածը սահմանում է նպատակային արձակուրդների տեսակները։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_019",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/530416.html",
+    "question_armenian": "Ի՞նչ է աշխատանքային պայմանագիրը։",
+    "question_english": "What is an employment contract?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-83"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "83-րդ հոդվածով աշխատանքային պայմանագիրը աշխատողի և գործատուի միջև համաձայնություն է, որով աշխատողը պարտավորվում է կատարել որոշակի աշխատանք և պահպանել աշխատանքային կարգապահությունը, իսկ գործատուն՝ տրամադրել աշխատանք, վճարել աշխատավարձ և ապահովել սահմանված աշխատանքային պայմանները։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_020",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/524077.html",
+    "question_armenian": "Ինչպե՞ս է վարձատրվում արտաժամյա և գիշերային աշխատանքը։",
+    "question_english": "How are overtime and night work remunerated?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-184"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "184-րդ հոդվածով արտաժամյա աշխատանքի յուրաքանչյուր ժամի համար վճարվում է ժամային դրույքաչափից բացի առնվազն 50 տոկոս հավելում, իսկ գիշերային աշխատանքի յուրաքանչյուր ժամի համար՝ օրենքով նախատեսված բացառություններով առնվազն 30 տոկոս հավելում։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_021",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/564161.html",
+    "question_armenian": "Ի՞նչ հիմքերով կարող են ծագել, փոփոխվել և դադարել աշխատանքային իրավունքներն ու պարտականությունները։",
+    "question_english": "On what grounds may labor rights and obligations arise, change and terminate?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-36"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "36-րդ հոդվածը սահմանում է աշխատանքային իրավունքների և պարտականությունների ծագման, փոփոխման և դադարման հիմքերը՝ ներառյալ օրենքը, աշխատանքային իրավունքի նորմեր պարունակող այլ ակտերը, աշխատանքային և կոլեկտիվ պայմանագրերը և իրավական նշանակություն ունեցող գործողությունները։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_022",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/529247.html",
+    "question_armenian": "Ի՞նչ աշխատանք կարող են կատարել մինչև 18 տարեկան անձինք։",
+    "question_english": "What work may persons under 18 perform?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-171"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Անչափահասների աշխատանքի հնարավորությունները սահմանափակվում են նրանց տարիքով, զարգացման առանձնահատկություններով և օրենքով արգելված աշխատանքներով, իսկ առանձին տարիքային խմբերի համար նախատեսված են հատուկ պայմաններ։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_023",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/530455.html",
+    "question_armenian": "Ի՞նչ է գործադուլը՝ ըստ ՀՀ աշխատանքային օրենսգրքի։",
+    "question_english": "What is a strike under the RA Labor Code?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-73"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "73-րդ հոդվածով գործադուլը աշխատողների կոլեկտիվի կամ որոշակի խմբի կոլեկտիվ գործողությունների միջոցով աշխատանքների լրիվ կամ մասնակի ժամանակավոր դադարեցումն է՝ աշխատողների տնտեսական, սոցիալական կամ աշխատանքային շահերի պաշտպանության նպատակով։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_024",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/518707.html",
+    "question_armenian": "Ո՞ր դեպքերում գործատուն իր նախաձեռնությամբ չի կարող լուծել աշխատանքային պայմանագիրը։",
+    "question_english": "In what circumstances may an employer not terminate an employment contract on its own initiative?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-art-113",
+      "labor-code-art-114"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "114-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ աշխատանքային պայմանագրի լուծման արգելքները, այդ թվում՝ որոշ դեպքերում ժամանակավոր անաշխատունակության, արձակուրդի և հղիության ժամանակահատվածներում, իսկ 113-րդ հոդվածը սահմանում է գործատուի նախաձեռնությամբ լուծման հիմքերը և համապատասխան բացառությունները։",
+    "difficulty": "medium",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "iravaban_labor_025",
+    "case_number": null,
+    "datalex_url": null,
+    "source_url": "https://iravaban.net/547736.html",
+    "question_armenian": "Ո՞վ է փորձնակը և պարտադի՞ր է արդյոք փորձնակության համար վարձատրությունը։",
+    "question_english": "Who is an intern/trainee and is remuneration for an internship mandatory?",
+    "facts_summary": null,
+    "expected_arlis_urls": [],
+    "expected_article_ids": [
+      "labor-code-internship-provision"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Փորձնակը կրթության ընթացքում կամ ավարտելուց հետո օրենքով սահմանված ժամանակահատվածում գործատուի մոտ աշխատանքային փորձառություն ձեռք բերելու նպատակով ներգրավված անձն է։ Փորձնակության պայմանագիրը կնքվում է գրավոր, իսկ վարձատրության հարցը որոշվում է կողմերի համաձայնությամբ։",
+    "difficulty": "easy",
+    "origin": "artsakhian"
+  },
+  {
+    "id": "irv_558219",
+    "question_armenian": "Ի՞նչ տուգանք է նախատեսվում անտոմս երթևեկելու համար",
+    "question_english": "",
+    "source_url": "https://iravaban.net/558219.html",
+    "published": "2026-05-24",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176093/latest"
+    ],
+    "expected_article_ids": [
+      "admin-offenses-code-art-137"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ընդհանուր օգտագործման երկաթուղային տրանսպորտով անտոմս երթևեկելը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի քսանապատիկի չափով: Հինգից մինչև տասը տարեկան անտոմս երեխաներ փոխադրելը` առաջացնում է տուգանքի նշանակում. մերձքաղաքային գնացքներով` սահմանված նվազագույն աշխատավարձի երեք տոկոսի չափով. տեղական և հեռավոր հաղորդակցության գնացքներով` սահմանված նվազագույն աշխատավարձի հինգ տոկոսի չափով: Անտոմս ուղևորների թռիչքը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի երկուհարյուրապատիկի չափով: Տուգանքի վճարումը ուղևորին չի ազատում ուղևորության և թռիչքի արժեքը վճարելուց: Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_558222",
+    "question_armenian": "ԻՐԱԶԵԿՈՒՄ․ Ի՞նչ տուգանք է նախատեսվում ուղևորների, հետիոտների և հեծանվորդների համար",
+    "question_english": "",
+    "source_url": "https://iravaban.net/558222.html",
+    "published": "2026-05-24",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176093/latest"
+    ],
+    "expected_article_ids": [
+      "admin-offenses-code-art-131"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ուղևորների, հետիոտների, հեծանվորդների կամ ճանապարհային երթևեկության մյուս մասնակիցների կողմից (բացառությամբ տրանսպորտային միջոցների վարորդների) ճանապարհային երթևեկության կանոնները խախտելը, ինչպես նաև հետիոտների, հեծանվորդների կամ ճանապարհային երթևեկության մյուս մասնակիցների կողմից (բացառությամբ տրանսպորտային միջոցների վարորդների) ճանապարհային երթևեկության կարգավորման ազդանշաններին չենթարկվելը, ճանապարհային նշանների կամ ճանապարհային գծանշումների պահանջները խախտելը՝ առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի եռապատիկի չափով : Հետիոտների կողմից ճանապարհով (այդ թվում` մայթերով կամ հետիոտնային արահետներով, իսկ դրանց բացակայության դեպքում` կողնակներով) շարժվելու կարգը խախտելը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի հնգապատիկի չափով : Հետիոտների կողմից ճանապարհի երթևեկելի մասը հատելու կարգը խախտելը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի տասնապատիկի չափով: Տրանսպորտային միջոցի ուղևորի կողմից ընթացքի ժամանակ տրանսպորտային միջոցի դռները բացելը կամ կանգնած տրանսպորտային միջոցի դռները բացելը, եթե դա խոչընդոտում է երթևեկության մյուս մասնակիցներին, ինչպես նաև ուղևորների կողմից տրանսպորտային միջոցից իրեր և առարկաներ նետելը` առաջացնում են տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի հնգապատիկի չափով: Մոպեդները, հեծանիվները կամ լծասայլերը վարելու կանոնները խախտելը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի հնգապատիկի չափով: 5․1․ Ապրանքների առաքում իրականացնող հեծանիվ կամ մոպեդ վարող անձի կողմից հեծանիվը կամ մոպեդն առանց սաղավարտի կամ չկոճկված սաղավարտով վարելը, ինչպես նաև առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի յոթնապատիկի չափով : Սույն հոդվածի 1-5.1-ին մասերով նախատեսված արարքներ կատարելը, որոնք ստեղծել են վթարային իրադրություն` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի տասնապատիկի չափով : Սույն հոդվածի 1-5.1-ին մասերով նախատեսված արարքները կատարելը, եթե դրանց հետևանքով անձի առողջությանը պատճառվել է թեթև վնաս՝ առաջացնում է տուգանքի նշանակում՝ սահմանված նվազագույն աշխատավարձի քսանապատիկի չափով ։ Ճանապարհներով անասուններ քշելու կանոնները խախտելը` առաջացնում է տուգանքի նշանակում` սահմանված նվազագույն աշխատավարձի տասնապատիկի չափով : Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_556489",
+    "question_armenian": "Եթե 10 տարի անընդմեջ տիրապետել եք որևէ անշարժ գույք՝ ո՞ր 4 պարտադիր պայմանների դեպքում կդառնաք այդ գույքի սեփականատերը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/556489.html",
+    "published": "2026-05-10",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-178"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն անշարժ գույքի նկատմամբ սեփականության իրավունք ունենալու համար պետք է գույքը ձեռք բերել օրինական ձևով։ Սակայն շատերը չգիտեն, որ ՀՀ քաղաքացիական օրենսգիրքը թույլ է տալիս տիրազուրկ անշարժ գույքի նկատմամբ ձեռք բերել սեփականություն՝ ձեռքբերման վաղեմության ուժով։ Ինչպես տեղեկացնում է Iravaban.net -ը, ՀՀ քաղաքացիական օրենսգրքի 178-րդ և 187-րդ հոդվածները սահմանում են տիրազուրկ անշարժ գույքի նկատմամբ սեփականության իրավունք ձեռք բերելու պայմանները։ Ի՞նչ է տիրազուրկ գույքը Օրենսգրքի 178-րդ հոդվածի 1-ին մասի համաձայն՝ տիրազուրկ է համարվում այն գույքը, որը չունի սեփականատեր, կամ որի սեփականատերն անհայտ է կամ հրաժարվել է դրա նկատմամբ սեփականության իրավունքից։ Ե՞րբ կարող եք ձեռք բերել սեփականություն Օրենսգրքի 187-րդ հոդվածի 1-ին մասի համաձայն՝ քաղաքացին կամ իրավաբանական անձը, որն անշարժ գույքի սեփականատեր չէ, սակայն այն տասը տարվա ընթացքում բարեխղճորեն, բացահայտ և անընդմեջ տիրապետում է որպես սեփական գույք, այդ գույքի նկատմամբ ձեռք է բերում սեփականության իրավունք։ Ձեռքբերման վաղեմության համար անհրաժեշտ են հետևյալ պայմանները՝ տիրապետել 10 տարի, բարեխղճորեն, բացահայտ, անընդմեջ, որպես սեփական գույք։ Տիրապետման ժամկետի միացում Օրենսգրքի 187-րդ հոդվածի 2-րդ մասի համաձայն՝ տիրապետման վաղեմությունը վկայակոչող անձը կարող է իր տիրապետման ժամկետին միացնել այն ժամանակը, որի ընթացքում այդ գույքին տիրապետել է այն անձը, որի իրավահաջորդն է ինքը։ Սեփականության իրավունքի ճանաչումը Օրենսգրքի 178-րդ հոդվածի 4-րդ մասի համաձայն՝ տիրազուրկ գույքի նկատմամբ սեփականության իրավունքը ճանաչելու հիմքերն ու կարգը սահմանվում են ՀՀ քաղաքացիական դատավարության օրենսգրքով։ Օրենսգրքի 187-րդ հոդվածի 4-րդ մասի համաձայն՝ անշարժ գույքի նկատմամբ սեփականության իրավունքը ձեռքբերման վաղեմության ուժով գույքը ձեռք բերած անձի մոտ ծագում է այդ իրավունքի պետական գրանցման պահից։ Ինքնակամ կառույցների բացառություն Օրենսգրքի 178-րդ հոդվածի 3-րդ մասի համաձայն՝ տիրազուրկ անշարժ գույքի նկատմամբ սեփականության իրավունքը կարող է ձեռք բերվել ձեռքբերման վաղեմության ուժով։ Սակայն սույն նորմը չի կիրառվում ինքնակամ կառույց հանդիսացող անշարժ գույքի նկատմամբ։ Պաշտպանություն երրորդ անձանցից Օրենսգրքի 187-րդ հոդվածի 3-րդ մասի համաձայն՝ մինչև ձեռքբերման վաղեմության ուժով գույքի նկատմամբ սեփականության իրավունք ձեռք բերելը գույքը որպես սեփականություն տիրապետող անձն իրավունք ունի պաշտպանել այն երրորդ անձանցից, որոնք գույքի սեփականատերը չեն և օրենքով կամ պայմանագրով նախատեսված այլ հիմքով դրա նկատմամբ չունեն տիրապետման իրավունք։ Ուշադրություն. տիրազուրկ անշարժ գույքի նկատմամբ սեփականություն ձեռք բերելու համար անհրաժեշտ է 10 տարի բարեխղճորեն, բացահայտ և անընդմեջ տիրապետել այն որպես սեփական գույք։ Սեփականության իրավունքը ճանաչվում է դատարանի կողմից և ծագում է պետական գրանցման պահից, – տեղեկացնում է Iravaban.net -ը ։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_556501",
+    "question_armenian": "Հարևանների միջև վեճեր՝ ինչպե՞ս պաշտպանել ձեր իրավունքները",
+    "question_english": "",
+    "source_url": "https://iravaban.net/556501.html",
+    "published": "2026-05-10",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-225.3"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն հարևանները պետք է փոխադարձ հարգանք ցուցաբերեն իրար նկատմամբ։ Սակայն շատերը չգիտեն, որ ՀՀ քաղաքացիական օրենսգիրքը մանրամասն սահմանում է հարևանների միջև հարաբերությունները՝ աղմուկից և հոտից մինչև ծառերի ճյուղերն ու ցանկապատի կառուցումը։ Ինչպես տեղեկացնում է Iravaban.net – ը, ՀՀ քաղաքացիական օրենսգրքի 225.3-225.10 հոդվածները սահմանում են հարևանների իրավունքներն ու պարտականությունները։ Ի՞նչ է հարևանային գույք Օրենսգրքի 225.3-րդ հոդվածի 2-րդ մասի համաձայն՝ հարևանային է այն հողամասը կամ ցանկացած այլ անշարժ գույքը, որը որևէ եղանակով ազդեցություն ունի մեկ այլ հողամասի կամ ցանկացած այլ անշարժ գույքի վրա։ Օրենսգրքի 225.3-րդ հոդվածի 3-րդ մասի համաձայն՝ հարևանային համարվող անշարժ գույքի սեփականատերերը, ինչպես նաև օրինական տիրապետողները, բացի օրենքով նախատեսված իրավունքներից և պարտականություններից, ունեն փոխադարձ հարգանք ցուցաբերելու պարտականություն։ Աղմուկ, հոտ, ծուխ՝ ե՞րբ կարող եք պահանջել փոխհատուցում Օրենսգրքի 225.4-րդ հոդվածի 1-ին մասի համաձայն՝ հարևանային համարվող անշարժ գույքի սեփականատերը կամ օրինական տիրապետողը չի կարող արգելել հարևան տարածքից գազի, գոլորշու, հոտի, մրի, ծխի, աղմուկի, ջերմության կամ այլ ազդեցություն, եթե այն չի խոչընդոտում իր անշարժ գույքի օգտագործումը, կամ պայմանավորված է գույքի՝ տվյալ տարածքին բնորոշ ձևով բնականոն օգտագործմամբ, կամ այդպիսի ազդեցությունն աննշան է։ Օրենսգրքի 225.4-րդ հոդվածի 2-րդ մասի համաձայն՝ եթե ազդեցությունը գերազանցում է նորմատիվներով սահմանված չափը և տվյալ տարածքին բնորոշ գույքի բնականոն օգտագործումը և չի կարող վերացվել ողջամտորեն, իսկ սեփականատերը ստիպված է հանդուրժել այն, ապա նա կարող է հարևան տարածքի սեփականատիրոջից պահանջել դրամական փոխհատուցում։ Ջրօգտագործում Օրենսգրքի 225.5-րդ հոդվածի 1-ին մասի համաձայն՝ ջրային հոսքերը, որոնք անցնում են հարևանների հողամասերով, չեն կարող շեղվել կամ փոփոխվել մեկ հողամասի սեփականատիրոջ կամ օրինական տիրապետողի կողմից այնպես, որ խաթարվի հարևան հողամասի սեփականատիրոջ կամ օրինական տիրապետողի կողմից այդ հոսքերի բնականոն օգտագործման իրավունքը, եթե այլ բան նախատեսված չէ հարևանների փոխադարձ համաձայնությամբ։ Տանիքից ջրահեռացում Օրենսգրքի 225.6-րդ հոդվածի 1-ին մասի համաձայն՝ հարևանային համարվող գույքի սեփականատերը կամ օրինական տիրապետողը պետք է միջոցներ ձեռնարկի, որ հարևանային համարվող գույքի տանիքից կամ օժանդակ շինությունից ջուրը, սառույցը կամ ձյունը չթափվեն հարևան հողամասի վրա։ Հարևանի ծառի ճյուղերն ու պտուղները Օրենսգրքի 225.7-րդ հոդվածի 1-ին մասի համաձայն՝ հողամասի սեփականատերը կամ օրինական տիրապետողը կարող է կտրել և իրեն վերցնել ծառի կամ թփի ճյուղերը, արմատները, որոնք հողամաս են անցել հարևան հողամասից այն դեպքում, երբ հողամասի սեփականատերը կամ օրինական տիրապետողը նախապես պատշաճ ծանուցել է հարևան հողամասի սեփականատիրոջը և պահանջել հեռացնել իր հողամասից, սակայն ողջամիտ ժամկետներում միջոցներ չեն ձեռնարկվել։ Օրենսգրքի 225.7-րդ հոդվածի 2-րդ մասի համաձայն՝ հարևան հողամասի վրա ընկած ծառերի կամ թփերի պտուղները համարվում են այդ հողամասի պտուղներ, եթե այլ բան նախատեսված չէ հարևանների փոխադարձ համաձայնությամբ։ Ցանկապատի կառուցում Օրենսգրքի 225.8-րդ հոդվածի 1-ին մասի համաձայն՝ հողամասի սեփականատերն իրավունք ունի ցանկապատելու, պարսպապատելու կամ այլ բաժանագծի միջոցով սահմանազատելու իրեն պատկանող հողամասը կամ վերականգնելու արդեն գոյություն ունեցող, սակայն մաշված կամ վնասված բաժանագիծը։ Օրենսգրքի 225.8-րդ հոդվածի 2-րդ մասի համաձայն՝ բաժանագիծն անցկացնելու հետ կապված ծախսերը հարևանները որոշում են փոխադարձ համաձայնությամբ։ Առանց մյուս հարևանի համաձայնության կատարված ծախսերը չեն հատուցվում։ Վիճելի սահման Օրենսգրքի 225.9-րդ հոդվածի 1-ին մասի համաձայն՝ եթե այլ բան սահմանված չէ իրավահաստատող փաստաթղթերով, և եթե վեճի արդյունքում անհնար է որոշել ստույգ սահմանը, ապա բաժանագիծն անցկացնելու համար որոշիչ է համարվում հարևանների փաստացի տիրապետումը։ Եթե փաստացի տիրապետումը նույնպես անհնար է որոշել, ապա յուրաքանչյուր հողամասին օրենսդրությամբ սահմանված կարգով միացվում է վիճելի տարածքի հավասար մասը։ Ընդհանուր բաժանագիծ Օրենսգրքի 225.10-րդ հոդվածի 2-րդ մասի համաձայն՝ երկու հողամաս կամ այլ անշարժ գույք բաժանող ցանկացած բաժանագիծ սեփականատերերի համաձայնությամբ կամ դատարանի վճռով կարող",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_556504",
+    "question_armenian": "Երաշխավորություն՝ ի՞նչ պետք է իմանալ նախքան երաշխավորության պայմանագիր ստորագրելը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/556504.html",
+    "published": "2026-05-10",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-375",
+      "civil-code-art-382"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն երաշխավորի դերում հանդես գալը նշանակում է այլ անձի պարտավորության համար պատասխանատվություն կրել։ Սակայն շատերը չգիտեն, որ օրենքը սահմանում է երաշխավորի իրավունքներն ու պարտականությունները, ինչպես նաև այն պայմանները, երբ երաշխավորը կարող է ազատվել պատասխանատվությունից։ Ինչպես տեղեկացնում է Iravaban.net -ը, ՀՀ քաղաքացիական օրենսգրքի 375-382-րդ հոդվածները սահմանում են երաշխավորության կանոնները։ Ի՞նչ է երաշխավորության պայմանագիրը Օրենսգրքի 375-րդ հոդվածի 1-ին մասի համաձայն՝ երաշխավորը, երաշխավորության պայմանագրով, այլ անձի պարտատիրոջ առջև պարտավորվում է պատասխանատվություն կրել այդ անձի կողմից իր պարտավորությունը լրիվ կամ մասնակի կատարելու համար։ Օրենսգրքի 375-րդ հոդվածի 3-րդ մասի համաձայն՝ վարկային կամ փոխառության պայմանագրից, որով որպես վարկատու կամ փոխատու է հանդես գալիս բանկը կամ վարկային կազմակերպությունը, ծագող պարտավորության կատարման ապահովման համար անհատ ձեռնարկատեր չհանդիսացող ֆիզիկական անձ երաշխավորի հետ կնքված երաշխավորության պայմանագրում պետք է նշվի երաշխավորի պատասխանատվության առավելագույն ծավալը՝ գումարային արտահայտմամբ, ինչպես նաև այն ժամկետը, որով տրամադրվել է երաշխավորությունը։ Պայմանագրի ձևը Օրենսգրքի 376-րդ հոդվածի համաձայն՝ երաշխավորության պայմանագիրը պետք է կնքվի գրավոր։ Գրավոր ձևը չպահպանելը հանգեցնում է երաշխավորության պայմանագրի անվավերությանը։ Երաշխավորի պատասխանատվություն Օրենսգրքի 377-րդ հոդվածի 1-ին մասի համաձայն՝ պարտապանի կողմից երաշխավորությամբ ապահովված պարտավորությունը չկատարվելու կամ անպատշաճ կատարվելու դեպքում երաշխավորը պարտատիրոջ առջև կրում է սուբսիդիար պատասխանատվություն, եթե երաշխավորի համապարտ պատասխանատվություն նախատեսված չէ օրենքով կամ երաշխավորության պայմանագրով։ Օրենսգրքի 377-րդ հոդվածի 3-րդ մասի համաձայն՝ անհատ ձեռնարկատեր չհանդիսացող ֆիզիկական անձ երաշխավորը պարտատիրոջ առջև կրում է համապարտ պատասխանատվություն, եթե դա նախատեսված է երաշխավորության պայմանագրով, և միաժամանակ առկա է հետևյալ պայմաններից առնվազն մեկը՝ երաշխավորն ու պարտապանը նույն ընտանիքի անդամներ են, երաշխավորը պարտապան իրավաբանական անձի գործադիր մարմնի անդամ կամ մասնակից կամ բաժնետեր է, երաշխավորը պարտապան իրավաբանական անձի կամ անհատ ձեռնարկատիրոջ իրական շահառու է, երաշխավորն ու պարտապանն ունեն համատեղ գործունեության պայմանագիր։ Օրենսգրքի 377-րդ հոդվածի 7-րդ մասի համաձայն՝ պարտապանի կողմից երաշխավորությամբ ապահովված պարտավորությունը չկատարվելու կամ անպատշաճ կատարվելու դեպքում երեք աշխատանքային օրվա ընթացքում պարտատերը պարտավոր է այդ մասին ծանուցել երաշխավորին։ Օրենսգրքի 377-րդ հոդվածի 8-րդ մասի համաձայն՝ պարտատիրոջ կողմից երաշխավորին պահանջ ներկայացվելու դեպքում երաշխավորը պարտավոր է կատարել իր պարտավորությունն այդ պահանջն ստանալու օրվանից յոթ աշխատանքային օրվա ընթացքում, եթե երաշխավորության պայմանագրով կամ պարտատիրոջ ներկայացրած պահանջով երաշխավորի կողմից պարտավորության կատարման ավելի երկար ժամկետ նախատեսված չէ։ Երաշխավորի ծառայությունների վարձատրություն Օրենսգրքի 378-րդ հոդվածի համաձայն՝ երաշխավորը պարտապանին մատուցած ծառայությունների համար ունի վարձատրության իրավունք, եթե այլ բան նախատեսված չէ պայմանագրով։ Առարկելու իրավունք Օրենսգրքի 379-րդ հոդվածի 1-ին մասի համաձայն՝ երաշխավորն իրավունք ունի պարտատիրոջ պահանջի դեմ անել այնպիսի առարկություններ, որոնք կարող էր ներկայացնել պարտապանը։ Օրենսգրքի 379-րդ հոդվածի 2-րդ մասի համաձայն՝ երաշխավորը պարտավոր է մինչև պարտատիրոջ պահանջը բավարարելը, այդ մասին նախազգուշացնել պարտապանին։ Պարտավորությունը կատարած երաշխավորի իրավունքներ Օրենսգրքի 380-րդ հոդվածի 1-ին մասի համաձայն՝ պարտավորությունը կատարած երաշխավորին են անցնում այդ պարտավորությամբ պարտատիրոջ իրավունքները և պարտատիրոջ՝ որպես գրավառուի պատկանող իրավունքներն այն ծավալով, որով երաշխավորը բավարարել է պարտատիրոջ պահանջը։ Երաշխավորն իրավունք ունի նաև պարտապանից պահանջել հատուցելու պարտատիրոջը վճարած գումարի տոկոսներն ու, պարտապանի փոխարեն պատասխանատվությունը կրելու կապակցությամբ, իր կրած այլ վնասները։ Պարտապանի տեղեկացման պարտականություն Օրենսգրքի 381-րդ հոդվածի համաձայն՝ երաշխավորությամբ ապահովված պարտավորությունը կատարած պարտապանը պարտավոր է այդ մասին անհապաղ տեղեկացնել երաշխավորին։ Երաշխավորության դադարում Օրենսգրք",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_557154",
+    "question_armenian": "Ի՞նչ է ինքնակամ կառույցը, ինչպե՞ս հաշվառել և օրինականացնել այն",
+    "question_english": "",
+    "source_url": "https://iravaban.net/557154.html",
+    "published": "2026-05-14",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-188"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն ցանկացած կառուցապատում պետք է իրականացնել օրենքով սահմանված կարգով։ Սակայն շատերը չգիտեն, որ առանց թույլտվության կառուցված շինությունները համարվում են ինքնակամ կառույց և ենթակա են հաշվառման և օրինականացման։ Ինչպես տեղեկացնում է Iravaban.net -ը, ՀՀ քաղաքացիական օրենսգրքի 188-րդ հոդվածը, ինչպես նաև ՀՀ կառավարության 2022 թվականի հունվարի 5-ի N 14-Ն և 2006 թվականի մայիսի 18-ի N 912-Ն որոշումները սահմանում են ինքնակամ կառույցների հաշվառման և օրինականացման կանոնները։ Ի՞նչ է ինքնակամ կառույցը Օրենսգրքի 188-րդ հոդվածի 1-ին մասի համաձայն՝ ինքնակամ կառույց է համարվում օրենքով և այլ իրավական ակտերով սահմանված կարգով այդ նպատակի համար չհատկացված հողամասում կամ առանց թույլտվության կամ թույլտվությամբ սահմանված պայմանների կամ քաղաքաշինական նորմերի և կանոնների էական խախտումներով կառուցված կամ վերակառուցված կամ տեղադրված շենքը, շինությունը կամ այլ կառույցը։ Քանդում Օրենսգրքի 188-րդ հոդվածի 1.1-ին մասի համաձայն՝ ինքնակամ կառույցը չի կարող ճանաչվել օրինական և ենթակա է քանդման (ապամոնտաժման)։ Օրենսգրքի 188-րդ հոդվածի 3-րդ մասի համաձայն՝ հողամասի սեփականատերն իրավունք ունի քանդելու իր հողամասում գտնվող ինքնակամ կառույցը՝ առանց դատարան դիմելու։ Պետական կամ համայնքային սեփականություն հանդիսացող հողամասում գտնվող ինքնակամ կառույցի քանդման (ապամոնտաժման) մասին որոշում կայացնում են օրենքով սահմանված իրավասու մարմինները։ Հաշվառում ՀՀ կառավարության 2022 թվականի հունվարի 5-ի N 14-Ն որոշման 2-րդ կետի համաձայն՝ Կադաստրի կոմիտեում չհաշվառված ինքնակամ կառույցը հաշվառելու նպատակով պատվիրատուն դիմում է չափագրողին։ Որոշման 1-ին կետի 2-րդ ենթակետի համաձայն՝ չափագրող է «Գեոդեզիական և քարտեզագրական գործունեության մասին» օրենքով սահմանված գեոդեզիական և մարկշեյդերական գործունեության և քարտեզագրական, հողաշինարարական, չափագրական և հաշվառման գործունեության որակավորման վկայական ստացած անձը։ Որոշման 7-րդ կետի համաձայն՝ համաձայնագիրը ստորագրվելուց հետո չափագրողը հաշվառման փաթեթը ներբեռնում է առցանց չափագրման գրասենյակ։ Որոշման 8-րդ կետի համաձայն՝ հաշվառման փաթեթը առցանց չափագրման գրասենյակ ներբեռնելու և այն հաստատելու պահից ձևավորվում է չափագրման ծածկագիր և ինքնակամ կառույցը համարվում է հաշվառված Կադաստրի կոմիտեի կողմից։ Օրինականացում՝ քաղաքացիների սեփական հողամասերում ՀՀ կառավարության 2006 թվականի մայիսի 18-ի N 912-Ն որոշման 8-րդ կետի համաձայն՝ քաղաքացիներին կամ իրավաբանական անձանց սեփականության իրավունքով պատկանող հողամասերում (տնամերձ, այգեգործական, ինչպես նաև անհատական բնակելի տան կառուցման և սպասարկման համար հողամասեր) գտնվող՝ ինքնակամ կառուցված բնակելի նշանակության (անկախ դրանց ավարտվածության աստիճանից) շենքերը, շինությունները կարող են ճանաչվել օրինական, եթե դրանք բավարարում են օրենսգրքի 188-րդ հոդվածով և կարգով սահմանված օրինականացման պայմանները։ Որոշման 9-րդ կետի համաձայն՝ հողամասի սեփականատերն ինքնակամ կառույցի օրինականացման նպատակով պետք է դիմի համապատասխան համայնքի ղեկավարին։ Որոշման 10-րդ կետի համաձայն՝ համայնքի ղեկավարը դիմումն ստանալուց հետո՝ ինքնակամ կառուցված բնակելի նշանակության կառույցների համար 30-օրյա ժամկետում ընդունում է դրանց օրինականացման կամ մերժման մասին որոշում։ Որոշման 13-րդ կետի համաձայն՝ ինքնակամ կառույցն օրինական ճանաչվելու դեպքում հողամասի սեփականատերը համապատասխան բյուջե պետք է մուծի հետևյալ դրույքաչափերով վճարներ՝ ինքնակամ կառուցված բնակելի տների և այգետնակների յուրաքանչյուր մեկ քառ. մետրի համար՝ բազային տուրքի 10-ապատիկի չափով, բնակելի տներին և այգետնակներին կից ինքնակամ կառուցված տնտեսական և օժանդակ կառույցների յուրաքանչյուր մեկ քառ. մետրի համար՝ քաղաքային համայնքներում՝ բազային տուրքի 10-ապատիկի, գյուղական համայնքներում՝ 6-ապատիկի չափով։ Որոշման 14-րդ կետի համաձայն՝ հասարակական և (կամ) արտադրական կառույցները կարող են ճանաչվել օրինական՝ համայնքի ղեկավարի որոշմամբ՝ մինչև 200 քառ. մետր կառույցների համար՝ 30, իսկ 200 քառ. մետրից ավելիի դեպքում՝ 60-օրյա ժամկետում։ Որոշման 16-րդ կետի համաձայն՝ վճարները հետևյալ դրույքաչափերով են՝ հասարակական նշանակության կառույցների յուրաքանչյուր մեկ քառ. մետրի համար՝ բազային տուրքի 20-ապատիկի չափով, արտադրական նշանակության կառույցների յուրաքանչյուր մեկ քառ. մետրի համար՝ բազային տուրքի 15-ապատիկի չ",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_557451",
+    "question_armenian": "Եթե մահացած ճանաչված անձը հայտնվի՝ կարո՞ղ է արդյոք հետ պահանջել իր գույքը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/557451.html",
+    "published": "2026-05-17",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-275",
+      "civil-code-art-48"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Հ Հ քաղաքացիական օրենսգրքի 48-րդ հոդվածի 1-ին մասի համաձայն՝ մահացած ճանաչված քաղաքացու հայտնվելու կամ նրա գտնվելու վայրը հայտնաբերվելու դեպքում դատարանը վերացնում է նրան մահացած ճանաչելու մասին վճիռը։ Սակայն շատերը չգիտեն, որ մահացած ճանաչված անձի հայտնվելու դեպքում օրենքը սահմանում է հստակ կանոններ՝ գույքը հետ պահանջելու համար։ Ինչպես տեղեկացնում է Iravaban.net -ը, ՀՀ քաղաքացիական օրենսգրքի 48-րդ և 275-րդ հոդվածները սահմանում են մահացած ճանաչված քաղաքացու հայտնվելու հետևանքները և գույքը հետ պահանջելու կանոնները։ ՀՀ քաղաքացիական օրենսգրքի 48-րդ հոդվածի 2-րդ մասի համաձայն՝ անկախ իր հայտնվելու ժամանակից՝ քաղաքացին իրավունք ունի յուրաքանչյուր անձից հետ պահանջել պահպանված գույքը, որն անհատույց անցել էր այդ անձին՝ քաղաքացուն մահացած ճանաչելուց հետո, բացառությամբ 275-րդ հոդվածի 3-րդ կետով նախատեսված դեպքերի։ ՀՀ քաղաքացիական օրենսգրքի 275-րդ հոդվածի 3-րդ մասի համաձայն՝ դրամական միջոցները, ինչպես նաև ըստ ներկայացնողի արժեթղթերը չեն կարող հետ պահանջվել բարեխիղճ ձեռք բերողից։ ՀՀ քաղաքացիական օրենսգրքի 48-րդ հոդվածի 3-րդ մասի համաձայն՝ մահացած ճանաչված քաղաքացու գույքը հատուցելի գործարքներով ձեռք բերած անձինք պարտավոր են նրան վերադարձնել այդ գույքը, եթե ապացուցվում է, որ գույքը ձեռք բերելիս նրանք գիտեին, որ մահացած ճանաչված քաղաքացին կենդանի է։ Այդ գույքը բնեղենով վերադարձնելու անհնարինության դեպքում հատուցվում է դրա արժեքը։ ՀՀ քաղաքացիական օրենսգրքի 48-րդ հոդվածի 4-րդ մասի համաձայն՝ եթե մահացած ճանաչված քաղաքացու գույքը ժառանգման իրավունքով անցել է համայնքին և իրացվել է սույն հոդվածով նախատեսված պայմանների պահպանմամբ, ապա քաղաքացուն մահացած ճանաչելու մասին վճիռը վերացվելուց հետո նրան է վերադարձվում գույքի իրացումից ստացված գումարը։ Ամփոփելով, պետք է նշել, որ մահացած ճանաչված քաղաքացու հայտնվելու դեպքում դատարանը վերացնում է մահացած ճանաչելու մասին վճիռը, և քաղաքացին իրավունք ունի հետ պահանջել իր գույքը։ Բացառություն են կազմում դրամական միջոցները և արժեթղթերը, որոնք չեն կարող հետ պահանջվել բարեխիղճ ձեռք բերողից։ Հատուցելի գործարքներով ձեռք բերված գույքը վերադարձվում է, եթե ապացուցվում է, որ գնորդը գիտեր, որ մահացած ճանաչված քաղաքացին կենդանի է։ Եթե գույքը ժառանգմամբ անցել է համայնքին և իրացվել է՝ վերադարձվում է իրացման գումարը, – տեղեկացնում է Iravaban.net -ը։ Հավելյալ տեղեկությունների համար կարող եք դիմել Iravaban.net -ին։",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_558265",
+    "question_armenian": "Ընդհանուր սեփականությունում բաժին վաճառելիս՝ ե՞րբ կարելի է օգտվել գնելու նախապատվության իրավունքից և ի՞նչ հետևանքներ կարող են առաջանալ այն խախտելու դեպքում",
+    "question_english": "",
+    "source_url": "https://iravaban.net/558265.html",
+    "published": "2026-05-24",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-195"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի համաձայն՝ ընդհանուր սեփականության իրավունքում բաժինը երրորդ անձի վաճառելիս բաժնային սեփականության մնացած մասնակիցները, վաճառքի գնով և այլ հավասար պայմաններով, վաճառվող բաժինը գնելու նախապատվության իրավունք ունեն։ Սակայն շատերը չգիտեն, որ օրենքը սահմանում է հստակ կարգ այս իրավունքի իրականացման և դրա խախտման հետևանքների համար։ Ինչպես տեղեկացնում է Iravaban.net -ը , ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածը սահմանում է բաժնային սեփականության մասնակիցների գնելու նախապատվության իրավունքը, ծանուցման կարգը, ժամկետները և իրավունքի խախտման հետևանքները։ Գնելու նախապատվության իրավունքի էությունը ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի 1-ին մասի համաձայն՝ ընդհանուր սեփականության իրավունքում բաժինը երրորդ անձի վաճառելիս բաժնային սեփականության մնացած մասնակիցները, վաճառքի գնով և այլ հավասար պայմաններով, վաճառվող բաժինը գնելու նախապատվության իրավունք ունեն, բացառությամբ հրապարակային սակարկություններով վաճառքի դեպքի։ Ծանուցման կարգը և ժամկետները ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի 2-րդ մասի համաձայն՝ բաժինը վաճառողը պարտավոր է իր բաժինը երրորդ անձի վաճառելու մտադրության մասին գրավոր տեղեկացնել բաժնային սեփականության մյուս մասնակիցներին՝ նշելով գինը և վաճառքի մյուս պայմանները։ Եթե բաժնային սեփականության մյուս մասնակիցները հրաժարվում են վաճառվող բաժինը գնելուց կամ անշարժ գույքի սեփականության իրավունքում բաժինը ձեռք չեն բերում ծանուցումը ստանալու օրվանից մեկ ամսվա, իսկ շարժական գույքի սեփականության իրավունքում՝ տասն օրվա ընթացքում, վաճառողն իրավունք ունի իր բաժինը վաճառել ցանկացած անձի։ Նախապատվության իրավունքի խախտման հետևանքները ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի 3-րդ մասի համաձայն՝ գնելու նախապատվության իրավունքի խախտմամբ բաժնի վաճառքի դեպքում բաժնային սեփականության ցանկացած մասնակից իրավունք ունի երեք ամսվա ընթացքում դատական կարգով պահանջել իրեն փոխանցելու գնորդի իրավունքները և պարտականությունները։ Լրացուցիչ կանոններ ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի 4-րդ մասի համաձայն՝ բաժինը գնելու նախապատվության իրավունքը չի կարող զիջվել։ ՀՀ քաղաքացիական օրենսգրքի 195-րդ հոդվածի 5-րդ մասի համաձայն՝ սույն հոդվածի կանոնները կիրառվում են նաև բաժինը փոխանակության պայմանագրով օտարելիս։ Ամփոփելով, պետք է նշել, որ բաժնային սեփականության մասնակիցները ունեն բաժինը գնելու նախապատվության իրավունք՝ նույն գնով և պայմաններով։ Վաճառողը պարտավոր է գրավոր տեղեկացնել մյուս մասնակիցներին՝ նշելով գինը և պայմանները։ Անշարժ գույքի դեպքում ժամկետը մեկ ամիս է, շարժական գույքի դեպքում՝ տասն օր։ Նախապատվության իրավունքի խախտման դեպքում մասնակիցը կարող է երեք ամսվա ընթացքում դատարանում պահանջել իրեն փոխանցելու գնորդի իրավունքները և պարտականությունները՝ տեղեկացնում է Iravaban.net -ը ։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565019",
+    "question_armenian": "Ինչպե՞ս և ի՞նչ ժամկետներում կարող են ժառանգներն իմանալ մահացած հարազատի բանկային հաշիվների մասին",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565019.html",
+    "published": "2026-07-20",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-1189",
+      "civil-code-art-1239",
+      "civil-code-art-15"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Հարազատի մահից հետո ընտանիքը հաճախ չգիտի՝ արդյոք նա բանկում ավանդ, հաշիվ կամ ի պահ հանձնված արժեքներ ուներ, ո՞ւր դիմել դա պարզելու համար և ի՞նչ ժամկետում պետք է բանկը պատասխանի։ Օրենքը հստակ պատասխաններ ունի այս հարցերին. սահմանված են և՛ պահանջվող փաստաթուղթը, և՛ բանկի պատասխանի ժամկետները, և՛ մերժման դեպքում ժառանգի պաշտպանության միջոցները։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումը սահմանված է «Բանկային գաղտնիքի մասին» 1996 թվականի հոկտեմբերի 7-ի ՀՕ-80 օրենքի 12-րդ հոդվածով (գործող պաշտոնական ինկորպորացիա՝ 18.05.2026 թվականից), իսկ դրա կիրառությունը մանրամասնված է ՀՀ կենտրոնական բանկի խորհրդի 2013 թվականի դեկտեմբերի 10-ի թիվ 5 պաշտոնական պարզաբանմամբ։ Ո՞ւմ է բանկը տրամադրում մահացած հաճախորդի վերաբերյալ տեղեկությունները Օրենքի 12-րդ հոդվածի 1-ին մասի համաձայն՝ բանկերը հաճախորդի վերաբերյալ բանկային գաղտնիք կազմող տեղեկությունները տրամադրում են տվյալ հաճախորդի ժառանգներին (իրավահաջորդներին), եթե վերջիններս կամ նրանց ներկայացուցիչները ներկայացրել են ժառանգության (իրավահաջորդության) իրավունքները հիմնավորող բավարար փաստաթղթեր։ Ո՞ր փաստաթուղթն է համարվում «բավարար» Օրենքն ինքը չի բացահայտում, թե որ փաստաթուղթն է բավարար, և հենց այս անհստակությունը լուծել է Կենտրոնական բանկի խորհրդի պաշտոնական պարզաբանումը։ Ըստ դրա՝ բավարար փաստաթուղթ է համարվում ժառանգության իրավունքի վկայագիրը, իսկ երբ ժառանգությունն ընդունվել է ժառանգված գույքը փաստացի տիրապետելու կամ կառավարելու միջոցով, բավարար են համարվում ինչպես ժառանգության իրավունքի վկայագիրը, այնպես էլ ժառանգման փաստի վերաբերյալ դատարանի վճիռը (որոշումը)։ Կարևոր գործնական մանրամասն. վկայագիրը կամ դատական ակտը բանկի համար հիմք է ժառանգատուի վերաբերյալ տեղեկություններ տրամադրելու համար՝ անկախ նրանից, թե դրանում նշված է ժառանգատուի ամբողջ գույքի, թե դրա միայն մի մասի ժառանգումը։ Պարզաբանման մեջ բերված է ուղիղ օրինակ. եթե անձը ժառանգել է միայն ժառանգատուի բնակարանը և բանկին ներկայացնում է հենց դրա վերաբերյալ վկայագիրը կամ դատարանի վճիռը, դա բավարար հիմք է, որպեսզի բանկը նրան տրամադրի ժառանգատուի բանկային գաղտնիք կազմող տեղեկությունները։ Ի՞նչ ժամկետներ է սահմանում օրենքը Օրենքի 12-րդ հոդվածի 2-րդ մասով բանկը պարտավոր է ժառանգության իրավունքները հիմնավորող բավարար փաստաթղթերն ստանալու պահից. – հինգ բանկային օրվա ընթացքում տեղեկացնել դիմող անձանց կամ կազմակերպություններին ներկայացված փաստաթղթերի անբավարարության մասին՝ նշելով պակասող անհրաժեշտ փաստաթղթերի ցանկը. – փաստաթղթերի բավարարության դեպքում՝ տասը բանկային օրվա ընթացքում հաղորդել հաճախորդի վերաբերյալ բանկում եղած սպառիչ տեղեկությունները և տրամադրել բոլոր փաստաթղթերը։ Նոտարի դերը՝ մինչև վկայագիրը ստանալը Այստեղ ծագում է գործնական հանգույց. վկայագիր ստանալու համար պետք է իմանալ ժառանգական զանգվածը, իսկ բանկից տեղեկություն ստանալու համար պահանջվում է վկայագիր։ Այս շրջանը փակում է նոտարը։ ՀՀ քաղաքացիական օրենսգրքի 1239-րդ հոդվածի 3-րդ մասով՝ ժառանգության զանգվածը պարզելու և այն պահպանելու նպատակներով նոտարն իրավունք ունի հարցում անել բանկերին և այլ վարկային կազմակերպություններին՝ նրանց ավանդներում, հաշիվներում գտնվող կամ ի պահ հանձնված՝ ժառանգատուին պատկանող դրամի, արժութային ու այլ արժեքների վերաբերյալ։ Կենտրոնական բանկի պարզաբանմամբ՝ ժառանգության բացման վայրի նոտարին տեղեկություններ տրամադրելը բանկային գաղտնիքի ապօրինի հրապարակում չի համարվում, եթե միաժամանակ պահպանվել են երեք պայման. բանկին դիմել է հենց ժառանգության բացման վայրի նոտարը՝ պարզաբանման Հավելված 1-ի ձևանմուշին համապատասխան գրությամբ, բանկը պատասխանել է Հավելված 2-ի ձևանմուշով, և պատասխանը փակ ծրարով տրամադրվել կամ ուղարկվել է անմիջապես նոտարին, այլ ոչ թե նրա նշանակած այլ անձի։ Հիշեցնենք, որ ժառանգության բացման վայրը, ըստ քաղաքացիական օրենսգրքի 1189-րդ հոդվածի, ժառանգատուի բնակության վերջին վայրն է։ Ի՞նչ սահմաններում է տրամադրվում տեղեկությունը Օրենքի 15-րդ հոդվածի 1-ին մասով բանկը տեղեկությունները տրամադրում է միայն իր հաճախորդի, այսինքն՝ տվյալ դեպքում ժառանգատուի վերաբերյալ։ Եթե բանկում պահվող փաստաթղթերում նշված են այլ անձանց անուններ, գործարքի պայմաններ և նման այլ տվյալներ, դրանք ևս համարվում են հաճախորդի վերաբերյալ տեղեկություններ։ Ի՞նչ անել, եթե բանկը մե",
+    "difficulty": "hard",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565120",
+    "question_armenian": "Ժառանգությունն ընդունելով՝ ի՞նչ պարտքեր եք ստանձնում և ի՞նչ սահմաններում եք պատասխանատու",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565120.html",
+    "published": "2026-07-21",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-1186",
+      "civil-code-art-1244"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Հարազատի մահից հետո ժառանգներին հաճախ զանգահարում են բանկից՝ չմարված վարկի կապակցությամբ, և ծագում է վախ, թե ժառանգությունն ընդունելով՝ մարդն իր վրա է վերցնում ուրիշի բոլոր պարտքերը՝ առանց սահմանի։ Օրենսգիրքն այս հարցին հստակ պատասխան ունի. պարտքերն իսկապես անցնում են ժառանգներին, բայց միայն ստացած գույքի արժեքի սահմաններում, և ոչ բոլոր պարտավորություններն են ընդհանրապես ժառանգվում։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումները սահմանված են ՀՀ քաղաքացիական օրենսգրքի ժառանգական իրավունքի բաժնով՝ մասնավորապես 1186-րդ, 1225-րդ, 1227-րդ, 1230-րդ, 1242-րդ, 1243-րդ և 1244-րդ հոդվածներով։ Պարտքերն անցնո՞ւմ են ժառանգներին Օրենսգրքի 1186-րդ հոդվածի 1-ին կետի համաձայն՝ ժառանգության զանգվածի մեջ է մտնում ժառանգության բացման օրը ժառանգատուին պատկանող գույքը՝ ներառյալ դրամը, արժեթղթերը, գույքային իրավունքները և պարտականությունները։ Այսինքն՝ ժառանգությունը միայն ակտիվ չէ, այլ ակտիվի և պարտավորությունների միասնական ամբողջություն, որը 1184-րդ հոդվածով անցնում է որպես համապարփակ իրավահաջորդություն։ Ո՞ր պարտավորությունները չեն ժառանգվում Նույն հոդվածի 2-րդ կետով ժառանգության զանգվածի մեջ չեն մտնում ժառանգատուի անձի հետ անխզելիորեն կապված իրավունքներն ու պարտականությունները, մասնավորապես՝ ալիմենտային պարտավորություններով իրավունքներն ու պարտականությունները, քաղաքացու կյանքին կամ առողջությանը պատճառված վնասը հատուցելու իրավունքը, անձնական ոչ գույքային իրավունքները և այլ ոչ նյութական բարիքները, ինչպես նաև այն իրավունքներն ու պարտականությունները, որոնց անցումը ժառանգությամբ չի թույլատրվում օրենսգրքով և այլ օրենքներով։ Ի՞նչ սահմաններում է ժառանգը պատասխանատու Սա նյութի ամենակարևոր կանոնն է։ Օրենսգրքի 1244-րդ հոդվածի 1-ին կետով ժառանգները, ժառանգության իրավունքի վկայագիրը ստանալուց հետո, իրենց անցած գույքի արժեքի սահմաններում հատուցում են 1242-րդ հոդվածում նշված ծախսերը։ Նույն հոդվածի 2-րդ կետով, եթե անձը ժառանգություն է ստացել և՛ անմիջապես ժառանգության բացման, և՛ ժառանգության ընդունման իրավունքի փոխանցման արդյունքում, նա պատասխանատվություն է կրում այդ երկու հիմքերով ստացված գույքի արժեքի սահմաններում։ Իսկ 3-րդ կետով ժառանգներն իրենց անցած ժառանգության արժեքի սահմաններում կրում են համապարտ պատասխանատվություն։ Այսինքն՝ ժառանգը երբեք չի պատասխանում սեփական գույքով այն մասի համար, որը գերազանցում է իրեն անցած ժառանգության արժեքը։ Բայց մի քանի ժառանգ լինելու դեպքում պարտատերն իրավունք ունի ամբողջ պահանջն ուղղել նրանցից որևէ մեկին՝ այդ սահմանի ներսում։ Կարելի՞ է ընդունել գույքը, բայց հրաժարվել պարտքից Ոչ։ 1225-րդ հոդվածի 2-րդ կետով ժառանգությունը պայմանով կամ վերապահումներով ընդունել չի թույլատրվում, իսկ 3-րդ կետով ժառանգության մի մասի ընդունումը նշանակում է իրեն հասանելիք ամբողջ ժառանգության ընդունում՝ անկախ այն բանից, թե ինչ է այն իրենից ներկայացնում և որտեղ է գտնվում։ Հակառակ ուղղությամբ նույնպես. 1230-րդ հոդվածի 4-րդ և 5-րդ կետերով ժառանգությունից վերապահումներով կամ պայմանով հրաժարվել չի թույլատրվում, և ժառանգին հասանելիք ժառանգության մասից հրաժարվել չի թույլատրվում։ Ի՞նչ հերթականությամբ են վճարվում պարտքերը Օրենսգրքի 1242-րդ հոդվածով ժառանգության հետ կապված ծախսերը հատուցվում են հինգ հերթով. առաջին հերթին՝ մինչև մահը հիվանդության հետևանքով առաջացած և պատշաճ հուղարկավորության համար անհրաժեշտ ծախսերը, երկրորդ հերթին՝ գույքը պահպանելու և կառավարելու, ինչպես նաև կտակը կատարելու հետ կապված ծախսերը, երրորդ հերթին՝ ժառանգատուի պարտքերով պարտատերերի պահանջները, չորրորդ հերթին՝ պարտադիր բաժնի իրավունք ունեցող ժառանգների պահանջները, հինգերորդ հերթին՝ կտակային հանձնարարությունը կատարելու հետ կապված ծախսերը։ Յուրաքանչյուր հերթի պահանջները բավարարվում են նախորդ հերթը լրիվ բավարարելուց հետո, իսկ գույքն անբավարար լինելու դեպքում այն համապատասխան հերթի պարտատերերի միջև բաշխվում է պահանջների գումարներին համամասնորեն։ Որքա՞ն ժամանակ ունեն պարտատերերը 1243-րդ հոդվածի 1-ին կետով պարտատերերն իրավունք ունեն ժառանգության բացման օրվանից վեց ամսվա ընթացքում ներկայացնել իրենց պահանջները։ 2-րդ կետով՝ մինչև ժառանգության իրավունքի վկայագիր ստանալը պահանջները կարող են ներկայացվել ժառանգությունն ընդունած ժառանգին կամ կտակակատարին, իսկ նրանց բացակայության դեպք",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565513",
+    "question_armenian": "Ե՞րբ է անձը դառնում գույքի սեփականատեր․ օրենքը սահմանում է 6 հիմնական հիմք",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565513.html",
+    "published": "2026-07-26",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-172"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Սեփականության իրավունքը կարող է առաջանալ տարբեր եղանակներով։ Անձը կարող է գույք ստեղծել, գնել, ստանալ նվիրատվությամբ, ժառանգել կամ օրենքով նախատեսված այլ հիմքով ձեռք բերել դրա նկատմամբ սեփականության իրավունք։ ՀՀ քաղաքացիական օրենսգրքի համաձայն՝ սեփականության իրավունքի ձեռքբերման հիմնական հիմքերը սահմանված են օրենսգրքի 172-րդ հոդվածով։ Iravaban.net -ը ստորև մանրամասն ներկայացնում է սեփականության իրավունքի ձեռքբերման հիմնական հիմքերը և նոր ստեղծված անշարժ գույքի նկատմամբ սեփականության իրավունքի ծագման առանձնահատկությունները։ 1. Անձը նոր գույք է ստեղծում Եթե անձը օրենքի և այլ իրավական ակտերի պահանջների պահպանմամբ իր համար պատրաստում կամ ստեղծում է նոր գույք, ապա այդ գույքի նկատմամբ սեփականության իրավունք ձեռք է բերում հենց ինքը։ Օրինակ՝ անձը կարող է ստեղծել շարժական գույք կամ այլ գույք՝ պահպանելով օրենքով սահմանված պահանջները։ Միաժամանակ, գույքի օգտագործման արդյունքում ստացված պտուղների, արտադրանքի և եկամուտների նկատմամբ սեփականության իրավունքը ձեռք է բերվում Քաղաքացիական օրենսգրքով սահմանված հատուկ կանոններով։ 2. Գույքը ձեռք է բերվում գործարքի միջոցով Սեփականատեր ունեցող գույքի նկատմամբ սեփականության իրավունքը կարող է անցնել մեկ այլ անձի՝ առուվաճառքի, փոխանակության, նվիրատվության, կամ գույքի օտարման այլ գործարքի հիման վրա։ Այսինքն՝ գույքի սեփականատերը կարող է փոխվել համապատասխան իրավական գործարքի արդյունքում։ 3. Գույքը փոխանցվում է ժառանգությամբ Քաղաքացու մահվան դեպքում նրան պատկանող գույքի նկատմամբ սեփականության իրավունքը կարող է անցնել այլ անձանց։ Դա կատարվում է՝ կտակի համաձայն , կամ օրենքով սահմանված ժառանգության կարգով ։ Այսպիսով, ժառանգության դեպքում գույքի նկատմամբ իրավունքը փոխանցվում է ժառանգներին՝ օրենքով նախատեսված ընթացակարգով։ 4. Սեփականության իրավունքը կարող է փոխանցվել իրավաբանական անձի վերակազմակերպման դեպքում Եթե իրավաբանական անձը վերակազմակերպվում է, նրա գույքի նկատմամբ սեփականության իրավունքը կարող է անցնել իրավահաջորդ իրավաբանական անձին կամ իրավաբանական անձանց։ Այս դեպքում գույքային իրավունքների փոխանցումը կապված է իրավաբանական անձի վերակազմակերպման իրավական գործընթացի հետ։ 5. Որոշ դեպքերում սեփականության իրավունք կարելի է ձեռք բերել նաև սեփականատեր չունեցող գույքի նկատմամբ Օրենքով նախատեսված դեպքերում անձը կարող է սեփականության իրավունք ձեռք բերել՝ սեփականատեր չունեցող գույքի, այն գույքի նկատմամբ, որի սեփականատերն անհայտ է, գույքի նկատմամբ, որից սեփականատերը հրաժարվել է, կամ այն գույքի նկատմամբ, որի սեփականության իրավունքը սեփականատերը կորցրել է օրենքով նախատեսված այլ հիմքով։ Սակայն կարևոր է, որ նման գույքի նկատմամբ սեփականության իրավունքը չի առաջանում ինքնաբերաբար․ անհրաժեշտ է պահպանել Քաղաքացիական օրենսգրքով սահմանված համապատասխան կարգը։ 6. Կոոպերատիվի անդամը կարող է սեփականության իրավունք ձեռք բերել իր կողմից ամբողջությամբ վճարված գույքի նկատմամբ Բնակարանային, ամառանոցային, ավտոտնակային կամ այլ կոոպերատիվի անդամը, ինչպես նաև փայակուտակման իրավունք ունեցող այլ անձը, եթե ամբողջությամբ մուծել է իր փայավճարը կոոպերատիվի կողմից իրեն տրամադրված բնակարանի, ամառանոցի, ավտոտնակի կամ այլ շինության համար, ձեռք է բերում այդ գույքի նկատմամբ սեփականության իրավունք։ Նոր ստեղծված անշարժ գույքի դեպքում կա կարևոր առանձնահատկություն Օրենսգրքի 173-րդ հոդվածը հատուկ կարգավորում է նոր ստեղծված անշարժ գույքի նկատմամբ սեփականության իրավունքի ծագումը։ Այն առաջանում է անշարժ գույքի պետական գրանցման պահից ։ Այսինքն՝ նոր ստեղծված անշարժ գույքի դեպքում միայն այն փաստը, որ գույքը կառուցվել կամ ստեղծվել է, բավարար չէ սեփականության իրավունքի ծագման համար։ Անհրաժեշտ է նաև դրա պետական գրանցումը։ Սեփականության իրավունքը կարող է ձեռք բերվել՝ ✔ նոր գույք ստեղծելու, ✔ առուվաճառքի կամ այլ գործարքի, ✔ ժառանգության, ✔ իրավաբանական անձի վերակազմակերպման, ✔ օրենքով նախատեսված հատուկ դեպքերի, ✔ ինչպես նաև կոոպերատիվի անդամի կողմից փայավճարի ամբողջական վճարման արդյունքում։ Իսկ նոր ստեղծված անշարժ գույքի նկատմամբ սեփականության իրավունքը ծագում է դրա պետական գրանցման պահից ։ Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565566",
+    "question_armenian": "Ո՞ւմ է օրենքն արգելում ժառանգել. ե՞րբ է ժառանգը ճանաչվում անարժան",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565566.html",
+    "published": "2026-07-26",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-1191"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ժառանգության իրավունքն ինքնաբերաբար չի պահպանվում բոլոր դեպքերում։ Օրենսգիրքը սահմանում է հանգամանքներ, երբ անձը մեկուսացվում է ժառանգությունից՝ անկախ նրանից, թե նա ժառանգում է ըստ կտակի, թե ըստ օրենքի, և անկախ նրանից, թե ինչ ազգակցական կապ ունի ժառանգատուի հետ։ Ինչպես տեղեկացնում է Iravaban.net – ը, համապատասխան կարգավորումը սահմանված է ՀՀ քաղաքացիական օրենսգրքի 1191-րդ հոդվածով՝ անարժան ժառանգներին ժառանգությունից մեկուսացնելու մասին։ Ո՞ր դեպքերում է անձը մեկուսացվում ցանկացած հիմքով ժառանգելուց Օրենսգրքի 1191-րդ հոդվածի 1-ին կետով ըստ կտակի և ըստ օրենքի ժառանգությունից մեկուսացվում են այն անձինք, ովքեր դիտավորյալ խոչընդոտել են ժառանգատուի վերջին կամքի իրականացմանը, դիտավորյալ կյանքից զրկել են ժառանգատուին կամ հնարավոր ժառանգներից որևէ մեկին, կամ մահափորձ են կատարել նրանց կյանքի նկատմամբ։ Կարևոր է շեշտել «դիտավորյալ» բառը. հոդվածը վերաբերում է դիտավորությամբ կատարված արարքներին։ Առկա է նաև բացառություն. մեկուսացումը չի կիրառվում այն անձանց նկատմամբ, որոնց օգտին ժառանգատուն կտակը կազմել է մահափորձ կատարելուց հետո։ Այսինքն՝ եթե ժառանգատուն, իմանալով կատարվածի մասին, հետո կտակ է կազմել հօգուտ այդ անձի, դա դիտվում է որպես նրա գիտակցված կամքի արտահայտություն։ Ծնողական իրավունքներից զրկված ծնողները Նույն հոդվածի 2-րդ կետով ըստ օրենքի ժառանգության դեպքում ժառանգությունից մեկուսացվում են ծնողական իրավունքներից զրկված ծնողները, որոնց ծնողական իրավունքները չեն վերականգնվել ժառանգությունը բացվելու ժամանակ։ Ուշադրություն դարձրեք երկու պայմանի. այս հիմքը գործում է միայն ըստ օրենքի ժառանգության դեպքում, և որոշիչ պահը ժառանգության բացման պահն է։ Եթե մինչ այդ ծնողական իրավունքները վերականգնվել են, մեկուսացման հիմքը վերանում է։ Ինքնաբերաբար չի կիրառվում. պահանջվում է դատական ակտ 1191-րդ հոդվածի 3-րդ կետով անարժան ժառանգներին ժառանգությունից մեկուսացնելու համար հիմք են դատարանի՝ օրինական ուժի մեջ մտած դատավճիռը և կամ վճիռը։ Այսինքն՝ ոչ թե նոտարը կամ մյուս ժառանգներն են որոշում, այլ դատարանը։ Նույն կետով սահմանված է նաև, թե ով կարող է հարուցել այդ հարցը. անարժան ժառանգներին ժառանգությունից մեկուսացնելու պահանջով դատարան դիմելու իրավունք ունեն այն անձինք, որոնց համար նման մեկուսացումն առաջացնում է ժառանգության հետ կապված գույքային հետևանքներ։ Այսինքն՝ դիմողը պետք է ունենա սեփական գույքային շահ։ Տարածվում է նաև պարտադիր բաժնի վրա Սա հոդվածի ամենակարևոր և քիչ հայտնի դրույթներից է։ 4-րդ կետով 1191-րդ հոդվածի կանոնները տարածվում են ժառանգության պարտադիր բաժնի իրավունք ունեցող ժառանգների վրա։ Հիշեցնենք, որ 1194-րդ հոդվածով պարտադիր բաժնի իրավունք ունեն ժառանգատուի անչափահաս երեխաները, ինչպես նաև հաշմանդամություն ունեցող կամ անգործունակ ճանաչված կամ 60 տարեկան դարձած երեխաները, ամուսինը և ծնողները, և այդ իրավունքը գործում է անկախ կտակի բովանդակությունից։ Սակայն անարժան ճանաչվելու դեպքում նույնիսկ պարտադիր բաժինը չի պահպանվում։ 5-րդ կետով հոդվածի 1-ին և 3-րդ կետերի կանոնները կիրառվում են նաև կտակային հանձնարարության նկատմամբ։ Ի՞նչ է լինում մեկուսացվածի բաժնի հետ Օրենսգրքի 1232-րդ հոդվածի 1-ին կետով, երբ ժառանգը մեկուսացվում է որպես անարժան ժառանգ, նրան հասանելիք ժառանգության մասն անցնում է ժառանգության հրավիրված՝ ըստ օրենքի ժառանգներին և բաշխվում է նրանց միջև հավասար բաժիններով։ Իսկ եթե ժառանգատուն ամբողջ գույքը կտակել է իր նշանակած ժառանգներին, այդ մասն անցնում է մնացած՝ ըստ կտակի ժառանգներին՝ ժառանգության բաժիններին համամասնորեն, եթե այլ բան նախատեսված չէ կտակով։ Այս կանոնը չի կիրառվում, եթե դուրս մնացած ժառանգին կտակով նշանակված է ենթաժառանգ։ Առանձին կարևոր հետևանք է սահմանված 1221-րդ հոդվածի 2-րդ կետով. ներկայացման իրավունքով չեն կարող ժառանգել ժառանգությունից մեկուսացված ժառանգի երեխաները։ Հաճախ տրվող հարցեր Կարո՞ղ է անարժան ճանաչվել պարտադիր բաժնի իրավունք ունեցող ժառանգը։ Այո։ 1191-րդ հոդվածի 4-րդ կետով հոդվածի կանոնները տարածվում են նաև ժառանգության պարտադիր բաժնի իրավունք ունեցող ժառանգների վրա։ Մեկուսացված ժառանգի երեխաները կարո՞ղ են ժառանգել իր փոխարեն։ Ոչ։ 1221-րդ հոդվածի 2-րդ կետով ներկայացման իրավունքով չեն կարող ժառանգել ժառանգությունից մեկուսացված ժառանգի երեխաները։ Ամփոփում Ամփոփելով՝ ՀՀ քաղաքացիական օրենսգրքի 1191-րդ հոդվածով ժառանգո",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565577",
+    "question_armenian": "Մահացածին չվճարված աշխատավարձը, թոշակը և նպաստը՝ ո՞վ և ի՞նչ ժամկետում կարող է ստանալ",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565577.html",
+    "published": "2026-07-26",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-1249"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Անձի մահից հետո հաճախ մնում են վճարման ենթակա, բայց չվճարված գումարներ՝ վերջին ամսվա աշխատավարձ, թոշակ կամ նպաստ։ Ընտանիքի անդամները սովորաբար կարծում են, որ դրանք ստանալու համար պետք է սպասել վեց ամիս և ձեռք բերել ժառանգության իրավունքի վկայագիր։ Օրենսգիրքն այս գումարների համար այլ, ավելի պարզ կարգ է սահմանում, բայց դրա հետ կապված է նաև խիստ ժամկետ։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումը սահմանված է ՀՀ քաղաքացիական օրենսգրքի 1249-րդ հոդվածով։ Ո՞ր գումարների մասին է խոսքը Օրենսգրքի 1249-րդ հոդվածի 1-ին կետով խոսքը վերաբերում է վճարման ենթակա, սակայն քաղաքացու կյանքի օրոք որևէ պատճառով չվճարված չորս տեսակի գումարների՝ աշխատավարձին, թոշակներին, նպաստներին և կյանքին կամ առողջությանը պատճառված վնասի հատուցման գումարներին։ Ո՞վ ունի դրանք ստանալու իրավունք Նույն կետով այդ գումարներն ստանալու իրավունքը պատկանում է մահացածի ընտանիքի անդամներին, ինչպես նաև նրա խնամքի ներքո գտնվող անաշխատունակ անձանց։ Ուշադրություն դարձրեք, որ այստեղ խոսքը ժառանգների մասին չէ, այլ ընտանիքի անդամների և խնամքի ներքո գտնվողների։ Այսինքն՝ այս գումարներն առաջին հերթին անցնում են ոչ թե ժառանգության ընդհանուր կանոններով, այլ այս հատուկ կարգով։ Ի՞նչ ժամկետում պետք է ներկայացվի պահանջը 1249-րդ հոդվածի 2-րդ կետով գումարներ վճարելու վերաբերյալ պահանջները պետք է ներկայացվեն ժառանգության բացման օրվանից վեց ամսվա ընթացքում։ Հիշեցնենք, որ օրենսգրքի 1188-րդ հոդվածով ժառանգության բացման ժամանակը քաղաքացու մահվան օրն է, իսկ նրան դատարանով մահացած ճանաչելու դեպքում՝ այդ մասին վճիռն օրինական ուժի մեջ մտնելու օրը, եթե այլ օր սահմանված չէ վճռում։ Ի՞նչ է լինում, եթե ժամկետը բաց է թողնվել Այս դեպքի համար օրենսգիրքն ունի հստակ լուծում։ 1249-րդ հոդվածի 3-րդ կետով, եթե բացակայում են գումարներն ստանալու իրավունք ունեցող անձինք, կամ նրանք սահմանված ժամկետում պահանջ չեն ներկայացնում, ապա համապատասխան գումարները ներառվում են ժառանգության զանգվածի մեջ և ժառանգվում են օրենսգրքով սահմանված ընդհանուր հիմունքներով։ Այսինքն՝ գումարները չեն կորչում, բայց դրանք ստանալու ճանապարհը դառնում է ավելի երկար. պարզ պահանջի փոխարեն անհրաժեշտ կլինի անցնել ժառանգության ձևակերպման ամբողջ ընթացակարգը՝ նոտարին դիմումով և ժառանգության իրավունքի վկայագրով, որը 1246-րդ հոդվածով, որպես կանոն, տրվում է ժառանգության բացման օրվանից վեց ամիս հետո։ Ի՞նչ տարբերություն կա ժառանգության ընդհանուր կարգից Տարբերությունը երկուսն է՝ շրջանակը և ժամկետը։ Ընդհանուր կանոնով 1186-րդ հոդվածի 1-ին կետով ժառանգության զանգվածի մեջ մտնում է ժառանգության բացման օրը ժառանգատուին պատկանող գույքը՝ ներառյալ դրամը, և այն բաշխվում է ժառանգների միջև՝ ըստ կտակի կամ ըստ օրենքի հերթականության։ Իսկ 1249-րդ հոդվածով նշված գումարներն առաջին վեց ամսում հասանելի են ընտանիքի անդամներին և խնամքի ներքո գտնվող անաշխատունակ անձանց՝ անկախ ժառանգության հերթականությունից։ Առանձին հիշեցնենք, որ 1186-րդ հոդվածի 2-րդ կետով ժառանգության զանգվածի մեջ ընդհանրապես չեն մտնում ժառանգատուի անձի հետ անխզելիորեն կապված իրավունքներն ու պարտականությունները, մասնավորապես՝ ալիմենտային պարտավորություններով իրավունքներն ու պարտականությունները և կյանքին կամ առողջությանը պատճառված վնասը հատուցելու իրավունքը։ Հենց այս պատճառով է, որ արդեն հաշվարկված, բայց չվճարված հատուցման գումարների համար 1249-րդ հոդվածն առանձին կարգ է սահմանում։ Հաճախ տրվող հարցեր – Պետք է սպասել վեց ամի՞ս և վկայագիր ստանալ։ – Ոչ, եթե պահանջը ներկայացվում է ժամանակին։ 1249-րդ հոդվածով վճարման ենթակա, բայց չվճարված աշխատավարձը, թոշակը, նպաստը և վնասի հատուցման գումարներն ստանալու իրավունքը պատկանում է ընտանիքի անդամներին և խնամքի ներքո գտնվող անաշխատունակ անձանց, իսկ պահանջը պետք է ներկայացվի ժառանգության բացման օրվանից վեց ամսվա ընթացքում։ – Ի՞նչ է լինում, եթե վեց ամիսը լրանում է։ – Գումարները չեն կորչում. 3-րդ կետով դրանք ներառվում են ժառանգության զանգվածի մեջ և ժառանգվում են ընդհանուր հիմունքներով՝ արդեն ժառանգության ձևակերպման կարգով։ Ամփոփում Ամփոփելով՝ ՀՀ քաղաքացիական օրենսգրքի 1249-րդ հոդվածով վճարման ենթակա, սակայն քաղաքացու կյանքի օրոք չվճարված աշխատավարձը, թոշակները, նպաստները և կյանքին կամ առողջությանը պատճառված վնասի հատուցման գումարներն ստանալու իրավունքը պատկանում է մա",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565590",
+    "question_armenian": "Ե՞րբ է կտակը վավեր առանց նոտարի. ո՞վ կարող է այն վավերացնել",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565590.html",
+    "published": "2026-07-27",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/172116/latest"
+    ],
+    "expected_article_ids": [
+      "civil-code-art-1203",
+      "civil-code-art-1207"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ընդհանուր կանոնով կտակը վավերացնում է նոտարը, և առանց դրա այն անվավեր է։ Սակայն կյանքում լինում են իրավիճակներ, երբ մարդը ֆիզիկապես չի կարող հասնել նոտարին՝ հիվանդանոցում է, զինվորական մասում, նավի վրա կամ հեռավոր բնակավայրում։ Օրենսգիրքն այս դեպքերի համար նախատեսում է կտակների առանձին խումբ, որոնք հավասարեցվում են նոտարի վավերացրածներին։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումը սահմանված է ՀՀ քաղաքացիական օրենսգրքի 1207-րդ հոդվածով։ Ընդհանուր կանոնը Օրենսգրքի 1203-րդ հոդվածով կտակը պետք է կազմվի գրավոր՝ նշելով այն կազմելու վայրը և ժամանակը, անձամբ ստորագրվի կտակարարի կողմից և վավերացվի նոտարի կողմից։ Այս կանոնները չպահպանելը հանգեցնում է կտակի անվավերության։ Հենց այս ընդհանուր կանոնից են բացառություն 1207-րդ հոդվածով նախատեսված դեպքերը։ Ո՞ր կտակներն են հավասարեցվում նոտարի վավերացրածներին 1207-րդ հոդվածի 1-ին կետով նոտարի վավերացրած կտակներին հավասարեցվում են՝ – հիվանդանոցներում, հոսպիտալներում, այլ հիվանդանոցային բուժական հաստատություններում բուժվող կամ բնակչության սոցիալական պաշտպանության հաստատություններում ապրող քաղաքացիների կտակները՝ վավերացված այդ հաստատությունների գլխավոր բժիշկների, բուժական մասով նրանց տեղակալների կամ հերթապահ բժիշկների, ինչպես նաև հոսպիտալների պետերի, սոցիալական պաշտպանության հաստատությունների տնօրենների կամ գլխավոր բժիշկների կողմից, – զինծառայողների կտակները, իսկ զինվորական մասերի տեղաբաշխման այն կետերում, որտեղ նոտար չկա, նաև այդ մասերում աշխատող քաղաքացիական անձանց, նրանց ընտանիքի անդամների և զինծառայողների ընտանիքի անդամների կտակները՝ վավերացված զինվորական մասերի հրամանատարների կողմից, – հեռավոր այն բնակավայրերում, որտեղ նոտար չկա, ապրող անձանց կտակները՝ վավերացված համայնքի ղեկավարի կողմից, – երկրաբանական կամ այլ նմանատիպ արշավախմբերում գտնվող քաղաքացիների կտակները՝ վավերացված այդ արշավախմբերի ղեկավարների կողմից, – Հայաստանի Հանրապետության դրոշի ներքո նավարկող նավերի վրա գտնվող քաղաքացիների կտակները՝ վավերացված այդ նավերի նավապետերի կողմից, – ազատազրկման վայրերում գտնվող անձանց կտակները՝ վավերացված ազատազրկման վայրերի պետերի կողմից։ Վկայի ներկայությունը պարտադիր է Սա այս կարգի կարևորագույն պայմանն է։ 1207-րդ հոդվածի 2-րդ կետով նշված կտակները կտակարարը պետք է ստորագրի վկայի ներկայությամբ, և վկան նույնպես ստորագրում է կտակը։ Ի տարբերություն նոտարական սովորական վավերացման, որտեղ 1205-րդ հոդվածի 4-րդ կետով վկայի ներկայությունը կտակարարի ցանկությամբ է, այստեղ այն պարտադիր պահանջ է։ Նույն կետով նման կտակների նկատմամբ համապատասխանաբար կիրառվում են օրենսգրքի 1205-րդ հոդվածի կանոնները՝ կտակի նոտարական վավերացման մասին։ Դրանցից են, օրինակ, պահանջը, որ կտակը մինչև ստորագրելը կտակարարն ամբողջությամբ կարդա, ինչպես նաև վավերացնող անձի պարտականությունը՝ կտակարարին պարզաբանել ժառանգության պարտադիր բաժնի իրավունքը։ Ո՞վ չի կարող լինել վկա 1208-րդ հոդվածով վկա չեն կարող լինել և կտակարարի փոխարեն կտակը չեն կարող ստորագրել կտակը վավերացնող անձը, այն անձը, ում օգտին կազմվել է կտակը կամ արվել կտակային հանձնարարություն, ինչպես նաև այդ անձի ամուսինը, երեխաները և ծնողները, լրիվ գործունակությամբ չօժտված քաղաքացիները, անգրագետները և կտակը կարդալ չկարողացող անձինք, կազմված կտակի լեզվին բավարար չափով չտիրապետող անձինք, բացառությամբ փակ կտակի դեպքի, ինչպես նաև կեղծ ցուցմունք տալու համար դատվածություն ունեցող անձինք։ Կտակն ուղարկվում է նոտարին 1207-րդ հոդվածի 3-րդ կետով այս կարգով վավերացված կտակն առաջին իսկ հնարավորության դեպքում այն վավերացրած անձը պետք է ուղարկի կտակարարի բնակության վայրի նոտարին։ Հաճախ տրվող հարցեր Հիվանդանոցում կազմված կտակը նույն ուժն ունի՞, ինչ նոտարականը։ Այո, եթե պահպանված են 1207-րդ հոդվածի պահանջները՝ վավերացրել է լիազորված պաշտոնատար անձը, և կտակն ստորագրվել է վկայի ներկայությամբ, որը նույնպես ստորագրել է այն։ Կարո՞ղ է վկա լինել այն անձը, ում օգտին կազմվում է կտակը։ Ոչ։ 1208-րդ հոդվածով վկա չեն կարող լինել ինչպես այդ անձը, այնպես էլ նրա ամուսինը, երեխաները և ծնողները։ Ամփոփում Ամփոփելով՝ ՀՀ քաղաքացիական օրենսգրքի 1207-րդ հոդվածով նոտարի վավերացրած կտակներին հավասարեցվում են բուժական և սոցիալական պաշտպանության հաստատություններում, զինվորական մասերում, նոտար չունեցող հեռավոր բնա",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_529258",
+    "question_armenian": "Սոցիալական իրավունքները Հայաստանում․ ի՞նչ պետք է իմանա յուրաքանչյուր քաղաքացի",
+    "question_english": "",
+    "source_url": "https://iravaban.net/529258.html",
+    "published": "2025-08-28",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/143723/latest"
+    ],
+    "expected_article_ids": [
+      "constitution-current-art-83"
+    ],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ Սահմանադրության 83-րդ հոդվածը սահմանում է․ Յուրաքանչյուր ոք, օրենքին համապատասխան, ունի մայրության, բազմազավակության, հիվանդության, հաշմանդամության, աշխատավայրում դժբախտ պատահարների, խնամքի կարիք ունենալու, կերակրողին կորցնելու, ծերության, գործազրկության, աշխատանքը կորցնելու և այլ դեպքերում սոցիալական ապահովության իրավունք: Սա նշանակում է, որ պետությունը պարտավոր է ապահովել նվազագույն սոցիալական երաշխիքներ և աջակցություն այն քաղաքացիներին, ովքեր դրա կարիքը ունեն։ Ովքեր կարող են օգտվել սոցիալական իրավունքներից․ Անաշխատունակ անձինք Գործազուրկներ Բռնի տեղահանված և փախստական անձինք Սոցիալապես անապահով ընտանիքներ Երեխաներ և բազմազավակ ընտանիքներ Ինչպիսի աջակցության ձևեր կան Պետական նպաստներ և թոշակներ Բժշկական ծառայությունների հասանելիություն (անվճար կամ արտոնյալ) Սոցիալական բնակարան կամ ժամանակավոր կացարան Ուսման, աշխատանքի տեղավորման և վերապատրաստման ծրագրեր Վթարի, աղետի կամ այլ արտակարգ իրավիճակների դեպքում օգնություն Ինչպես օգտվել սոցիալական իրավունքներից 1. Ճշտեք, ինչ օգնություն կարող եք ստանալ Օրինակ՝ նպաստ, թոշակ, սոցիալական ծառայություններ կամ օգնություն արտակարգ իրավիճակներում։ 2. Ներկայացրեք դիմում Կարող եք դա անել e-social.am կայքի միջոցով կամ ձեր տարածքի սոցիալական բաժնում։ 3. Իրականացվում է դիմումի ուսումնասիրություն Նրանք ստուգում են ձեր փաստաթղթերը և տվյալները, որպեսզի որոշեն աջակցության իրավունքը։ 4. Ստացեք պատասխան Ձեզ կհայտնեն, արդյոք կարող եք օգտվել աջակցությունից և ինչ տեսակի օգնություն է հասանելի։ 5. Դիմումի մերժման դեպքում Եթե գտնում եք, որ մերժումը ոչ իրավաչափ է , կարող եք այն բողոքարկել օրենքով սահմանված կարգով։ Հիշեք․ Սոցիալական իրավունքները յուրաքանչյուր քաղաքացու պաշտպանված լինելու հիմնական երաշխիքն են։ Իրազեկված լինելը թույլ է տալիս օգտվել պետության կողմից սահմանված բոլոր հնարավորություններից։ Հիշեցում․ Շատերը չգիտեն, որ սոցիալական աջակցության մեծ մասը տրամադրվում է դիմումի հիման վրա։ Եթե դուք կամ ձեր ընտանիքը հայտնվել եք դժվար իրավիճակում, բայց դիմում չեք ներկայացնում, պետությունը չի կարող իմանալ և աջակցել։ Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_547667",
+    "question_armenian": "Ինչպե՞ս դիմել Սահմանադրական դատարան․ Ուղեցույց",
+    "question_english": "",
+    "source_url": "https://iravaban.net/547667.html",
+    "published": "2026-02-21",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/143723/latest"
+    ],
+    "expected_article_ids": [
+      "constitution-current-art-74"
+    ],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ Սահմանադրական դատարանի մասին սահմանադրական օրենքի 4-րդ գլուխը սահմանում է ՍԴ դիմելու ընթացակարգը։ Iravaban.net -ը նհերկայացնում է համապատասխան բաժինը։ ԳԼՈՒԽ 4 ՍԱՀՄԱՆԱԴՐԱԿԱՆ ԴԱՏԱՐԱՆ ԴԻՄԵԼԸ Հոդված 22. Սահմանադրական դատարանում գործի քննության առիթը 1, Սահմանադրական դատարանը գործը քննում է միայն համապատասխան դիմումի առկայության դեպքում: Հոդված 23. Սահմանադրական դատարան դիմելու իրավունքը 1. Սահմանադրությամբ և սույն օրենքով սահմանված կարգով Սահմանադրական դատարան կարող են դիմել Սահմանադրության 169-րդ հոդվածով նախատեսված մարմինները և անձինք: 2. Սահմանադրության 169-րդ հոդվածի 1-ին մասի 8-րդ կետում նշված դեպքում Սահմանադրական դատարան կարող են դիմել նաև իրավաբանական անձինք` Սահմանադրության 74-րդ հոդվածին համապատասխան: Հոդված 24. Դիմումին ներկայացվող ընդհանուր պահանջները 1. Դիմումը Սահմանադրական դատարան է ներկայացվում գրավոր՝ իրավասու անձի կողմից ստորագրված։ Դիմումը ներկայացվում է թղթային կամ էլեկտրոնային եղանակով: 2. Դիմումում նշվում են՝ 1) Սահմանադրական դատարանի անվանումը. 2) դիմողի անունը (իրավաբանական անձի դեպքում՝ անվանումը), հաշվառման (իրավաբանական անձի դեպքում՝ գտնվելու վայրի) կամ բնակության վայրի հասցեն, եթե այն տարբերվում է հաշվառման հասցեից. եթե դիմողը հանդես է գալիս ներկայացուցչի միջոցով՝ դիմողի ներկայացուցչի անունը, հաշվառման կամ բնակության վայրի հասցեն, եթե այն տարբերվում է հաշվառման հասցեից. 3) Սահմանադրության այն հոդվածը, որը Սահմանադրական դատարան դիմելու հիմք է հանդիսանում. 4) Սահմանադրական դատարան ներկայացվող խնդրանքը և դիմողի փաստարկները` Սահմանադրության համապատասխան նորմերին կատարված հղումներով. 5) Սահմանադրության 168-րդ հոդվածի 1-ին և 5-րդ կետերով նախատեսված դեպքերում այն պետական կամ տեղական ինքնակառավարման մարմնի անվանումը կամ պաշտոնատար անձի անունը, որն ընդունել է վիճարկվող ակտը. 6) դիմումին կցվող նյութերի ցանկը։ 3. Սույն օրենքի 68-րդ, 75-րդ և 79-րդ հոդվածներում նշված գործերով պատգամավորների ընդհանուր թվի առնվազն մեկ հինգերորդի կողմից ներկայացվող դիմումները պետք է համապատասխանեն դիմումին ներկայացվող ընդհանուր պահանջներին, ինչպես նաև պարունակեն անհրաժեշտ քանակի ստորագրություններ: Հոդված 25. Դիմումին կցվող նյութերը 1. Սահմանադրական դատարան ներկայացվող դիմումին կցվում են՝ 1) լիազորագիրը կամ ներկայացուցչի լիազորությունները հաստատող այլ փաստաթուղթ. 2) օտար լեզվով շարադրված բոլոր փաստաթղթերի՝ օրենքով սահմանված կարգով վավերացված հայերեն թարգմանությունը. 3) սույն օրենքով նախատեսված դեպքերում՝ դիմումի հիմնավորվածությունը հավաստող ապացույցները. 4) դիմողի հայեցողությամբ` գործին առնչվող այլ նյութեր: 2. Սույն օրենքի 69-րդ հոդվածում նշված գործերով դիմողը պարտավոր է Սահմանադրական դատարան ներկայացնել նաև՝ 1) օրենքով սահմանված չափով պետական տուրք վճարելու վերաբերյալ անդորրագիրը կամ միջնորդություն պետական տուրքի վճարումից ազատելու մասին. 2) ընդհանուր իրավասության կամ մասնագիտացված դատարանի այն վերջնական դատական ակտը, որով դիմողի նկատմամբ կիրառվել է նրա կողմից վիճարկվող օրենքի դրույթը. 3) դիմողի անձը հաստատող փաստաթղթի պատճենը. 4) իրավաբանական անձի պետական գրանցման կամ անհատ ձեռնարկատիրոջ պետական հաշվառման համարը. 5) որպես ներկայացուցիչ հանդես եկող փաստաբանի անձը հաստատող և փաստաբանի կարգավիճակի մասին հավաստող փաստաթղթի պատճենները. 6) որպես ներկայացուցիչ հանդես եկող` բարձրագույն իրավաբանական կրթություն ունեցող անձի` անձը հաստատող փաստաթղթի և բարձրագույն իրավաբանական կրթությունը հավաստող փաստաթղթի պատճենը: 3. Դիմումն ընդունվելուց հետո դիմող կողմի նոր նյութերն ընդունվում են միայն Սահմանադրական դատարանի աշխատակարգային որոշմամբ։ Սկզբնաղբյուր` http://www.parliament.am/legislation.php?sel=show&ID=6121&lang=arm Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_547712",
+    "question_armenian": "Որո՞նք են պետության քաղաքականության հիմնական նպատակները",
+    "question_english": "",
+    "source_url": "https://iravaban.net/547712.html",
+    "published": "2026-02-22",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/143723/latest"
+    ],
+    "expected_article_ids": [
+      "constitution-current-art-86"
+    ],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ Սահմանադրությամբ պետության քաղաքականության հիմնական նպատակներն ու դրանց իրագործումը։ Հոդված 89․ Պետության քաղաքականության հիմնական նպատակները Տնտեսական, սոցիալական և մշակութային ոլորտներում պետության քաղաքականության հիմնական նպատակներն են` 1) գործարար միջավայրի բարելավումը և ձեռնարկատիրության խթանումը. 2) բնակչության զբաղվածության խթանումը և աշխատանքի պայմանների բարելավումը. 3) բնակարանային շինարարության խթանումը. 4) կանանց և տղամարդկանց միջև փաստացի հավասարության խթանումը. 5) ծնելիության և բազմազավակության խթանումը. 6) երեխաների անհատականության լիակատար և բազմակողմանի զարգացման համար բարենպաստ պայմանների ստեղծումը. 7) բնակչության առողջության պահպանման և բարելավման ծրագրերի իրականացումը, արդյունավետ և մատչելի բժշկական սպասարկման պայմանների ստեղծումը. 8) հաշմանդամության կանխարգելման, բուժման, հաշմանդամների առողջության վերականգնման ծրագրերի իրականացումը, հասարակական կյանքին հաշմանդամների մասնակցության խթանումը. 9) սպառողների շահերի պաշտպանությունը, ապրանքների, ծառայությունների և աշխատանքների որակի նկատմամբ վերահսկողությունը. 10) տարածքային համաչափ զարգացումը. 11) ֆիզկուլտուրայի և սպորտի զարգացումը. 12) քաղաքական, տնտեսական և մշակութային կյանքին երիտասարդության մասնակցության խթանումը. 13) անվճար բարձրագույն և այլ մասնագիտական կրթության զարգացումը. 14) հիմնարար և կիրառական գիտության զարգացումը. 15) ազգային և համամարդկային արժեքներին յուրաքանչյուրի ազատ հաղորդակցմանը նպաստելը. 16) բարեգործության խթանումը` մշակութային, կրթական, գիտական, առողջապահական, մարզական, սոցիալական և այլ հաստատությունների հիմնադրման, ֆինանսավորման, ինչպես նաև դրանց ֆինանսական անկախության ապահովման նպատակով: Հոդված 87․ Պետության քաղաքականության հիմնական նպատակների իրագործումը 1. Պետական և տեղական ինքնակառավարման մարմիններն իրենց իրավասությունների և հնարավորությունների շրջանակում պարտավոր են իրագործել Սահմանադրության 86-րդ հոդվածով սահմանված նպատակները: 2. Կառավարությունը Սահմանադրության 156-րդ հոդվածով նախատեսված զեկույցի շրջանակներում տեղեկատվություն է ներկայացնում Սահմանադրության 86-րդ հոդվածով սահմանված նպատակների իրագործման վերաբերյալ: Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_564415",
+    "question_armenian": "53-ից բարձր կանայք չեն կարող զրկվել արհեստական բեղմնավորումից. ի՞նչ է որոշել Սահմանադրական դատարանը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/564415.html",
+    "published": "2026-07-14",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/143723/latest"
+    ],
+    "expected_article_ids": [
+      "constitution-current-art-31"
+    ],
+    "expected_hierarchy_level": "Constitution",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Սահմանադրական դատարանը 2025 թվականի ապրիլի 1-ին կայացրած որոշմամբ անվավեր ճանաչեց այն օրենսդրական դրույթը, որով վերարտադրողականության օժանդակ տեխնոլոգիաներից (ԱՕՏ, ժողովրդական լեզվով՝ արհեստական բեղմնավորում) օգտվելու համար սահմանված էր տարիքային սահմանափակում։ Ստորև Iravaban.net -ը ներկայացնում է որոշման էությունը՝ պարզ և հասկանալի լեզվով։ Ի՞նչ էր սահմանում վիճարկվող դրույթը «Մարդու վերարտադրողական առողջության և վերարտադրողական իրավունքների մասին» օրենքի 12-րդ հոդվածը սահմանում է, թե ով իրավունք ունի օգտվելու վերարտադրողականության օժանդակ տեխնոլոգիաներից։ Այդ դրույթով նախատեսված էր տարիքային շեմ, որից հետո անձը զրկվում էր ԱՕՏ-ից օգտվելու հնարավորությունից։ Հենց այս տարիքային սահմանափակումն էր, որ Մարդու իրավունքների պաշտպանը վիճարկեց Սահմանադրական դատարանում՝ գտնելով, որ այն անհամաչափորեն միջամտում է անձի մասնավոր և ընտանեկան կյանքի անձեռնմխելիության իրավունքին։ Ի՞նչ որոշեց Սահմանադրական դատարանը Սահմանադրական դատարանը 12-րդ հոդվածի 1-ին մասի 1-ին և 2-րդ կետերը՝ մարդու վերարտադրողական օժանդակ տեխնոլոգիաներից օգտվելու իրավունքի իրացման տարիքային սահմանափակում նախատեսելու մասով, ճանաչեց Սահմանադրության 31-րդ հոդվածի 1-ին մասին հակասող և անվավեր։ Սահմանադրության 31-րդ հոդվածը երաշխավորում է յուրաքանչյուրի՝ մասնավոր և ընտանեկան կյանքի անձեռնմխելիության իրավունքը։ Դատարանը փաստեց, որ ԱՕՏ-ից օգտվելու իրավունքն ընդգրկված է հենց այս սահմանադրական իրավունքի ծավալում։ Ինչո՞ւ դատարանը տարիքային շեմը համարեց անթույլատրելի Դատարանի պատճառաբանության առանցքային միտքն այն է, որ տարիքով պայմանավորված՝ վերարտադրողականության վրա ազդող հնարավոր ֆիզիոլոգիական փոփոխություններն իրենց բնույթով բացարձակ և անվերապահ չեն, հետևաբար՝ բոլորին ի սկզբանե բնորոշ չեն և յուրաքանչյուր դեպքում ենթակա են առանձին մասնագիտական գնահատման։ Այսինքն՝ դատարանը գտավ, որ սխալ է բոլորի համար միասնական տարիքային «պատնեշ» դնելը, երբ իրականում յուրաքանչյուր անձի առողջական վիճակը տարբեր է և պետք է գնահատվի անհատապես։ Ի՞նչ դեր ունեն բժշկական հակացուցումները Դատարանը շեշտեց, որ հնարավոր ֆիզիոլոգիական ռիսկերն արդյունավետ կառավարելու համար արդեն գործում է համապատասխան կառուցակարգ. Կառավարության 2013 թվականի N 214-Ն որոշումը սահմանում է ԱՕՏ-ի կիրառման հակացուցումները, դրանց ախտորոշման կարգը և համապատասխան ընթացակարգը։ Այս կառուցակարգով հնարավոր է համակողմանի հետազոտությամբ բացահայտել անձի մոտ առկա բժշկական հակացուցումները, այդ թվում՝ տարիքով պայմանավորված։ Ըստ դատարանի՝ եթե մարդը չունի հակացուցումներ, ապա միայն տարիքն ինքնին ԱՕՏ-ից օգտվելու համար սահմանադրաչափ սահմանափակում լինել չի կարող։ Բնական և «արհեստական» վերարտադրության համեմատությունը Դատարանը ուշագրավ զուգահեռ անցկացրեց. բնական ճանապարհով երեխա ունենալու դեպքում պետությունը ծնողի տարիքի հիմքով որևէ սահմանափակում չի կիրառում։ Դատարանն անընդունելի համարեց, որ նույն արդյունքին տանող՝ բնական և «արհեստական» ճանապարհներով վերարտադրության նկատմամբ պետությունը տարբերակված մոտեցում ցուցաբերի՝ բնականի դեպքում չեզոք մնալով, իսկ ԱՕՏ-ի դեպքում՝ առանց բավարար հիմքի սահմանափակելով։ Ե՞րբ է որոշումն ուժի մեջ մտել Որոշումը կայացվել է 2025 թվականի ապրիլի 1-ին, պաշտոնական հրապարակման օրը՝ 2025 թվականի ապրիլի 4-ը։ Համաձայն Սահմանադրության 170-րդ հոդվածի 2-րդ մասի՝ Սահմանադրական դատարանի որոշումը վերջնական է և ուժի մեջ է մտնում հրապարակման պահից։ Հաճախ տրվող հարցեր Ի՞նչ փոխվեց այս որոշումով: Վերարտադրողականության օժանդակ տեխնոլոգիաներից օգտվելու համար սահմանված տարիքային շեմը ճանաչվեց Սահմանադրությանը հակասող և անվավեր։ Այսինքն՝ տարիքն ինքնին այլևս չի կարող հիմք լինել ԱՕՏ-ից օգտվելը մերժելու համար։ Նշանակու՞մ է սա, որ ցանկացած տարիքում կարելի է օգտվել արհեստական բեղմնավորումից: Որոշումը վերացնում է բացառապես տարիքի հիմքով բացարձակ արգելքը։ Սակայն ԱՕՏ-ից օգտվելու հնարավորությունը շարունակում է կախված մնալ բժշկական հակացուցումների բացակայությունից. եթե առկա են համապատասխան հակացուցումներ, դրանք գնահատվում են յուրաքանչյուր դեպքում առանձին։ Այս սահմանափակումը միայն կանա՞նց էր վերաբերում: Օրենքի փոփոխված խմբագրությամբ տարիքային շեմ էր սահմանված ինչպես կանանց, այնպես էլ տղամարդկանց համար։ Դատարանն անդրադարձավ ԱՕՏ-ից օգտվելու տարիքային սահմանափակմանն ",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_528651",
+    "question_armenian": "Ի՞նչ պատիժ է սահմանվում ապօրինի աբորտ կատարելու համար․ անձը կարող է դատապարտվել մինչև 5 տարի ազատազրկման",
+    "question_english": "",
+    "source_url": "https://iravaban.net/528651.html",
+    "published": "2025-08-19",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176079/latest"
+    ],
+    "expected_article_ids": [
+      "criminal-code-art-174"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Համապատասխան բժշկական բարձրագույն կրթություն ունեցող անձի կողմից հղիության ապօրինի արհեստական ընդհատում (աբորտ) կատարելը պատժվում է տուգանքով` առավելագույնը քսանապատիկի չափով, կամ հանրային աշխատանքներով` 80-150 ժամ տևողությամբ, կամ որոշակի պաշտոններ զբաղեցնելու, որոշակի գործունեությամբ զբաղվելու իրավունքից զրկելով` առավելագույնը 3 տարի ժամկետով, կամ կարճաժամկետ ազատազրկմամբ` առավելագույնը 2 ամիս ժամկետով, կամ ազատազրկմամբ՝ առավելագույնը 1 տարի ժամկետով: ՀՀ քրեական օրենսգրքի 174-րդ հոդվածը նման արարքի կատարման համար պատժի հետևյալ տեսակներն է սահմանում՝ եթե արարք, որը 1) անզգուշությամբ առաջացրել է հանցագործությունից տուժած անձի մահ կամ այլ ծանր հետևանք կամ 2) կատարվել է մարդու սաղմը կամ պտուղը վերցնելու նպատակով` պատժվում է ազատազրկմամբ` մեկից չորս տարի ժամկետով: Համապատասխան բժշկական բարձրագույն կրթություն չունեցող անձի կողմից հղիության ապօրինի արհեստական ընդհատում (աբորտ) կատարելը` պատժվում է տուգանքով` տասնապատիկից երեսնապատիկի չափով, կամ հանրային աշխատանքներով` հարյուրից երկու հարյուր ժամ տևողությամբ, կամ կարճաժամկետ ազատազրկմամբ` մեկից երկու ամիս ժամկետով, կամ ազատազրկմամբ` առավելագույնը երեք տարի ժամկետով: 4. Սույն հոդվածի 3-րդ մասով նախատեսված արարքը, որը՝ 1) անզգուշությամբ առաջացրել է հանցագործությունից տուժած անձի մահ կամ այլ ծանր հետևանք կամ 2) կատարվել է մարդու սաղմը կամ պտուղը վերցնելու նպատակով` պատժվում է ազատազրկմամբ` 2-5 տարի ժամկետով: Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_531151",
+    "question_armenian": "Համակարգչային կեղծիք․ ի՞նչ ռիսկեր է այն պարունակում և ինչպիսի՞ պատիժ է սահմանված",
+    "question_english": "",
+    "source_url": "https://iravaban.net/531151.html",
+    "published": "2025-09-19",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176079/latest"
+    ],
+    "expected_article_ids": [
+      "criminal-code-art-364"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ քրեական օրենսգրքի 364-րդ հոդվածը սահմանում է պատասխանատվություն համակարգչային կեղծիք կատարելու համար։ Ի՞նչ է համարվում համակարգչային կեղծիք Հանցանք է համարվում՝ Իրավական հետևանքներ առաջացնելու նպատակով համակարգչային տվյալների ապօրինի մուտքագրումը, փոփոխումը, ջնջումը կամ տվյալներին հասանելիության արգելումը (մեկուսացումը) , որը հանգեցնում է ոչ հավաստի տվյալների ստեղծման։ Ի՞նչ պատիժ է նախատեսվում Նման արարքի համար սահմանված է ․ տուգանք՝ առավելագույնը 20-ապատիկի չափով , կամ հանրային աշխատանքներ՝ 80-150 ժամ , կամ որոշակի պաշտոն զբաղեցնելու կամ գործունեությամբ զբաղվելու իրավունքից զրկում՝ 2-5 տարի ժամկետով , կամ ազատության սահմանափակում՝ մինչև 2 տարի , կամ կարճաժամկետ ազատազրկում՝ մինչև 2 ամիս , կամ ազատազրկում՝ մինչև 2 տարի ։ Ծանրացուցիչ դեպքեր Եթե համակարգչային կեղծիքը կատարվել է ․ Իշխանական կամ ծառայողական լիազորությունները օգտագործելով, Մի խումբ անձանց կողմից՝ նախնական համաձայնությամբ, Արդյունքում առաջացրել է առանձնապես խոշոր չափերի գույքային վնաս, հիմնարկի գործունեության խաթարում, վթար, աղետ կամ այլ ծանր հետևանքներ, ապա պատիժը ավելի խիստ է ․ տուգանք՝ 20-50-ապատիկի չափով , կամ հանրային աշխատանքներ՝ 150-270 ժամ , կամ որոշակի պաշտոն զբաղեցնելու կամ գործունեությամբ զբաղվելու իրավունքից զրկում՝ 3-7 տարի ժամկետով , կամ ազատության սահմանափակում՝ 1-3 տարի , կամ կարճաժամկետ ազատազրկում՝ 1-2 ամիս , կամ ազատազրկում՝ 2-5 տարի ։ Հիշեցում Համակարգչային կեղծիքը ոչ միայն ֆինանսական վնաս է առաջացնում, այլ կարող է խաթարել կազմակերպությունների գործունեությունը և վտանգել անվտանգության համակարգերը։ Հավելյալ տեղեկությունների համար կարող եք այցելել Իրավաբան.net մասնագիտական առցանց մեդիա։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_549762",
+    "question_armenian": "ՀՀ սահմանով որքա՞ն կանխիկ գումար կարող եք տեղափոխել, ի՞նչ իրավունքներ ունեք և ի՞նչ պատասխանատվության միջոցների կարող եք ենթարկվել",
+    "question_english": "",
+    "source_url": "https://iravaban.net/549762.html",
+    "published": "2026-03-14",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176079/latest"
+    ],
+    "expected_article_ids": [
+      "criminal-code-art-291"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Շատ անձինք չգիտեն, որ սահմանով կանխիկ գումար տեղափոխելիս օրենքը նրանց վրա հայտարարագրման հստակ պարտականություն է դնում, իսկ այդ պարտականությունն անտեսելը կարող է հանգեցնել ոչ թե պարզ տուգանքի, այլ քրեական պատասխանատվության։ Պետական եկամուտների կոմիտեն մարտի 12-ին հայտարարեց, որ շարունակաբար ուժեղացվելու է սահմանով տեղափոխվող կանխիկ դրամական միջոցների նկատմամբ վերահսկողությունը՝ ֆինանսական թափանցիկության ապահովման և հնարավոր իրավախախտումների կանխարգելման նպատակով։ Ինչպես տեղեկացնում է Iravaban.net -ը, կարգավորումն ամրագրված է «Արժութային կարգավորման և արժութային վերահսկողության մասին», «Մաքսային կարգավորման մասին» ՀՀ օրենքներում, ինչպես նաև ՀՀ Քրեական օրենսգրքում, որոնք միասին ձևավորում են կանխիկ գումարի սահմանային վերահսկողության իրավական համակարգը։ Ո՞րն է ելակետային կանոնը «Արժութային կարգավորման և արժութային վերահսկողության մասին» ՀՀ օրենքի համաձայն՝ ռեզիդենտներն ու ոչ ռեզիդենտները կարող են առանց սահմանափակումների և առանց հայտարարագրման ՀՀ տարածք ներմուծել կամ ՀՀ տարածքից արտահանել արժութային արժեքներ, բացառությամբ նույն հոդվածի 2-րդ մասով նախատեսված դեպքերի։ Այսինքն՝ մինչև 10 000 ԱՄՆ դոլարին համարժեք գումարը ցանկացած ուղղությամբ կարող է ազատ տեղափոխվել՝ առանց որևէ հայտարարագրման։ Ըստ 5-րդ հոդվածի 2-րդ մասի՝ Կենտրոնական բանկն իրավունք ունի, ֆինանսական կայունությունն ապահովելու, ռիսկերը կանխարգելելու, ինչպես նաև փողերի լվացման և ահաբեկչության ֆինանսավորման դեմ պայքարի կամ վիճակագրական նպատակներով, սահմանել արժութային արժեքների փոխադրման, ներմուծման, արտահանման և հայտարարագրման կարգ ու պայմաններ։ Հենց այդ լիազորության հիման վրա էլ սահմանվել է 10 000 դոլարի շեմը, ինչն այնուհետև ամրագրվել է «Մաքսային կարգավորման մասին» ՀՀօրենքում։ Ե՞րբ է հայտարարագրումը պարտադիր «Մաքսային կարգավորման մասին» ՀՀ օրենքի համաձայն՝ 10 000 ԱՄՆ դոլարին համարժեք գումարը գերազանցող կանխիկ դրամական միջոցների կամ վճարային գործիքների ՀՀ պետական սահմանով կամ Եվրասիական տնտեսական միության մաքսային սահմանով տեղափոխումը, որն իրականացվել է դրանց մասին հավաստի տեղեկությունը սահմանված կարգով չհայտարարագրելու կամ ոչ իր անվամբ հայտարարագրելու միջոցով, մաքսանենգություն է, որն ունի քրեական հետևանք։ Ուշադրություն. «վճարային գործիքներ» հասկացության մեջ ներառվում են ճանապարհային չեկերը, մուրհակները, բանկային չեկերը, ըստ ներկայացնողի փաստաթղթային արժեթղթերը, ինչը նշանակում է, որ կանոնը կիրառվում է ոչ միայն կանխիկ թղթադրամների, այլ նաև վճարային այլ գործիքների նկատմամբ։ Ի՞նչ քրեական հետևանք կա հայտարարագիր չներկայացնելու դեպքում ՀՀ քրեական օրենսգրքի 291-րդ հոդվածի 1-ին մասի համաձայն՝ կանխիկ դրամական միջոցների մաքսանենգությունը, որ կատարվել է խոշոր չափերով, պատժվում է տուգանքով, հանրային աշխատանքներով, որոշակի գործունեությամբ զբաղվելու իրավունքից զրկելով, ազատության սահմանափակմամբ կամ ազատազրկմամբ՝ առավելագույնը 3 տարի ժամկետով։ Նույն հոդվածի 2-րդ մասի համաձայն՝ եթե արարքը կատարվել է պաշտոնեական լիազորություններ օգտագործելով, մի խումբ անձանց կողմից կամ առանձնապես խոշոր չափերով, ապա ազատազրկման ժամկետը կազմում է 2-5 տարի, իսկ եթե արարքը կատարվել է հանցավոր կազմակերպության կողմից՝ 3-6 տարի։ Ո՞րն է համարվում «խոշոր չափ». Օրենսգրքի 291-րդ հոդվածի 4-րդ մասի համաձայն՝ արարքը «խոշոր չափերով» կատարված է, եթե անօրինական տեղափոխված գումարը գերազանցում է հայտարարագրման շեմի կրկնապատիկը, այսինքն՝ 20 000 ԱՄՆ դոլարին համարժեք գումարը, իսկ «առանձնապես խոշոր չափ» է, եթե գումարն անցնում է շեմի հնգապատիկը, այսինքն՝ 50 000 ԱՄՆ դոլարը։ Ի՞նչ է ցույց տալիս վիճակագրությունը ՊԵԿ-ի հայտարարության համաձայն՝ 2026 թվականի հունվար-փետրվար ամիսներին ֆիզիկական անձանց կողմից կանխիկ դրամական միջոցների ներմուծման և արտահանման ավելի քան 450 դեպք է արձանագրվել կամ հայտարարագրվել՝ շուրջ 69 մլն ԱՄՆ դոլարին համարժեք գումարի չափով։ Դրանցից շուրջ 59.5 մլն ԱՄՆ դոլարի չափով կանխիկ ներմուծվել է ՀՀ, իսկ 9.5 մլն ԱՄՆ դոլարի չափով արտահանվել երկրից։ ՊԵԿ-ն ընդգծում է, որ կանխիկ դրամական միջոցների զգալի մասը տեղափոխվել է Եվրասիական տնտեսական միության անդամ պետություններից։ Կոմիտեն նաև հատուկ նշում է, որ թեև ԵԱՏՄ շրջանակում կանխիկ ներմուծման ու արտահանման վերաբերյալ առանձին կարգավորումներ սահմանված չեն, այնուամենայնիվ, մեծած",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_514633",
+    "question_armenian": "Ի՞նչ կարգով են լուծվում աշխատանքային վեճերը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/514633.html",
+    "published": "2025-03-23",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-265"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքային վեճերը ենթակա են քննության դատական կարգով` ՀՀ քաղաքացիական դատավարության օրենսգրքով սահմանված կարգով: Կոլեկտիվ աշխատանքային վեճերը լուծվում են ՀՀ աշխատանքային օրենսգրքով սահմանված կարգով: Աշխատանքային վեճերը, ՀՀ քաղաքացիական դատավարության օրենսգրքի և «Առևտրային արբիտրաժի մասին» ՀՀ օրենքի պահանջներին համապատասխան, կարող են հանձնվել արբիտրաժային տրիբունալի լուծմանը, եթե աշխատողի և գործատուի միջև կնքվել է համաձայնություն, կամ կոլեկտիվ պայմանագրով նախատեսված է վեճն արբիտրաժին հանձնելու հնարավորություն։ ՀՀ աշխատանքային օրենսգրքի 265-րդ հոդվածով նախատեսված աշխատանքային վեճերը կարող են հանձնվել արբիտրաժային տրիբունալի լուծմանը նույն հոդվածով սահմանված ժամկետում։ Արբիտրաժային համաձայնությունը չի սահմանափակում աշխատողի աշխատանքային պայմանագրից բխող վեճը դատարան հանձնելու իրավունքը, բացառությամբ եթե արբիտրաժային համաձայնությունը կնքվել է վեճը ծագելուց հետո, և կողմերն անվերապահորեն համաձայնել են վեճը հանձնել արբիտրաժային տրիբունալի լուծմանը: Իրավաբան.net",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_528940",
+    "question_armenian": "Գործատուն իր նախաձեռնությամբ ո՞ր դեպքերում չի կարող լուծել աշխատանքային պայմանագիրը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/528940.html",
+    "published": "2025-08-23",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-113",
+      "labor-code-art-124"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքային պայմանագրի լուծումը գործատուի նախաձեռնությամբ արգելվում է` 1) աշխատողի ժամանակավոր անաշխատունակության ժամանակահատվածում, բացառությամբ ՀՀ աշխատանքային օրենսգրքի 113-րդ հոդվածի 1-ին մասի 7-րդ կետով նախատեսված դեպքերի, 2) աշխատողի արձակուրդում գտնվելու ժամանակահատվածում, 2.1) հղի կանանց հետ` հղիության մասին գործատուին տեղեկանք ներկայացնելու օրվանից մինչև հղիության և ծննդաբերության արձակուրդի ավարտման օրվանից հետո մեկ ամիսը լրանալը. 2.2) երեխային փաստացի խնամող՝ արձակուրդում չգտնվող անձի՝ մինչև մեկ տարեկան երեխա խնամելու ամբողջ ժամանակահատվածում, բացառությամբ ՀՀ աշխատանքային օրենսգրքի 113-րդ հոդվածի 1-ին մասի 1-ին, 5-րդ, 6-րդ, 8-րդ և 10-րդ կետերով նախատեսված դեպքերի. 3) գործադուլ հայտարարելու մասին որոշումն ընդունելուց հետո և գործադուլի ընթացքում, եթե աշխատողն այդ գործադուլին մասնակցում է ՀՀ աշխատանքային օրենսգրքով սահմանված կարգով, 4) պետական կամ տեղական ինքնակառավարման մարմինների կողմից աշխատողի վրա դրված պարտականությունների կատարման ժամանակահատվածում, բացառությամբ ՀՀ աշխատանքային օրենսգրքի 124-րդ հոդվածի 1-ին մասով նախատեսված դեպքերի, 5) տարերային աղետների, տեխնոլոգիական վթարների, համաճարակների, դժբախտ պատահարների, հրդեհների և արտակարգ բնույթ կրող այլ դեպքերի կանխարգելման կամ դրանց հետևանքների անհապաղ վերացման ժամանակահատվածում, եթե, այդ դեպքերով պայմանավորված, աշխատողը չի ներկայացել աշխատանքի. 6) ուսումնական (այդ թվում՝ նախադպրոցական) հաստատությունների համար նախատեսված արձակուրդների չպլանավորված տեղափոխման կամ չպլանավորված տրամադրման ժամանակահատվածում, եթե մինչև տասներկու տարեկան երեխայի խնամքը կազմակերպելու նպատակով աշխատողը չի ներկայացել աշխատանքի: Կազմակերպության լուծարման (անհատ ձեռնարկատիրոջ գործունեության դադարման) հետևանքով աշխատանքային պայմանագիրը լուծելիս չեն կիրառվում 114-րդ հոդվածի 1-ին մասով նախատեսված սահմանափակումները: Իրավաբան.net",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_558270",
+    "question_armenian": "Աշխատանքային պայմանագիրը կողմերի համաձայնությամբ լուծելու կարգ՝ ի՞նչ ընթացակարգ է սահմանված և ի՞նչ ժամկետներ են նախատեսված",
+    "question_english": "",
+    "source_url": "https://iravaban.net/558270.html",
+    "published": "2026-05-24",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-110"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ աշխատանքային օրենսգրքի 110-րդ հոդվածի համաձայն՝ կողմերի համաձայնությամբ աշխատանքային պայմանագիրը լուծելիս աշխատանքային պայմանագրի մի կողմը գրավոր ձևով առաջարկում է մյուս կողմին լուծելու պայմանագիրը։ Սակայն շատերը չգիտեն, որ օրենքը սահմանում է հստակ ժամկետներ և ընթացակարգեր այս գործընթացի համար։ Ինչպես տեղեկացնում է Iravaban.net – ը , ՀՀ աշխատանքային օրենսգրքի 110-րդ հոդվածը սահմանում է աշխատանքային պայմանագրի լուծման ընթացակարգը կողմերի համաձայնությամբ, համաձայնության տալու ժամկետը և առաջարկի մերժման հետևանքները։ Առաջարկի ներկայացման կարգը ՀՀ աշխատանքային օրենսգրքի 110-րդ հոդվածի 1-ին մասի համաձայն՝ կողմերի համաձայնությամբ աշխատանքային պայմանագիրը լուծելիս աշխատանքային պայմանագրի մի կողմը գրավոր ձևով առաջարկում է մյուս կողմին լուծելու պայմանագիրը։ Համաձայնության տալու ժամկետը Առաջարկի հետ համաձայնվելու դեպքում մյուս կողմը պետք է յոթ օրվա ընթացքում իր համաձայնության մասին ծանուցի առաջարկ ներկայացրած կողմին։ Համաձայնագրի կնքումը Եթե կողմերը համաձայնվում են լուծել պայմանագիրը, ապա այդ մասին կնքում են գրավոր համաձայնագիր, որում նշվում են պայմանագրի լուծման ժամկետը և այլ պայմաններ (հատուցումներ և այլն)։ Առաջարկի մերժումը ՀՀ աշխատանքային օրենսգրքի 110-րդ հոդվածի 2-րդ մասի համաձայն՝ եթե պայմանագիրը լուծելու առաջարկություն ստացած կողմը սույն հոդվածի 1-ին մասով նախատեսված ժամկետում չի ծանուցում պայմանագիրը լուծելու իր համաձայնության մասին, ապա աշխատանքային պայմանագրի լուծման մասին առաջարկը համարվում է մերժված։ Ամփոփելով, պետք է նշել, որ աշխատանքային պայմանագիրը կողմերի համաձայնությամբ լուծելու համար մի կողմը պետք է գրավոր առաջարկ ներկայացնի մյուս կողմին։ Առաջարկ ստացած կողմը յոթ օրվա ընթացքում պետք է ծանուցի իր համաձայնության մասին։ Համաձայնության դեպքում կողմերը կնքում են գրավոր համաձայնագիր՝ նշելով լուծման ժամկետը և այլ պայմանները։ Եթե յոթ օրվա ընթացքում պատասխան չի տրվում, առաջարկը համարվում է մերժված՝ տեղեկացնում է Iravaban.net – ը ։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_564889",
+    "question_armenian": "Ո՞ր աշխատանքային տարիներն են համարվում մասնագիտական ստաժ․ օրենքի 4 կարևոր տարբերակումները",
+    "question_english": "",
+    "source_url": "https://iravaban.net/564889.html",
+    "published": "2026-07-19",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-20"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Iravaban.net –ի փոխանցմամբ՝ աշխատանքային ստաժը շատերի համար պարզապես աշխատանքի անցնելուց մինչև աշխատանքից դուրս գալու տարիների հաշվարկն է։ Սակայն օրենքը տարբերակում է աշխատանքային ստաժի մի քանի տեսակներ, և աշխատած տարիների իրավական նշանակությունը կարող է տարբեր լինել՝ կախված նրանից, թե ինչ աշխատանք է կատարվել, ինչ մասնագիտությամբ, ինչ գործատուի մոտ և ինչ ընդմիջումներով։ Այսինքն՝ 10 տարի աշխատած լինելը դեռ չի նշանակում, որ այդ 10 տարիները բոլոր դեպքերում նույն կերպ են հաշվարկվելու ։ ՀՀ աշխատանքային օրենսգրքի 20-րդ հոդվածը սահմանում է աշխատանքային ստաժի հիմնական տեսակները։ Ի՞նչ է աշխատանքային ստաժը Աշխատանքային ստաժը այն ժամանակահատվածն է, որի ընթացքում քաղաքացին գտնվել է աշխատանքային հարաբերությունների մեջ։ Սակայն աշխատանքային ստաժ կարող են ներառվել նաև այլ ժամանակահատվածներ, եթե դա նախատեսված է նորմատիվ իրավական ակտերով կամ կոլեկտիվ պայմանագրերով։ Ինչո՞ւ է սա կարևոր։ Քանի որ որոշակի աշխատանքային իրավունքներ, լրացուցիչ երաշխիքներ և արտոնություններ կարող են պայմանավորված լինել հենց աշխատանքային ստաժի առկայությամբ կամ դրա տևողությամբ։ Այս դեպքում առաջանում է հիմնական հարցը՝ ի՞նչ ստաժ է անհրաժեշտ կոնկրետ իրավունքի կամ երաշխիքի համար ։ 1. Ընդհանուր աշխատանքային ստաժ Ընդհանուր աշխատանքային ստաժում հաշվարկվում է քաղաքացու՝ աշխատանքային հարաբերությունների մեջ գտնվելու ամբողջ ժամանակահատվածը։ Այսինքն՝ հիմնականում հաշվարկվում է անձի ընդհանուր աշխատանքային գործունեության ժամանակը։ Անձը կարող է աշխատել տարբեր գործատուների մոտ, տարբեր կազմակերպություններում և տարբեր ոլորտներում։ Այդ աշխատանքային ժամանակահատվածները կարող են հաշվարկվել ընդհանուր աշխատանքային ստաժում՝ օրենքով սահմանված կարգով։ Այս դեպքում հիմնական հարցը հետևյալն է՝ որքա՞ն ժամանակ է անձը գտնվել աշխատանքային հարաբերությունների մեջ ։ 2. Մասնագիտական աշխատանքային ստաժ Մասնագիտական ստաժի դեպքում միայն աշխատած տարիները բավարար չեն։ Այստեղ կարևոր է նաև՝ արդյոք կատարված աշխատանքը համապատասխանում է անձի մասնագիտությանը կամ որակավորմանը ։ Օրենքի համաձայն՝ մասնագիտական աշխատանքային ստաժում հաշվարկվում է այն աշխատանքային ստաժը, որը համապատասխանում է անձի մասնագիտական կամ բարձրագույն կրթությանը։ Եթե տվյալ պաշտոնի նկարագրով նախատեսված է որոշակի մասնագիտական կամ բարձրագույն կրթություն, ապա հաշվի է առնվում այդ կրթությունը հավաստող փաստաթղթում նշված որակավորմանը կամ մասնագիտությանը համապատասխանող աշխատանքային ստաժը։ Օրինակ՝ անձը կարող է ունենալ իրավաբանական կրթություն, սակայն տարիներ շարունակ աշխատել այնպիսի աշխատանքում, որը չի համապատասխանում իր մասնագիտությանը։ Այս դեպքում հարց է առաջանում՝ այդ ամբողջ աշխատանքային ժամանակահատվածը մասնագիտական ստա՞ժ է համարվում ։ Պատասխանը կախված է տվյալ աշխատանքի և անձի ստացած կրթության կամ որակավորման համապատասխանությունից։ Օրենքը նաև սահմանում է, որ մասնագիտական աշխատանքային ստաժը ներառում է համապատասխան որակավորում ստանալուց հետո աշխատած ժամանակահատվածը։ Պետակա՞ն, թե՞ մասնավոր ոլորտ․ տարբերություն չկա Մասնագիտական ստաժի հաշվարկման համար աշխատանքի պետական կամ մասնավոր ոլորտում կատարված լինելը ինքնին որոշիչ չէ։ Այսինքն՝ եթե անձը իր մասնագիտությանը կամ որակավորմանը համապատասխան աշխատանք է կատարել մասնավոր կազմակերպությունում, այդ աշխատանքային ժամանակահատվածը կարող է հաշվարկվել մասնագիտական ստաժում։ Նույնը վերաբերում է պետական ոլորտում կատարված աշխատանքին։ Այսպիսով, հարցը ոչ թե այն է՝ որտե՞ղ է անձը աշխատել , այլ՝ ինչպիսի՞ աշխատանք է կատարել և արդյոք այն համապատասխանում է իր մասնագիտությանը կամ որակավորմանը ։ 3. Միևնույն գործատուի մոտ աշխատանքային ստաժ Օրենքը առանձնացնում է նաև որոշակի կազմակերպությունում կամ միևնույն գործատուի մոտ աշխատանքային ստաժը։ Այս դեպքում հաշվարկվում է տվյալ աշխատատեղում աշխատած ժամանակահատվածը։ Այս տեսակի ստաժը կարող է նշանակություն ունենալ այն դեպքերում, երբ որևէ աշխատանքային իրավունք կամ լրացուցիչ երաշխիք կապված է կոնկրետ գործատուի մոտ աշխատած ժամանակի հետ։ Այսինքն՝ հնարավոր է, որ անձը ընդհանուր առմամբ 15 տարվա աշխատանքային ստաժ ունենա, սակայն տվյալ իրավունքի համար կարևոր լինի, թե այդ տարիներից քանի՞սն է աշխատել նույն գործատուի մոտ։ 4. Աշխատանքը փոխելու դեպքում ստաժը միշտ չէ, որ խզվում է Օրենքը սահմանում է նաև անընդմեջ աշխատանքային",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565430",
+    "question_armenian": "Աշխատանքից ազատվելիս ի՞նչ վճարումներ է պարտավոր կատարել գործատուն",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565430.html",
+    "published": "2026-07-25",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-130",
+      "labor-code-art-214"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Աշխատանքից ազատվելիս աշխատողի իրավունքները դրամական հստակ արտահայտություն ունեն. օրենսգիրքը սահմանում է վերջնահաշվարկի ժամկետը, արձակման նպաստի չափը՝ ըստ ազատման հիմքի և աշխատած տարիների, ինչպես նաև գործատուի պատասխանատվությունը ծանուցման ժամկետները չպահպանելու համար։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումները սահմանված են ՀՀ աշխատանքային օրենսգրքի 129-րդ, 130-րդ, 115-րդ և 214-րդ հոդվածներով։ Ե՞րբ պետք է կատարվի վերջնահաշվարկը Օրենսգրքի 130-րդ հոդվածի 1-ին մասով գործատուն պարտավոր է աշխատողի հետ կատարել լրիվ վերջնահաշվարկ հենց աշխատանքային պայմանագրի լուծման օրը, եթե օրենսգրքով, օրենքով կամ կողմերի համաձայնությամբ այլ կարգ նախատեսված չէ։ 2-րդ մասով վերջնահաշվարկի օրը վճարվում են աշխատավարձը և դրան հավասարեցված այլ վճարումները։ Եթե դա գործատուից անկախ պատճառներով հնարավոր չէ, վճարումները կատարվում են աշխատողի պահանջը ներկայացնելուց հետո՝ հինգ աշխատանքային օրվա ընթացքում։ Իսկ 3-րդ մասով աշխատողի ցանկությամբ գործատուն պարտավոր է տրամադրել տեղեկանք աշխատանքային գործառույթների, աշխատավարձի, վճարված հարկերի և աշխատանքի գնահատականի վերաբերյալ։ Որքա՞ն է արձակման նպաստը Օրենսգրքի 129-րդ հոդվածի 1-ին մասով նպաստի չափը կախված է ազատման հիմքից։ Գործատուի լուծարման, աշխատողների քանակի կամ հաստիքների կրճատման և աշխատողին նախկին աշխատանքում վերականգնելու դեպքերում (113-րդ հոդվածի 1-ին մասի 1-ին, 2-րդ և 4-րդ կետեր) նպաստը կազմում է մեկ ամսվա միջին աշխատավարձ։ Զբաղեցրած պաշտոնին չհամապատասխանելու և երկարատև անաշխատունակության (113-րդ հոդվածի 1-ին մասի 3-րդ և 7-րդ կետեր), ինչպես նաև աշխատանքի էական պայմանները փոփոխվելու և պարտադիր զինվորական ծառայության զորակոչվելու դեպքերում նպաստը հաշվարկվում է ըստ տվյալ գործատուի մոտ անընդմեջ ստաժի՝ միջին օրական աշխատավարձի. – մինչև մեկ տարի աշխատելու դեպքում՝ տասնապատիկը. – մեկից մինչև հինգ տարի՝ քսանհինգապատիկը. – հինգից մինչև տասը տարի՝ երեսնապատիկը. – տասից մինչև տասնհինգ տարի՝ երեսունհինգապատիկը. – տասնհինգ տարի և ավելի՝ քառասունչորսապատիկը։ 129-րդ հոդվածի 2-րդ մասով պայմանագրով կամ կողմերի գրավոր համաձայնությամբ կարող է սահմանվել ավելի մեծ չափ։ Հոդվածի ցանկը սպառիչ է. սեփական նախաձեռնությամբ հեռանալիս, կողմերի համաձայնությամբ պայմանագիրը լուծելիս, ինչպես նաև կարգապահական հիմքերով ազատվելիս արձակման նպաստ չի վճարվում։ 101-րդ հոդվածի 4-րդ մասով նպաստ չի վճարվում նաև ժամանակավոր աշխատանքային պայմանագիրը լուծվելու դեպքում։ Ծանուցման ժամկետները և տուժանքը 115-րդ հոդվածի 1-ին մասով լուծարման և հաստիքների կրճատման դեպքերում գործատուն պարտավոր է գրավոր ծանուցել ոչ ուշ, քան երկու ամիս առաջ։ Պաշտոնին չհամապատասխանելու և երկարատև անաշխատունակության հիմքերով ժամկետը կախված է աշխատած ժամանակից՝ մինչև մեկ տարի աշխատողին 14 օր, մեկից հինգ տարի՝ 35 օր, հինգից տասը՝ 42 օր, տասից տասնհինգ՝ 49 օր, տասնհինգ տարուց ավելի աշխատողին՝ 60 օր առաջ։ Ամենակարևորը 2-րդ մասն է. ժամկետները չպահպանելու դեպքում գործատուն պարտավոր է վճարել տուժանք՝ ծանուցման յուրաքանչյուր ժամկետանց օրվա համար՝ աշխատողի միջին օրական աշխատավարձի չափով։ 4-րդ մասով ծանուցման ժամանակահատվածում գործատուն պետք է աշխատողին տրամադրի ազատ ժամանակ նոր աշխատանք փնտրելու համար՝ ոչ պակաս, քան այդ ժամանակահատվածի աշխատաժամանակի տասը տոկոսը, ընդ որում պահպանվում է միջին աշխատավարձը։ Ի՞նչ կարող է պահել գործատուն 213-րդ հոդվածի 2-րդ մասով գործատուին ունեցած պարտքերը մարելու համար կարող են պահվել աշխատավարձի հաշվին տրված կանխավճարը, մեխանիկական սխալի հետևանքով ավել վճարումները, գործուղման կանխավճարի չծախսված գումարը, աշխատողի մեղքով պատճառված վնասի հատուցումը և չաշխատած օրերի համար վճարված արձակուրդային գումարը։ 3-րդ մասով չի թույլատրվում պահել օրենքի սխալ կիրառմամբ ավել վճարված աշխատավարձը՝ բացառությամբ մեխանիկական սխալների։ 214-րդ հոդվածով պահումների ընդհանուր չափը չի կարող գերազանցել մեկ ամսվա աշխատավարձի հիսուն տոկոսը, և մնացորդը չի կարող պակաս լինել նվազագույն աշխատավարձի՝ 75.000 դրամի չափից։ Հաճախ տրվող հարցեր Եթե ես ինքս եմ դիմում գրում, արձակման նպաստ կստանա՞մ։ Ոչ։ 129-րդ հոդվածի ցանկը սպառիչ է, և սեփական նախաձեռնությամբ ազատվելը դրանում ներառված չէ։ Նպաստ չի վճարվում նաև կողմերի համաձայնությամբ պայմանագիրը լուծելիս և ժամանակավոր աշխատանքա",
+    "difficulty": "medium",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565502",
+    "question_armenian": "Չօգտագործված արձակուրդի փոխարեն կարո՞ղ եք գումար ստանալ",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565502.html",
+    "published": "2026-07-25",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-170"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Տարածված պատկերացումն այն է, որ չօգտագործված արձակուրդը կարելի է «փողի վերածել»։ Օրենսգիրքն այլ բան է սահմանում. արձակուրդի փոխարինումը դրամական հատուցմամբ որպես կանոն արգելված է, և հատուցում վճարվում է միայն աշխատանքային պայմանագիրը լուծելիս՝ որոշակի պայմաններում։ Ինչպես տեղեկացնում է Iravaban.net – ը, համապատասխան կարգավորումները սահմանված են ՀՀ աշխատանքային օրենսգրքի 159-րդ, 163-րդ, 167-րդ, 168-րդ, 169-րդ և 170-րդ հոդվածներով։ Ընդհանուր կանոնը՝ արձակուրդը գումարով չի փոխարինվում Օրենսգրքի 170-րդ հոդվածի 1-ին մասի առաջին նախադասությունը հստակ է. ամենամյա արձակուրդի փոխարինումը դրամական հատուցմամբ չի թույլատրվում։ Այսինքն՝ աշխատանքը շարունակելու ընթացքում աշխատողը չի կարող հրաժարվել արձակուրդից՝ դրա փոխարեն գումար ստանալու պայմանով, և գործատուն էլ իրավունք չունի նման առաջարկ անել։ Ե՞րբ է վճարվում դրամական հատուցում Բացառությունը վերաբերում է աշխատանքային հարաբերությունների ավարտին։ Նույն 170-րդ հոդվածի 1-ին մասով, եթե պայմանագրի լուծման հետևանքով արձակուրդի իրավունք ձեռք բերած աշխատողին արձակուրդ չի կարող տրամադրվել, կամ աշխատողն ինքը չի ցանկանում դրա տրամադրումը, ապա նրան վճարվում է դրամական հատուցում։ 2-րդ մասով հատուցումը վճարվում է աշխատանքային պայմանագիրը լուծելիս, չափը որոշվում է տվյալ ժամանակահատվածի համար տրամադրման ենթակա արձակուրդի չօգտագործված օրերի քանակով, և հատուցումը վճարվում է չօգտագործված բոլոր արձակուրդների համար։ Այսինքն՝ նախորդ տարիների կուտակված օրերը ևս ենթակա են հատուցման։ 1.1-ին մասով առանձին կատեգորիաների համար հատուցումը վճարվում է ուղղակիորեն. օրենսգրքի 100-րդ կամ 101-րդ հոդվածով սահմանված ժամկետներով կնքված պայմանագրերով, ինչպես նաև մինչև վեց ամիս աշխատած աշխատողների հետ պայմանագիրը լուծվելու դեպքում։ Այլընտրանքը՝ ազատման ամսաթիվը տեղափոխելը Հատուցումը միակ ճանապարհը չէ։ 168-րդ հոդվածով աշխատանքից ազատվելիս չօգտագործված ամենամյա արձակուրդն այդ իրավունքը ձեռք բերած աշխատողի ցանկությամբ տրամադրվում է ազատման տարին, ամիսը և ամսաթիվը տեղափոխելու միջոցով։ Այդ դեպքում աշխատանքից ազատման օր է համարվում արձակուրդի ժամկետի ավարտին հաջորդող օրը։ Այս տարբերակի գործնական տարբերությունն այն է, որ աշխատանքային հարաբերությունները երկարում են՝ մինչև արձակուրդի ավարտը։ 168-րդ հոդվածը սահմանում է նաև բացառություններ. ազատման ամսաթիվը տեղափոխելու կանոնը չի կիրառվում գործատուի լուծարման, պարտականությունները պարբերաբար չկատարելու և վստահությունը կորցնելու հիմքերով ազատման դեպքերում (113-րդ հոդվածի 1-ին մասի 1-ին, 5-րդ և 6-րդ կետեր), ինչպես նաև դատավճռի առկայության, որոշակի աշխատանքներ կատարելու իրավունքներից զրկվելու, աշխատողի մահվան, աշխատանքի ընդունվելիս կեղծ տեղեկատվություն ներկայացնելու և իրավունքներից զրկված լինելու փաստը թաքցնելու դեպքերում (109-րդ հոդվածի 1-ին մասի 6-րդ, 7-րդ, 11-րդ, 12-րդ և 13-րդ կետեր)։ Ինչպե՞ս է հաշվարկվում գումարը 169-րդ հոդվածի 1-ին մասով ամենամյա արձակուրդի համար գործատուն վճարում է միջին աշխատավարձ, որը հաշվարկվում է աշխատողի միջին օրական աշխատավարձը տրամադրվող արձակուրդի օրերի թվով բազմապատկելու միջոցով։ Իսկ թե քանի օրվա մասին է խոսքը, սահմանում է 159-րդ հոդվածի 1-ին մասը. ամենամյա նվազագույն արձակուրդի տևողությունը հնգօրյա աշխատանքային շաբաթվա դեպքում 20 աշխատանքային օր է, իսկ վեցօրյա շաբաթվա դեպքում՝ 24 աշխատանքային օր։ Արձակուրդի իրավունքը չի կորչում Սա այն դրույթն է, որը շատերին անհայտ է։ 167-րդ հոդվածի 4-րդ մասով աշխատողը պահպանում է ամենամյա արձակուրդի իրավունքը նույնիսկ այն դեպքում, երբ արձակուրդը նրան չի տրամադրվել օրենսգրքով սահմանված ժամկետներում և կարգով։ Ավելին, 5-րդ մասով, եթե տեղափոխված արձակուրդը կամ դրա մասը չի տրամադրվել 3-րդ մասով սահմանված՝ 18 ամսվա ժամկետում, գործատուն պարտավոր է կետանցված յուրաքանչյուր օրվա համար վճարել տուժանք՝ աշխատողի միջին ամսական աշխատավարձի 0,15 տոկոսի չափով, բայց ոչ ավելի, քան միջին ամսական աշխատավարձը։ Բացառություն են այն դեպքերը, երբ չտրամադրելը պայմանավորված է եղել աշխատողի՝ մինչև երեք տարեկան երեխայի խնամքի արձակուրդում գտնվելով կամ 167-րդ հոդվածի 1-ին մասի 3-րդ և 4-րդ կետերով նախատեսված հանգամանքներով։ Կարևոր է նաև իմանալ, որ 164-րդ հոդվածի 10-րդ մասով, եթե աշխատողը երկուսուկես աշխատանքային տարի անընդմեջ խուսափում է արձակուրդն օգտագործելո",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_565867",
+    "question_armenian": "Շոգին լրացուցիչ ընդմիջում հասնո՞ւմ է. ի՞նչ է սահմանում աշխատանքային օրենսգիրքը",
+    "question_english": "",
+    "source_url": "https://iravaban.net/565867.html",
+    "published": "2026-07-29",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176082/latest"
+    ],
+    "expected_article_ids": [
+      "labor-code-art-153"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Ամառային շոգին կամ ձմեռային ցրտին բացօթյա կամ չօդափոխվող տարածքում աշխատելը հաճախ ուղեկցվում է հարցով՝ արդյոք աշխատողն իրավունք ունի լրացուցիչ հանգստի։ Օրենսգիրքն այս իրավիճակի համար նախատեսում է առանձին տեսակի ընդմիջում, որի կարգավիճակը տարբերվում է սովորական ընդմիջումից։ Ինչպես տեղեկացնում է Iravaban.net -ը, համապատասխան կարգավորումը սահմանված է ՀՀ աշխատանքային օրենսգրքի 153-րդ հոդվածով։ Ե՞րբ է գործատուն պարտավոր տրամադրել հատուկ ընդմիջում Աշխատանքային օրենսգրքի 153-րդ հոդվածի 3-րդ մասով հատուկ ընդմիջումներ պետք է տրամադրվեն, եթե աշխատանքը կատարվում է՝ պլյուս 40 աստիճան ցելսիուսից բարձր օդի ջերմաստիճանային պայմաններում, մինուս 10 աստիճան ցելսիուսից ցածր օդի ջերմաստիճանային պայմաններում, ծանր ֆիզիկական կամ մտավոր և հուզական գերլարված բնույթ կրող պայմաններում, այն դեպքերում, երբ աշխատավայրում վնասակար գործոնների սահմանային թույլատրելի մակարդակը տեխնիկական կամ այլ պատճառներով հնարավոր չէ իջեցնել աշխատողների առողջության և անվտանգության մասին իրավական ակտերով սահմանված՝ առողջության համար անվտանգ մակարդակի։ Ուշադրություն դարձրեք ձևակերպմանը. օրենսգրքի հոդվածն ասում է «պետք է տրամադրվեն», ոչ թե «կարող են տրամադրվել»։ Այսինքն՝ թվարկված պայմաններից մեկի առկայության դեպքում հատուկ ընդմիջում տրամադրելը գործատուի հայեցողությանը թողնված չէ։ Ինչո՞վ է հատուկ ընդմիջումը տարբերվում սովորականից Տարբերությունը վճարման տեսանկյունից էական է։ 153-րդ հոդվածի 4-րդ մասով լրացուցիչ և հատուկ ընդմիջումները ներառվում են աշխատաժամանակում։ Համեմատության համար՝ 152-րդ հոդվածի 2-րդ մասով հանգստի և սնվելու սովորական ընդմիջումը, ընդհակառակը, չի ներառվում աշխատաժամանակում, և աշխատողն այն օգտագործում է սեփական հայեցողությամբ։ Այսինքն՝ շոգի կամ ցրտի պատճառով տրամադրվող ընդմիջումն աշխատողի ժամանակի հաշվին չէ, այլ մտնում է աշխատաժամանակի մեջ։ Ի՞նչ տևողություն է սահմանված Օրենսգիրքը հատուկ ընդմիջումների կոնկրետ տևողություն չի սահմանում։ 153-րդ հոդվածի 5-րդ մասով լրացուցիչ և հատուկ ընդմիջումների քանակը, տևողությունը և հանգստանալու տեղը նախատեսվում են կոլեկտիվ կամ աշխատանքային պայմանագրերով։ 4-րդ մասով դրանց տրամադրման կարգը սահմանվում է ներքին կարգապահական կանոններով, աշխատանքի ժամանակացույցով, կոլեկտիվ կամ աշխատանքային պայմանագրերով։ Այսինքն՝ իրավունքն ինքը սահմանված է օրենսգրքով, բայց դրա իրականացման պայմանները՝ պայմանագրով։ Հենց այս պատճառով աշխատողի համար կարևոր է իմանալ, թե ինչ է սահմանված իր աշխատանքային կամ կոլեկտիվ պայմանագրում։ Առանձին կանոն անչափահասների համար 153-րդ հոդվածի 2-րդ մասով մինչև 18 տարեկան աշխատողներին, որոնց աշխատաժամանակի տևողությունը գերազանցում է 4 ժամը, աշխատաժամանակի ընթացքում պետք է տրվի հանգստի համար լրացուցիչ ընդմիջում՝ նվազագույնը 30 րոպե։ Այս դեպքում, ի տարբերություն հատուկ ընդմիջումների, օրենսգիրքն ուղղակիորեն սահմանում է նվազագույն տևողությունը։ Հաճախ տրվող հարցեր Շոգին տրամադրվող ընդմիջումն աշխատաժամանակի՞ց է հանվում։ Ոչ։ 153-րդ հոդվածի 4-րդ մասով լրացուցիչ և հատուկ ընդմիջումները ներառվում են աշխատաժամանակում, ի տարբերություն 152-րդ հոդվածով նախատեսված սովորական ընդմիջման։ Քանի՞ րոպե պետք է տևի հատուկ ընդմիջումը։ Աշխատանքային օրենսգիրքը կոնկրետ տևողություն չի սահմանում։ 153-րդ հոդվածի 5-րդ մասով ընդմիջումների քանակը, տևողությունը և հանգստանալու տեղը նախատեսվում են կոլեկտիվ կամ աշխատանքային պայմանագրերով։ Ամփոփում Ամփոփելով՝ ՀՀ աշխատանքային օրենսգրքի 153-րդ հոդվածի 3-րդ մասով հատուկ ընդմիջումներ պետք է տրամադրվեն, եթե աշխատանքը կատարվում է պլյուս 40 աստիճան ցելսիուսից բարձր կամ մինուս 10 աստիճանից ցածր ջերմաստիճանային պայմաններում, ինչպես նաև ծանր ֆիզիկական կամ մտավոր և հուզական գերլարված բնույթ կրող պայմաններում կամ երբ վնասակար գործոնների մակարդակը հնարավոր չէ իջեցնել անվտանգ մակարդակի, ընդ որում այդ ընդմիջումները 4-րդ մասով ներառվում են աշխատաժամանակում, իսկ դրանց քանակը, տևողությունը և հանգստանալու տեղը 5-րդ մասով նախատեսվում են կոլեկտիվ կամ աշխատանքային պայմանագրերով, – տեղեկացնում է Iravaban.net -ը ։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_556506",
+    "question_armenian": "Ե՞րբ են կազմակերպությունները և (կամ) ֆիզիկական անձինք համարվում փոխկապակցված ըստ հարկային օրենսգրքի",
+    "question_english": "",
+    "source_url": "https://iravaban.net/556506.html",
+    "published": "2026-05-10",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176085/latest"
+    ],
+    "expected_article_ids": [
+      "tax-code-art-30"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն կազմակերպությունները և ֆիզիկական անձինք իրենց հարկային պարտավորությունների համար պատասխանատվություն են կրում անկախ։ Սակայն շատերը չգիտեն, որ հարկային օրենսգիրքը սահմանում է փոխկապակցված կազմակերպությունների և ֆիզիկական անձանց հասկացությունը՝ որոնք ենթակա են հատուկ կանոնների։ Ինչպես տեղեկացնում է Iravaban.net -ը, ՀՀ հարկային օրենսգրքի 30-րդ հոդվածը սահմանում է փոխկապակցվածության հասկացությունը և չափանիշները։ Փոխկապակցված՝ 20% և ավելի փայաբաժնի դեպքում Օրենսգրքի 30-րդ հոդվածի 1-ին մասի 1-ին կետի համաձայն՝ կազմակերպությունները և (կամ) ֆիզիկական անձինք համարվում են փոխկապակցված, եթե ռեզիդենտ առևտրային կազմակերպության կանոնադրական (բաժնեհավաք) կապիտալի 20 տոկոս և ավելի փայաբաժինը (բաժնետոմսը, բաժնեմասը) պատկանում է այլ ռեզիդենտ առևտրային կազմակերպությանը, անհատ ձեռնարկատիրոջը կամ նոտարին։ Օրենսգրքի 30-րդ հոդվածի 1-ին մասի 2-րդ կետի համաձայն՝ կազմակերպությունները և (կամ) ֆիզիկական անձինք համարվում են փոխկապակցված, եթե ռեզիդենտ առևտրային կազմակերպության կանոնադրական (բաժնեհավաք) կապիտալի 20 տոկոս և ավելի փայաբաժինը (բաժնետոմսը, բաժնեմասը) պատկանում է անհատ ձեռնարկատեր չհանդիսացող այն ֆիզիկական անձին, որին միաժամանակ պատկանում է այլ ռեզիդենտ առևտրային կազմակերպության կանոնադրական (բաժնեհավաք) կապիտալի 20 տոկոս և ավելի փայաբաժինը (բաժնետոմսը, բաժնեմասը)։ Փոխկապակցված՝ հարկային մարմնի որոշմամբ Օրենսգրքի 30-րդ հոդվածի 2-րդ մասի համաձայն՝ անկախ 20% փայաբաժնի առկայությունից՝ կազմակերպությունները և (կամ) ֆիզիկական անձինք համարվում են փոխկապակցված, եթե երրորդ անձից (այդ թվում՝ պետական մարմնից) ստացված կամ օպերատիվ-հետախուզական գործողությունների արդյունքում ձեռք բերված տեղեկությունների հիման վրա կազմակերպությունները և (կամ) ֆիզիկական անձինք, ընդհանուր տնտեսական շահերից ելնելով համաձայնեցված գործելու հիմքով, հարկային մարմնի սահմանած կարգով, հարկային մարմնի ղեկավարի որոշմամբ ճանաչվում են որպես փոխկապակցված։ Օրենսգրքի համաձայն՝ հարկ վճարողներին որպես փոխկապակցված ճանաչելիս հաշվի են առնվում, մասնավորապես, հետևյալ հանգամանքները՝ միմյանց միջև կատարվող գործարքների ծավալը, պարբերականությունը, միմյանցից ձեռք բերվող ապրանքների հետագա վաճառքի գներն ու առևտրային վերադիրները, որևէ ապրանքային շուկայում ունեցած մասնաբաժնի մեծությունը։ Տրանսֆերային գնագոյացման կանոնները Օրենսգրքի 30-րդ հոդվածի 3-րդ մասի համաձայն՝ օրենսգրքի 73-րդ գլխով սահմանված՝ տրանսֆերային գնագոյացման կանոնների կիրառության իմաստով, կազմակերպություններին և ֆիզիկական անձանց փոխկապակցված համարելու լրացուցիչ կարգավորումները սահմանվում են այդ գլխով։ Ուշադրություն. կազմակերպությունները և ֆիզիկական անձինք համարվում են փոխկապակցված երկու դեպքում՝ եթե միևնույն ֆիզիկական անձին կամ կազմակերպությանը պատկանում է կազմակերպությունների կանոնադրական կապիտալի 20% և ավելի փայաբաժին, կամ եթե հարկային մարմնի ղեկավարի որոշմամբ ճանաչվում են որպես փոխկապակցված՝ ընդհանուր տնտեսական շահերից ելնելով համաձայնեցված գործելու հիմքով, – տեղեկացնում է Iravaban.net -ը։ Հավելյալ տեղեկությունների համար կարող եք դիմել Iravaban.net -ին։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_557446",
+    "question_armenian": "Ներկայացուցչական ծախսեր՝ որքա՞ն կարող եք նվազեցնել հարկման բազայից",
+    "question_english": "",
+    "source_url": "https://iravaban.net/557446.html",
+    "published": "2026-05-17",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176085/latest"
+    ],
+    "expected_article_ids": [
+      "tax-code-art-116"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "Որպես կանոն շահութահարկ վճարողները հարկման բազան որոշելիս համախառն եկամտից նվազեցնում են իրենց ծախսերը։ Սակայն շատերը չգիտեն, որ ներկայացուցչական ծախսերը նվազեցման ենթակա են սահմանափակումներով։ Ինչպես տեղեկացնում է Iravaban.net – ը, ՀՀ հարկային օրենսգրքի 116-րդ հոդվածը սահմանում է ներկայացուցչական ծախսերի նվազեցման կանոնները և սահմանափակումները։ Ի՞նչ են ներկայացուցչական ծախսերը ՀՀ հարկային օրենսգրքի 116-րդ հոդվածի 3-րդ մասի համաձայն՝ ներկայացուցչական ծախսեր են համարվում այլ կազմակերպությունների և ֆիզիկական անձանց հետ փոխշահավետ համագործակցություն հաստատելու և (կամ) այն պահպանելու նպատակով կատարվող ծախսերը։ Նվազեցման սահմանափակումները ՀՀ հարկային օրենսգրքի 116-րդ հոդվածի 1-ին մասի համաձայն՝ ռեզիդենտ շահութահարկ վճարողի և մշտական հաստատության միջոցով Հայաստանի Հանրապետությունում գործունեություն իրականացնող ոչ ռեզիդենտ շահութահարկ վճարողի հարկման բազան որոշելիս համախառն եկամտից չի նվազեցվում ներկայացուցչական ծախսերի այն մասը, որը գերազանցում է հարկային տարվա համախառն եկամտի 0.5 տոկոսը կամ հինգ միլիոն դրամը։ Բացառություն՝ գրանցման և հաշվառման տարի ՀՀ հարկային օրենսգրքի 116-րդ հոդվածի 2-րդ մասի համաձայն՝ պետական գրանցման (օրենքով սահմանված դեպքերում՝ հաշվառման) կամ որպես անհատ ձեռնարկատեր հաշվառման կամ որպես նոտար նշանակման հարկային տարվա հարկման բազան որոշելիս համախառն եկամտից նվազեցման ենթակա ներկայացուցչական ծախսերի առավելագույն թույլատրելի մեծությունը հաշվարկելու առումով հարկային տարվա համախառն եկամտի 0.5 տոկոսի սահմանափակումը հաշվի չի առնվում։ Ամփոփելով, պետք է նշել, որ ներկայացուցչական ծախսերը համախառն եկամտից նվազեցման ենթակա են հարկային տարվա համախառն եկամտի 0.5 տոկոսի կամ հինգ միլիոն դրամի սահմաններում՝ ավելի բարձրը։ Պետական գրանցման, անհատ ձեռնարկատեր հաշվառման կամ նոտար նշանակման հարկային տարում 0.5 տոկոսի սահմանափակումը չի կիրառվում և նվազեցման ենթակա է միայն հինգ միլիոն դրամի սահմաններում, – տեղեկացնում է Iravaban.net – ը։ Հավելյալ տեղեկությունների համար կարող եք դիմել Iravaban.net – ին։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  },
+  {
+    "id": "irv_561950",
+    "question_armenian": "200 միլիոն դրամի ներդրում. ի՞նչ պայմաններով կարող է օտարերկրացին ստանալ ՀՀ հարկային ռեզիդենտություն",
+    "question_english": "",
+    "source_url": "https://iravaban.net/561950.html",
+    "published": "2026-06-22",
+    "expected_arlis_urls": [
+      "https://www.arlis.am/hy/acts/176085/latest"
+    ],
+    "expected_article_ids": [
+      "tax-code-art-25"
+    ],
+    "expected_hierarchy_level": "Code",
+    "has_temporal_conflict": false,
+    "has_hierarchy_conflict": false,
+    "correct_answer_summary": "ՀՀ հարկային օրենսգրքի 25-րդ հոդվածով սահմանված են այն չափանիշները, որոնցով ֆիզիկական անձը համարվում է Հայաստանի Հանրապետության հարկային ռեզիդենտ՝ հիմնականում հարկային տարում 183 և ավելի օր ՀՀ-ում փաստացի գտնվելը կամ կենսական շահերի կենտրոնը ՀՀ-ում ունենալը։ Սակայն շատերը չգիտեն, որ Իրավական ակտերի նախագծերի հրապարակման միասնական հարթակում՝ e-draft.am -ում, հանրային քննարկման է ներկայացվել օրենքի նախագիծ, որով առաջարկվում է ներդնել ռեզիդենտություն ձեռք բերելու այլընտրանքային՝ ներդրումային հիմք։ Ինչպես տեղեկացնում է Iravaban.net -ը , նախագծի նպատակը աշխարհի տարբեր երկրներից ներդրողներ ներգրավելն է՝ ի նպաստ Հայաստանի կապիտալի շուկայի զարգացման։ Ի՞նչ է առաջարկվում Նախագծով առաջարկվում է, որ ֆիզիկական անձը ձեռք բերի ՀՀ հարկային ռեզիդենտ համարվելու իրավունք, եթե միաժամանակ բավարարում է երկու պայման՝ առնվազն 200 միլիոն դրամի (կամ համարժեք արտարժույթով) չափով ներդրում է կատարել Հայաստանում գործող ֆոնդային բորսայում ցուցակված ընկերությունների բաժնետոմսերում կամ պարտատոմսերում (բացառությամբ Կենտրոնական բանկի կողմից լիցենզավորված ընկերությունների), հարկային տարում ՀՀ-ում փաստացի գտնվել է 30 և ավելի օր։ Այս հիմքով ռեզիդենտություն ստանալու համար անձը, ըստ նախագծի, դիմումի հետ պետք է ներկայացնի ՀՀ-ում գտնվելու ժամանակահատվածի հաշվարկման աղյուսակը և Կենտրոնական բանկի կողմից լիցենզավորված ֆինանսական ընկերությունում իր արժեթղթերի սեփական հաշվից քաղվածք՝ հավաստելու, որ նշված արժեթղթերը պատկանում են իրեն սեփականության իրավունքով։ Ինչու է առաջարկվում փոփոխությունը Ըստ հիմնավորման՝ գործող կարգավորման խնդրահարույց կողմն այն է, որ անձը պարտադիր պետք է ՀՀ-ում գտնվի 183 և ավելի օր կամ այստեղ ունենա մասնագիտական գործունեության հիմնական վայրը։ Վերջինս խնդրահարույց է, քանի որ կան բազմաթիվ անձինք, որոնց մասնագիտական գործունեությունը ներդրումներ կատարելն է, և դրա հիմնական վայրը չի սահմանափակվում մեկ կամ երկու պետությամբ։ Նախագիծը նպատակ ունի այս խմբին ևս ընձեռել ռեզիդենտություն ստանալու հնարավորություն։ Միջազգային փորձը Հիմնավորման մեջ որպես համեմատություն ներկայացված են նմանատիպ ծրագրեր այլ երկրներից։ Մասնավորապես՝ Կիպրոսն ունի 60-օրյա կանոն գործարարների և մեծ կարողություն ունեցող անձանց համար, ԱՄԷ-ն՝ 90-օրյա կանոն (ռեզիդենտության վիզայի և բիզնես գործունեության պայմանով), իսկ Մալթան առաջարկում է հարկային ռեզիդենտություն՝ կախված անշարժ գույքում ներդրումների ծավալից։ Այս երկրները նման ծրագրերը զուգակցում են որոշակի հարկային արտոնություններով։ Ի՞նչ արդյունք է ակնկալվում Ըստ հիմնավորման՝ առաջարկվող կարգավորումը լրացուցիչ խթան կհանդիսանա Հայաստանում գործունեություն ծավալող ընկերությունների համար՝ ֆոնդային բորսայում ընդգրկվելու կամ պարտատոմսեր թողարկելու և առավել թափանցիկ ու վստահելի դառնալու։ Ակնկալվում է ներդրումների աճ ֆինանսական համակարգի միջոցով, ինչը կնպաստի կապիտալի շուկայի կայուն զարգացմանը և միջազգային ֆինանսական շուկաներում Հայաստանի դիրքերի ամրապնդմանը։ Հանրային քննարկումը և ուժի մեջ մտնելը Նախագիծը մշակվել է Էկոնոմիկայի նախարարության կողմից և հանրային քննարկման է դրվել 2026 թվականի հունիսի 22-ից հուլիսի 8-ն ընկած ժամանակահատվածում։ Ըստ հիմնավորման՝ պետական կամ տեղական ինքնակառավարման մարմինների բյուջեում եկամուտների կամ ծախսերի էական փոփոխություններ չեն նախատեսվում, սակայն օրենքը ներդրումների աճի միջոցով կարող է միջնաժամկետ և երկարաժամկետ դրական ազդեցություն ունենալ պետական բյուջեի եկամուտների վրա։ Նախագծով նախատեսվում է, որ օրենքն ուժի մեջ կմտնի պաշտոնական հրապարակմանը հաջորդող օրվանից։ Քանի որ խոսքը դեռ նախագծի մասին է, վերջնական կարգավորումը կախված է դրա ընդունումից։ Ամփոփելով՝ պետք է նշել, որ նախագծի ընդունման դեպքում ՀՀ-ում գործող ֆոնդային բորսայում առնվազն 200 միլիոն դրամի ներդրում կատարած և տարեկան առնվազն 30 օր ՀՀ-ում գտնվող ֆիզիկական անձինք կկարողանան ձեռք բերել ՀՀ հարկային ռեզիդենտի կարգավիճակ՝ որպես գործող չափանիշներին այլընտրանքային, – տեղեկացնում է Iravaban.net -ը ։",
+    "difficulty": "easy",
+    "origin": "auto_draft"
+  }
+]

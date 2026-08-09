@@ -3,16 +3,17 @@
 Left sidebar: chat history (LLM-named, one line each, empty chats hidden), new
 chat, and a Settings modal. The model picker is a popover in the composer, next
 to the input. The conversation anchors to the bottom and grows upward; user
-prompts sit right, answers left — ChatGPT-style. Each assistant turn shows a
-collapsible "Thinking" panel (retrieval trace + the model's hidden reasoning,
-live), then streams the answer conversationally at a readable pace. Every
-citation stays a clickable arlis.am link — auditability is still the point.
+prompts sit right, answers left — ChatGPT-style. While working, a spinner panel
+narrates retrieval and generation, then disappears as the answer streams in at
+a readable pace. Every citation stays a clickable arlis.am link — auditability
+is still the point.
 
 Usage:
     uv run streamlit run app.py
 """
 import logging
 import os
+import random
 import re
 import time
 import uuid
@@ -113,13 +114,21 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# The interface is English; the questions stay Armenian because the corpus,
-# retrieval and answers are Armenian.
+# Pool of landing-page examples; each blank chat samples four at random. The
+# sample is stored on the chat so it stays put across Streamlit reruns.
 EXAMPLES = [
     "Ի՞նչ է աշխատանքային պայմանագրի հասկացությունը",
     "Ի՞նչ դեպքերում կարող է գործատուն լուծել աշխատանքային պայմանագիրը",
     "Քանի՞ օր է տարեկան արձակուրդի նվազագույն տևողությունը",
     "Ինչպե՞ս գրանցել ամուսնություն Հայաստանում",  # Family Code, in no index -> should refuse
+    "Ո՞րն է աշխատաժամանակի առավելագույն տևողությունը",
+    "Ինչպե՞ս է վարձատրվում արտաժամյա աշխատանքը",
+    "Ի՞նչ տևողություն ունի փորձաշրջանը աշխատանքի ընդունելիս",
+    "Ի՞նչ երաշխիքներ ունի աշխատողը գործուղման ժամանակ",
+    "Ինչպիսի՞ կարգապահական տույժեր կարող է կիրառել գործատուն",
+    "Ո՞ր դեպքերում է աշխատողը կրում նյութական պատասխանատվություն",
+    "Ի՞նչ երաշխիքներ ունեն հղի կանայք աշխատանքում",
+    "Քանի՞ օր առաջ պետք է գործատուն ծանուցի աշխատողին կրճատման մասին",
 ]
 
 BACKENDS = get("generation.backends")
@@ -228,20 +237,6 @@ def cite_links(answer: str, articles: list[dict]) -> str:
     )
 
 
-def sources_expander(articles: list[dict]) -> None:
-    with st.expander(f"Sources — {len(articles)} article(s)"):
-        for a in articles:
-            flag = ""
-            if a.get("repealed"):
-                flag = " — repealed"
-            elif a.get("has_repealed_parts"):
-                flag = " — partly repealed"
-            label = f"{rag.cite_label(a)}" if a["article"] else a["title"]
-            st.markdown(f"**{label}** — {a['title'][:60]} · `{a['score']:.3f}`{flag}")
-            st.markdown(f"[Open on arlis.am ↗]({a['url']})")
-            st.divider()
-
-
 # ---------------------------------------------------------------- chat state
 def new_chat() -> None:
     """Switch to an empty chat, reusing one if it exists.
@@ -266,41 +261,50 @@ if "chats" not in st.session_state:
 # Settings live in a centered modal (st.dialog), not the sidebar. Widgets keyed
 # into session_state so the values survive the dialog closing; setdefault seeds
 # them once per session.
+# cfg_* keys are OWNED BY THE SESSION-STATE API, never bound to widgets via key=.
+# Widget-bound keys are garbage-collected the moment their widget disappears —
+# i.e. every time the Settings dialog closes — which reset every slider to its
+# MINIMUM (500 tokens, k=3, alpha=0.0) on reopen and silently ran the app that
+# way. Widgets get explicit value= from these keys and write back on change.
 for key, value in {
-    "max_out": rag.MAX_OUTPUT_TOKENS,
-    "top_k": rag.TOP_K,
-    "mode": get("retrieval.mode"),
-    "alpha": get("retrieval.alpha"),
-    "show_log": False,
+    "cfg_max_out": rag.MAX_OUTPUT_TOKENS,
+    "cfg_top_k": rag.TOP_K,
+    "cfg_mode": get("retrieval.mode"),
+    "cfg_alpha": get("retrieval.alpha"),
+    "cfg_show_log": False,
 }.items():
     st.session_state.setdefault(key, value)
 
 
-@st.dialog("Կարգավորումներ")
+@st.dialog("Settings")
 def settings() -> None:
-    st.slider("Max output tokens", 500, 8000, step=250, key="max_out")
-    st.slider("Articles to retrieve (top-k)", 3, 15, key="top_k")
-    st.radio(
+    s = st.session_state
+    s.cfg_max_out = st.slider("Max output tokens", 500, 8000, s.cfg_max_out, step=250)
+    s.cfg_top_k = st.slider("Articles to retrieve (top-k)", 3, 15, s.cfg_top_k)
+    modes = ["hybrid", "vector", "bm25"]
+    s.cfg_mode = st.radio(
         "Retrieval",
-        ["hybrid", "vector", "bm25"],
-        key="mode",
+        modes,
+        index=modes.index(s.cfg_mode),
         format_func={"hybrid": "Hybrid", "vector": "Vector", "bm25": "BM25"}.get,
         horizontal=True,
     )
-    st.slider("alpha (1=vector, 0=BM25)", 0.0, 1.0, step=0.05, key="alpha",
-              disabled=st.session_state.mode != "hybrid")
-    st.toggle("Debug log", key="show_log")
-    if st.session_state.show_log and st.button("Clear log", use_container_width=True):
+    s.cfg_alpha = st.slider("alpha (1=vector, 0=BM25)", 0.0, 1.0, s.cfg_alpha, step=0.05,
+                            disabled=s.cfg_mode != "hybrid")
+    s.cfg_show_log = st.toggle("Debug log", value=s.cfg_show_log)
+    if s.cfg_show_log and st.button("Clear log", use_container_width=True):
         LOGS.clear()
 
 
 # ---------------------------------------------------------------- sidebar
 with st.sidebar:
     st.markdown("## OpenLaw<sup>AM</sup>", unsafe_allow_html=True)
-    st.caption("Բաց, ստուգելի իրավաբանական օգնական ՀՀ օրենսդրության համար։")
+    st.caption("An open, verifiable legal assistant for the legislation of the Republic of Armenia.")
 
     # Only chats with messages are listed; the current empty one stays invisible
     # until its first question (see new_chat).
+    # No "New chat" button while the only chat IS the blank one — it appears
+    # together with the first chat in the history.
     named = [(cid, c) for cid, c in st.session_state.chats.items() if c["messages"]]
     if named:
         st.caption("**Chats**")
@@ -310,17 +314,17 @@ with st.sidebar:
                 st.session_state.current = cid
                 st.rerun()
 
-    if st.button("Նոր զրուցարան", use_container_width=True, type="primary"):
-        new_chat()
-        st.rerun()
+        if st.button("+ New chat", use_container_width=True, type="primary"):
+            new_chat()
+            st.rerun()
 
     st.divider()
-    if st.button("Կարգավորումներ", use_container_width=True):
+    if st.button("Settings", use_container_width=True):
         settings()
 
-max_out, top_k = st.session_state.max_out, st.session_state.top_k
-mode, alpha = st.session_state.mode, st.session_state.alpha
-show_log = st.session_state.show_log
+max_out, top_k = st.session_state.cfg_max_out, st.session_state.cfg_top_k
+mode, alpha = st.session_state.cfg_mode, st.session_state.cfg_alpha
+show_log = st.session_state.cfg_show_log
 
 # The index version picker is gone from the UI: the app pins itself to
 # weaviate.ui_default (or the alias target) and that's that. OPENLAW_UI_COLLECTION
@@ -340,17 +344,9 @@ chat = st.session_state.chats[st.session_state.current]
 # ---------------------------------------------------------------- history
 for msg in chat["messages"]:
     with st.chat_message(msg["role"]):
-        if msg["role"] == "assistant":
-            if msg.get("thinking"):
-                with st.expander(msg.get("thinking_label", "Thinking"), expanded=False):
-                    st.markdown(msg["thinking"])
-            st.markdown(msg["content"])
-            if msg.get("sources"):
-                sources_expander(msg["sources"])
-            if msg.get("caption"):
-                st.caption(msg["caption"])
-        else:
-            st.markdown(msg["content"])
+        st.markdown(msg["content"])
+        if msg["role"] == "assistant" and msg.get("caption"):
+            st.caption(msg["caption"])
 
 # ---------------------------------------------------------------- input
 if not chat["messages"]:
@@ -362,11 +358,13 @@ if not chat["messages"]:
         "<h1 style='text-align:center; margin-bottom:6rem;'>OpenLaw<sup>AM</sup></h1>",
         unsafe_allow_html=True,
     )
+    if "examples" not in chat:
+        chat["examples"] = random.sample(EXAMPLES, 4)
     _, mid, _ = st.columns([1, 3.2, 1])
     with mid:
-        st.caption("Հարցերի օրինակներ")
+        st.caption("Example questions")
         cols = st.columns(2)
-        for i, ex in enumerate(EXAMPLES):
+        for i, ex in enumerate(chat["examples"]):
             if cols[i % 2].button(ex, key=f"ex{i}", use_container_width=True):
                 st.session_state.queued = ex
                 st.rerun()
@@ -399,17 +397,24 @@ def backend_blurb(b: dict) -> str:
 
 # chat_input goes into the pinned bottom container first, the picker after it —
 # so the model chip sits UNDER the prompt line.
-question = st.chat_input("Տվեք Ձեր իրավաբանական հարցը")
+question = st.chat_input("Ask your legal question")
 if not question and st.session_state.get("queued"):
     question = st.session_state.pop("queued")
 
 with st.bottom:
-    current = st.session_state.get("model_name", names[default_idx])
-    with st.popover(current):
+    # One row under the prompt line: just the model chip on the left.
+    picker_col, _ = st.columns([1, 2], vertical_alignment="center")
+    # cfg_model is API-owned, never a widget key: the example buttons st.rerun()
+    # before this point, and a widget-bound key would be garbage-collected on any
+    # run where the radio doesn't render — silently resetting the model choice.
+    if st.session_state.get("cfg_model") not in names:
+        st.session_state.cfg_model = names[default_idx]
+    with picker_col.popover(st.session_state.cfg_model):
         choice = st.radio(
-            "Model", names, index=default_idx, key="model_name",
+            "Model", names, index=names.index(st.session_state.cfg_model),
             captions=[backend_blurb(b) for b in BACKENDS],
         )
+        st.session_state.cfg_model = choice
     backend = BACKENDS[names.index(choice)]
     if not reachable(backend["base_url"]):
         st.error(f"**{backend['name']}**: `{backend['base_url']}` is not responding.")
@@ -420,6 +425,14 @@ with st.bottom:
 api_key = backend.get("api_key") or (
     os.getenv(backend["api_key_env"]) if backend.get("api_key_env") else None
 )
+if backend.get("api_key_env") and not api_key:
+    # Never fall back to the default key: it belongs to a different account
+    # (provider-locked to deepseek) and fails with a misleading 404.
+    st.error(
+        f"**{backend['name']}** needs `{backend['api_key_env']}` in `.env` — "
+        "it is not set in this process. Add it and restart the app."
+    )
+    st.stop()
 
 if question:
     chat["messages"].append({"role": "user", "content": question})
@@ -432,9 +445,14 @@ if question:
         thinking_notes: list[str] = []
         index_label = sel["name"].removeprefix(prefix)
 
-        with st.status("Retrieving needed info…", expanded=True) as status:
-            note_slot = st.empty()
-            reason_slot = st.empty()
+        # The status lives inside an st.empty so it can be removed outright once
+        # the answer starts streaming. Deliberately NOT a `with` block: the
+        # context manager marks the status complete (check icon) on exit — it
+        # must keep the running spinner through retrieval and generation.
+        status_slot = st.empty()
+        status = status_slot.status("Retrieving needed info…", expanded=True)
+        note_slot = status.empty()
+        reason_slot = status.empty()
         answer_slot = st.empty()
 
         def think(line: str) -> None:
@@ -478,18 +496,17 @@ if question:
                     reason_slot.markdown(f"*…{reasoning[-400:]}*")
                 elif kind == "content":
                     if not streamed:
-                        status.update(
-                            label=f"Thought for {time.perf_counter() - t0:.0f}s · {len(articles)} sources",
-                            state="complete",
-                            expanded=False,
-                        )
+                        status_slot.empty()  # the working panel vanishes as the answer lands
                     streamed += payload
                     answer_slot.markdown(cite_links(streamed, articles) + " ▌")
                     time.sleep(STREAM_DELAY)
                 elif kind == "retry":
                     streamed = ""
-                    think(f"Empty answer — retrying with a {payload:,}-token budget…")
-                    status.update(label="Retrying…", state="running", expanded=True)
+                    status = status_slot.status(
+                        f"Empty answer — retrying with a {payload:,}-token budget…", expanded=False
+                    )
+                    note_slot = status.empty()
+                    reason_slot = status.empty()
                 elif kind == "done":
                     gen = payload
         except Exception as e:
@@ -509,25 +526,16 @@ if question:
                 f"({gen['reasoning_tokens']:,} went to hidden reasoning). "
                 f"Raise **Max output tokens** in Settings and re-ask."
             )
-        sources_expander(articles)
         caption = (
             f"{backend['name']} · {gen['total_tokens']:,} tokens · "
             f"retrieval {t_retrieve:.1f}s · generation {t_generate:.1f}s"
         )
         st.caption(caption)
 
-        thinking_text = "\n".join(f"- {n}" for n in thinking_notes)
-        if reasoning:
-            thinking_text += f"\n\n**Model reasoning:**\n\n*{reasoning}*"
+        # sources kept on the message for auditability even though the UI no
+        # longer renders them — the inline arlis.am citation links remain.
         chat["messages"].append(
-            {
-                "role": "assistant",
-                "content": linked,
-                "thinking": thinking_text,
-                "thinking_label": f"Thought for {t_generate:.0f}s · {len(articles)} sources",
-                "sources": articles,
-                "caption": caption,
-            }
+            {"role": "assistant", "content": linked, "sources": articles, "caption": caption}
         )
 
     # Name the chat once, after the first answer — the raw question set at submit
