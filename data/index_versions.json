@@ -7,7 +7,7 @@
       "labor-code": 373
     },
     "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
-    "activated": true
+    "activated": false
   },
   {
     "version": "Article_all_codes",
@@ -22,7 +22,7 @@
       "admin-offenses-code": 881
     },
     "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
-    "activated": true
+    "activated": false
   },
   {
     "version": "Article_all_docs",
@@ -49,5 +49,48 @@
     },
     "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
     "activated": false
+  },
+  {
+    "version": "Article_all_codex_better_chunking",
+    "chunks": 5428,
+    "articles": 3935,
+    "documents": {
+      "labor-code": 331,
+      "civil-code": 1458,
+      "tax-code": 1063,
+      "constitution-current": 222,
+      "constitution": 147,
+      "criminal-code": 656,
+      "criminal-procedure-code": 549,
+      "admin-offenses-code": 806,
+      "law-165000": 7,
+      "law-94713": 7,
+      "law-21443": 4,
+      "law-22458": 44,
+      "law-22493": 76,
+      "law-22836": 40,
+      "law-22044": 3,
+      "law-175792": 3,
+      "law-21676": 12
+    },
+    "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
+    "activated": false
+  },
+  {
+    "version": "Article_codes_constitution",
+    "chunks": 5232,
+    "articles": 3926,
+    "documents": {
+      "labor-code": 331,
+      "civil-code": 1458,
+      "tax-code": 1063,
+      "constitution-current": 222,
+      "constitution": 147,
+      "criminal-code": 656,
+      "criminal-procedure-code": 549,
+      "admin-offenses-code": 806
+    },
+    "embed_model": "Metric-AI/armenian-text-embeddings-2-large",
+    "activated": true
   }
 ]

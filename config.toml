@@ -68,7 +68,15 @@ temperature = 0.1
 # reasoning trace before writing any answer (260 reasoning + ~356 answer on a typical
 # question). At 800 this intermittently returned an EMPTY answer — the budget ran out
 # mid-reasoning. This ceiling must cover reasoning + answer, not just the answer.
-max_output_tokens = 4000
+# 8000: at 2000 a third of the k=10 benchmark run hit the ceiling (15/44 answers
+# truncated mid-reasoning, concentrated in hard questions). Gemma's vLLM serves
+# max_model_len=20000, so prompt (~7K at k=10) + 8000 still fits.
+max_output_tokens = 8000
+
+# Which backend the app.py picker starts on, by its `name` below. Same idea as
+# weaviate.ui_default: a per-session UI choice that must not change what the CLI
+# and eval.py hit through `model` / `base_url` above.
+ui_default = "Gemma 4 26B · 4B active (on-premise)"   # env: OPENLAW_UI_MODEL
 
 # Backends the dashboard can switch between at runtime. `model` / `base_url` above stay
 # the defaults for the CLI and eval.py; these only drive the picker in app.py. They
@@ -83,17 +91,24 @@ model = "deepseek/deepseek-v4-pro"
 base_url = "https://openrouter.ai/api/v1"
 prompt_cost = 0.435
 completion_cost = 0.87
-note = "Reasoning model, served through OpenRouter."
+note = "Reasoning model — thinks before answering"
 
 [[generation.backends]]
-name = "Gemma 4 26B (on-prem)"
+name = "Gemma 4 26B · 4B active (on-premise)"
 model = "google/gemma-4-26B-A4B-it"   # case-sensitive: vLLM matches the name exactly
 base_url = "http://localhost:18000/v1"
 api_key = "EMPTY"                     # vLLM is unauthenticated; the client needs a non-empty key
 prompt_cost = 0.0
 completion_cost = 0.0
-note = "Self-hosted vLLM on spark-alpha, reached through an SSH tunnel."
+note = "Open MoE model, runs on our own hardware"
 hint = "ssh -N -L 18000:localhost:8000 spark-alpha"
+
+[[generation.backends]]
+name = "Gemma 4 26B · 4B active (hosted)"
+model = "google/gemma-4-26b-a4b-it"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENLAW_BACKUP_API_KEY"   # the main account is provider-locked to deepseek
+note = "Same open model, served by a cloud provider"
 
 [eval]
 # Answer models compared in the Streamlit Eval page / `uv run python eval.py --compare`.

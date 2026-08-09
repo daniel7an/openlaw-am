@@ -27,7 +27,6 @@ TOP_K = get("retrieval.top_k")
 
 SYSTEM = prompt("answer.system")
 USER = prompt("answer.user")
-REFUSAL_MARKER = prompt("answer.refusal_marker")
 
 
 def client(base_url: str | None = None, api_key: str | None = None):
@@ -75,6 +74,7 @@ def retrieve(
                 p["cite_id"],
                 {
                     "cite_id": p["cite_id"],
+                    "slug": p.get("slug"),
                     "article": p["article"],
                     "title": p["title"],
                     "url": p["url"],
@@ -95,6 +95,32 @@ def retrieve(
         client_.close()
 
 
+# Citation tag per document: a bare article number is ambiguous across a
+# 17-document corpus (Constitution art. 33 ≠ Labor Code art. 33). The tag rides
+# inside the context label, and the model echoes labels verbatim — so answers
+# come out as [ԱշխՕ, Հոդված 83] with no extra prompting machinery.
+DOC_TAGS = {
+    "labor-code": "ԱշխՕ",
+    "civil-code": "ՔաղՕ",
+    "tax-code": "ՀարկՕ",
+    "criminal-code": "ՔրՕ",
+    "criminal-procedure-code": "ՔրԴատՕ",
+    "admin-offenses-code": "ՎԻՎՕ",
+    "constitution-current": "Սահմ",
+    "constitution": "Սահմ1995",  # pre-2015 edition — different article numbering
+}
+
+
+def doc_tag(article: dict) -> str:
+    return DOC_TAGS.get(article.get("slug") or "", "Օրենք")
+
+
+def cite_label(article: dict) -> str:
+    if not article["article"]:
+        return article["title"]
+    return f"{doc_tag(article)}, Հոդված {article['article']}"
+
+
 def context_block(articles: list[dict]) -> str:
     block = prompt("context.block")
     out = []
@@ -106,7 +132,7 @@ def context_block(articles: list[dict]) -> str:
             flags = prompt("context.partly_repealed_flag")
         out.append(
             block.format(
-                label=f"Հոդված {a['article']}" if a["article"] else a["title"],
+                label=cite_label(a),
                 flags=flags,
                 title=a["title"],
                 body="\n".join(a["texts"]),
@@ -192,6 +218,131 @@ def generate(
         "max_tokens": budget,
         "truncated": finish == "length",
     }
+
+
+def generate_stream(
+    question: str,
+    articles: list[dict],
+    model: str | None = None,
+    base_url: str | None = None,
+    max_tokens: int | None = None,
+    api_key: str | None = None,
+    history: list[dict] | None = None,
+):
+    """Streaming twin of `generate` for the UI: yields events while the model writes.
+
+    Events: ("reasoning", delta) — hidden-thinking text from reasoning models;
+            ("content", delta)   — answer text as it arrives;
+            ("retry", budget)    — empty answer, restarting at 2x (UI should reset);
+            ("done", meta)       — final metadata, same contract as generate().
+
+    `history` is prior chat turns ({role, content} dicts) inserted between the
+    system prompt and the current question, so follow-ups stay conversational.
+    Only the current question gets retrieved context — earlier turns keep just
+    their text, or the prompt would grow by ~7K tokens per turn.
+    """
+    model = model or MODEL
+    user_msg = USER.format(question=question, context=context_block(articles))
+    messages = [{"role": "system", "content": SYSTEM}]
+    messages += history or []
+    messages.append({"role": "user", "content": user_msg})
+
+    budget = max_tokens or MAX_OUTPUT_TOKENS
+    text, usage, finish = "", None, None
+    for attempt in range(2):
+        log.info(
+            "generate_stream: model=%s base_url=%s max_tokens=%d attempt=%d",
+            model, base_url or BASE_URL, budget, attempt + 1,
+        )
+        t0 = time.perf_counter()
+        kwargs = dict(
+            model=model, messages=messages, max_tokens=budget,
+            temperature=TEMPERATURE, stream=True,
+        )
+        try:
+            stream = client(base_url, api_key).chat.completions.create(
+                **kwargs, stream_options={"include_usage": True}
+            )
+        except Exception:  # backend rejects stream_options — stream without usage
+            stream = client(base_url, api_key).chat.completions.create(**kwargs)
+
+        text = ""
+        for chunk in stream:
+            if getattr(chunk, "usage", None):
+                usage = chunk.usage
+            if not chunk.choices:
+                continue
+            choice = chunk.choices[0]
+            if choice.finish_reason:
+                finish = choice.finish_reason
+            delta = choice.delta
+            if delta is None:
+                continue
+            thinking = getattr(delta, "reasoning", None) or (delta.model_extra or {}).get("reasoning")
+            if thinking:
+                yield "reasoning", thinking
+            if delta.content:
+                text += delta.content
+                yield "content", delta.content
+
+        log.info(
+            "generate_stream: finish=%s in %.2fs — %d answer chars",
+            finish, time.perf_counter() - t0, len(text),
+        )
+        if text.strip():
+            break
+        budget *= 2
+        log.warning("generate_stream: EMPTY answer (finish=%s) — retrying at max_tokens=%d", finish, budget)
+        yield "retry", budget
+    else:
+        text = "Could not get an answer from the model. Please try again."
+        yield "content", text
+
+    completion = usage.completion_tokens if usage else 0
+    details = getattr(usage, "completion_tokens_details", None)
+    reasoning = getattr(details, "reasoning_tokens", 0) or 0
+    yield "done", {
+        "question": question,
+        "model": model,
+        "answer": text,
+        "prompt_tokens": usage.prompt_tokens if usage else 0,
+        "completion_tokens": completion,
+        "reasoning_tokens": reasoning,
+        "answer_tokens": completion - reasoning,
+        "total_tokens": usage.total_tokens if usage else 0,
+        "finish_reason": finish,
+        "max_tokens": budget,
+        "truncated": finish == "length",
+    }
+
+
+def chat_title(
+    question: str,
+    model: str | None = None,
+    base_url: str | None = None,
+    api_key: str | None = None,
+) -> str:
+    """Short sidebar title for a chat, in the question's language. "" on failure.
+
+    max_tokens leaves room for a reasoning model's hidden trace; Gemma just
+    answers. Failures return "" so the caller can fall back to the raw question —
+    a chat must never lose its answer over a naming call.
+    """
+    try:
+        resp = client(base_url, api_key).chat.completions.create(
+            model=model or MODEL,
+            messages=[
+                {"role": "system", "content": prompt("chat_title.system")},
+                {"role": "user", "content": question},
+            ],
+            max_tokens=500,
+            temperature=0.3,
+        )
+        text = (resp.choices[0].message.content or "").strip().strip('"«»')
+        return text.splitlines()[0].strip()[:80] if text.strip() else ""
+    except Exception:
+        log.warning("chat_title failed; falling back to the question", exc_info=True)
+        return ""
 
 
 def answer(

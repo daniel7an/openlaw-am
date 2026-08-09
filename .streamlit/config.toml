@@ -20,3 +20,8 @@ folderWatchDenyList = [".venv", "data", ".git"]
 
 [browser]
 gatherUsageStats = false
+
+[client]
+# Hide the automatic pages nav (app / Eval) — the demo lives on the main page and
+# the sidebar should start with the OpenLaw header. Eval stays reachable at /Eval.
+showSidebarNavigation = false

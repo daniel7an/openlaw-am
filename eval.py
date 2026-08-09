@@ -39,8 +39,11 @@ OUT_DIR = Path("results")
 # well, e.g. [Հոդված 178, մաս 1]. Requiring "]" straight after the number scored
 # those as zero citations, i.e. penalised the model for being more precise than
 # the format asked for. Verified against real deepseek output on qa_003/021/023.
+# Also tolerates the document-tagged format [ԱշխՕ, Հոդված 83] introduced for the
+# demo — the tag is currently ignored here; exploiting it for exact (doc, article)
+# matching is a future scorer upgrade.
 CITE_RE = re.compile(
-    r"\[\s*Հոդված\s+(\d+(?:\.\d+)*)\s*(?:-?րդ)?\s*(?:[,։:][^\]]*)?\]",
+    r"\[\s*(?:[^,\[\]]{1,30},\s*)?Հոդված\s+(\d+(?:\.\d+)*)\s*(?:-?րդ)?\s*(?:[,։:][^\]]*)?\]",
     re.IGNORECASE,
 )
 
@@ -53,6 +56,12 @@ JUDGE_USER = prompt("judge.user")
 DEFAULT_JUDGE = "gemini-3.6-flash"
 JUDGE_BINARY_SYSTEM = prompt("judge_binary.system")
 JUDGE_BINARY_USER = prompt("judge_binary.user")
+WEB_DIRECT_SYSTEM = prompt("web_direct.system")
+WEB_DIRECT_USER = prompt("web_direct.user")
+# Benchmark 2 gold is a full lawyer-written Armenian answer, not an English
+# one-line summary — it gets its own judge prompt (see prompts.toml).
+JUDGE_IRAVABAN_SYSTEM = prompt("judge_binary_iravaban.system")
+JUDGE_IRAVABAN_USER = prompt("judge_binary_iravaban.user")
 
 
 def openai_judge(
@@ -61,6 +70,7 @@ def openai_judge(
     system_answer: str,
     judge_model: str,
     base_url: str,
+    scope: str = "covered",
 ) -> dict:
     """Binary 1/0 correctness judge over any OpenAI-compatible endpoint.
 
@@ -69,11 +79,16 @@ def openai_judge(
     """
     from rag import client
 
+    sys_t, usr_t = (
+        (JUDGE_IRAVABAN_SYSTEM, JUDGE_IRAVABAN_USER)
+        if scope == "iravaban"
+        else (JUDGE_BINARY_SYSTEM, JUDGE_BINARY_USER)
+    )
     messages = [
-        {"role": "system", "content": JUDGE_BINARY_SYSTEM},
+        {"role": "system", "content": sys_t},
         {
             "role": "user",
-            "content": JUDGE_BINARY_USER.format(
+            "content": usr_t.format(
                 question=question, gold=gold, system_answer=system_answer
             ),
         },
@@ -113,6 +128,35 @@ def openai_judge(
             "rationale": str(e)[:300],
             "error": f"judge: {type(e).__name__}",
         }
+
+
+def answer_direct(
+    question: str, model: str, base_url: str, max_tokens: int | None, api_key: str | None
+) -> dict:
+    """No-RAG answer path: the model + its own web search, none of our context.
+
+    The closed-vs-open comparison row — their whole stack against our whole stack.
+    Returns the same shape as rag.answer with an empty retrieval.
+    """
+    from rag import client
+
+    resp = client(base_url, api_key).chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": WEB_DIRECT_SYSTEM},
+            {"role": "user", "content": WEB_DIRECT_USER.format(question=question)},
+        ],
+        temperature=get("generation.temperature"),
+        max_tokens=max_tokens or get("generation.max_output_tokens"),
+    )
+    u = resp.usage
+    return {
+        "answer": (resp.choices[0].message.content or "").strip(),
+        "retrieved": [],
+        "prompt_tokens": u.prompt_tokens if u else 0,
+        "completion_tokens": u.completion_tokens if u else 0,
+        "total_tokens": u.total_tokens if u else 0,
+    }
 
 
 def indexed_cite_ids() -> set[str]:
@@ -177,7 +221,7 @@ def parse_cited_articles(answer: str) -> list[str]:
 
 
 def citation_metrics(
-    answer: str, expected_ids: list[str], retrieved: list[dict]
+    answer: str, expected_ids: list[str], retrieved: list[dict], grounded: bool = True
 ) -> dict:
     """Score [Հոդված N] citations against gold.
 
@@ -201,17 +245,22 @@ def citation_metrics(
 
     cit_set = set(cited)
     # A gold pair is covered when its number is cited AND that document supplied it.
+    # Ungrounded (no-RAG) runs have no retrieved context to disambiguate through, so
+    # credit is by article number alone, and supported-vs-hallucinated is undefined.
     covered = {
         (slug, num) for slug, num in expected_pairs
-        if num in cit_set and (slug, num) in retrieved_pairs
+        if num in cit_set and (not grounded or (slug, num) in retrieved_pairs)
     }
     recall = len(covered) / len(expected_pairs) if expected_pairs else 0.0
     gold_nums = {n for _, n in covered}
     precision_vs_gold = len(gold_nums & cit_set) / len(cit_set) if cit_set else 0.0
 
-    hallucinated = sorted(cit_set - retrieved_nums)
-    supported = sorted(cit_set & retrieved_nums)
-    halluc_rate = len(hallucinated) / len(cit_set) if cit_set else 0.0
+    if grounded:
+        hallucinated = sorted(cit_set - retrieved_nums)
+        supported = sorted(cit_set & retrieved_nums)
+        halluc_rate = len(hallucinated) / len(cit_set) if cit_set else 0.0
+    else:
+        hallucinated, supported, halluc_rate = None, None, None
     exp_set = expected_pairs
 
     return {
@@ -332,6 +381,10 @@ def summarize(rows: list[dict]) -> dict:
     # "fully correct" means the top of whichever scale produced the file.
     top = 2 if any(sc == 2 for sc in scores) else 1
     faith = [j["faithfulness"] for j in judges if j.get("faithfulness") is not None]
+    # None on ungrounded (no-RAG) rows — a web answer has no retrieved context to be
+    # hallucinated *relative to*, and 0% would misread as perfect grounding.
+    halluc = [c["hallucinated_citation_rate"] for c in cites
+              if c.get("hallucinated_citation_rate") is not None]
 
     return {
         "n": len(rows),
@@ -342,7 +395,7 @@ def summarize(rows: list[dict]) -> dict:
         "citation_recall_mean": avg([c["citation_recall"] for c in cites]),
         "citation_precision_vs_gold_mean": avg([c["citation_precision_vs_gold"] for c in cites]),
         "exact_citation_match_rate": avg([float(c["exact_citation_match"]) for c in cites]),
-        "hallucinated_citation_rate_mean": avg([c["hallucinated_citation_rate"] for c in cites]),
+        "hallucinated_citation_rate_mean": (sum(halluc) / len(halluc)) if halluc else None,
         "judge_correctness_mean": avg([j["correctness"] for j in judges]),
         "judge_correctness_dist": dict(Counter(j["correctness"] for j in judges)),
         "judge_fully_correct_rate": avg([float(sc == top) for sc in scores]),
@@ -360,9 +413,10 @@ def _by_difficulty(rows: list[dict]) -> dict:
     out = {}
     for diff, rs in sorted(buckets.items()):
         judges = [x["judge"] for x in rs if x["judge"].get("correctness") is not None]
+        hit5 = [x["retrieval"].get("hit@5") for x in rs]
         out[diff] = {
             "n": len(rs),
-            "hit@5": sum(x["retrieval"]["hit@5"] for x in rs) / len(rs),
+            "hit@5": (sum(bool(h) for h in hit5) / len(rs)) if any(h is not None for h in hit5) else None,
             "citation_recall": sum(x["citations"]["citation_recall"] for x in rs) / len(rs),
             "exact_citation_match": sum(x["citations"]["exact_citation_match"] for x in rs) / len(rs),
             "judge_correctness_mean": (
@@ -379,11 +433,12 @@ def print_report(summary: dict, rows: list[dict], args) -> None:
     print(f"retrieval  mode={args.search_mode or 'default'} alpha={args.alpha or 'default'} k={args.k}")
     r = summary["retrieval"]
     print("retrieval  " + "  ".join(f"{k}={v:.0%}" for k, v in r.items()))
+    h = summary["hallucinated_citation_rate_mean"]
     print(
         f"citations  recall={summary['citation_recall_mean']:.0%}  "
         f"precision_vs_gold={summary['citation_precision_vs_gold_mean']:.0%}  "
         f"exact_match={summary['exact_citation_match_rate']:.0%}  "
-        f"halluc_rate={summary['hallucinated_citation_rate_mean']:.0%}"
+        f"halluc_rate={f'{h:.0%}' if h is not None else 'n/a (no grounding)'}"
     )
     print(
         f"judge      accuracy={summary['judge_fully_correct_rate']:.0%}  "
@@ -400,7 +455,7 @@ def print_report(summary: dict, rows: list[dict], args) -> None:
         c = row["citations"]
         print(
             f"  {row['id']} {row['difficulty']:<6} "
-            f"hit5={int(row['retrieval']['hit@5'])} "
+            f"hit5={int(bool(row['retrieval'].get('hit@5')))} "
             f"cite_recall={c['citation_recall']:.0%} "
             f"exact={int(c['exact_citation_match'])} "
             f"judge={j.get('correctness')} "
@@ -451,6 +506,7 @@ def rescore(
                 row["judge"] = openai_judge(
                     row["question_armenian"], row["gold_summary"], row["system_answer"],
                     judge_model, judge_base_url,
+                    scope=payload["meta"].get("scope", "covered"),
                 )
             print(f"  [{i}/{len(todo)}] {row['id']} -> {row['judge'].get('correctness')}")
             time.sleep(judge_sleep)
@@ -470,7 +526,7 @@ def rescore(
         f"citations  recall={s['citation_recall_mean']:.0%}  "
         f"precision_vs_gold={s['citation_precision_vs_gold_mean']:.0%}  "
         f"exact_match={s['exact_citation_match_rate']:.0%}  "
-        f"halluc_rate={s['hallucinated_citation_rate_mean']:.0%}"
+        + (lambda h: f"halluc_rate={f'{h:.0%}' if h is not None else 'n/a'}")(s["hallucinated_citation_rate_mean"])
     )
     if any(r["judge"].get("correctness") is not None for r in payload["rows"]):
         print(
@@ -507,7 +563,8 @@ def preflight() -> None:
 def run(args) -> Path:
     from rag import answer
 
-    preflight()
+    if not args.no_rag:  # a web-direct run never touches the index
+        preflight()
     limit = args.limit
     questions = select_questions(args.scope)
     if limit is not None:
@@ -522,15 +579,25 @@ def run(args) -> Path:
         print(f"\n[{i}/{len(questions)}] {q['id']} ({q['difficulty']})")
         t0 = time.perf_counter()
         try:
-            result = answer(
-                q_hy,
-                k=args.k,
-                mode=args.search_mode,
-                alpha=args.alpha,
-                model=args.model,
-                base_url=args.base_url,
-                max_tokens=args.max_tokens,
-            )
+            if args.no_rag:
+                result = answer_direct(
+                    q_hy, args.model, args.base_url, args.max_tokens,
+                    api_key=os.getenv("OPENLAW_ANSWER_API_KEY"),
+                )
+            else:
+                result = answer(
+                    q_hy,
+                    k=args.k,
+                    mode=args.search_mode,
+                    alpha=args.alpha,
+                    model=args.model,
+                    base_url=args.base_url,
+                    max_tokens=args.max_tokens,
+                    # Set only for runs whose answer model bills to a different key
+                    # than the judge (e.g. gemini via the backup OpenRouter key).
+                    # Judge calls keep the process-default key.
+                    api_key=os.getenv("OPENLAW_ANSWER_API_KEY"),
+                )
             err = None
         except Exception as e:
             result = {
@@ -545,13 +612,20 @@ def run(args) -> Path:
         latency = time.perf_counter() - t0
 
         cites = citation_metrics(
-            result["answer"], q["expected_article_ids"], result["retrieved"]
+            result["answer"], q["expected_article_ids"], result["retrieved"],
+            grounded=not args.no_rag,
         )
-        retrieval = retrieval_hits(result["retrieved"], q["expected_article_ids"], args.k)
+        retrieval = (
+            {"retrieved_cite_ids": []}
+            if args.no_rag
+            else retrieval_hits(result["retrieved"], q["expected_article_ids"], args.k)
+        )
         judge_fn = (
             gemini_judge
             if args.judge_backend == "gemini"
-            else lambda qq, gg, aa, mm: openai_judge(qq, gg, aa, mm, args.judge_base_url)
+            else lambda qq, gg, aa, mm: openai_judge(
+                qq, gg, aa, mm, args.judge_base_url, scope=args.scope
+            )
         )
         judge = (
             judge_fn(q_hy, q["correct_answer_summary"], result["answer"], args.judge_model)
@@ -583,7 +657,7 @@ def run(args) -> Path:
         }
         rows.append(row)
         print(
-            f"  hit@5={retrieval['hit@5']}  cite_recall={cites['citation_recall']:.0%}  "
+            f"  hit@5={retrieval.get('hit@5', 'n/a')}  cite_recall={cites['citation_recall']:.0%}  "
             f"judge={judge.get('correctness')}  {latency:.1f}s"
         )
         time.sleep(args.sleep)  # be kind to free-tier rate limits
@@ -609,9 +683,11 @@ def run(args) -> Path:
             "base_url": args.base_url,
             "judge_model": args.judge_model,
             "judge_backend": args.judge_backend,
-            "embed_model": get("embedding.model", env="OPENLAW_EMBED_MODEL"),
-            "index": get("weaviate.alias", env="OPENLAW_COLLECTION"),
-            "top_k": args.k,
+            "judge_prompt": "judge_binary_iravaban" if args.scope == "iravaban" else "judge_binary",
+            "mode": "web_direct" if args.no_rag else "rag",
+            "embed_model": None if args.no_rag else get("embedding.model", env="OPENLAW_EMBED_MODEL"),
+            "index": None if args.no_rag else get("weaviate.alias", env="OPENLAW_COLLECTION"),
+            "top_k": None if args.no_rag else args.k,
             "search_mode": args.search_mode or get("retrieval.mode"),
             "alpha": args.alpha if args.alpha is not None else get("retrieval.alpha"),
             "max_tokens": args.max_tokens or get("generation.max_output_tokens"),
@@ -651,6 +727,9 @@ if __name__ == "__main__":
     p.add_argument("--search-mode", default=None, choices=["hybrid", "vector", "bm25"])
     p.add_argument("--alpha", type=float, default=None, help="hybrid alpha, 1=vector 0=bm25")
     p.add_argument("--max-tokens", type=int, default=None, help="answer token ceiling")
+    p.add_argument("--no-rag", action="store_true",
+                   help="answer WITHOUT our retrieval pipeline (closed-model + web-search "
+                        "comparison row); retrieval/grounding metrics are undefined")
     p.add_argument("--sleep", type=float, default=1.0, help="pause between questions")
     p.add_argument("--out", default=None, help="explicit results path")
     p.add_argument("--rescore", default=None,

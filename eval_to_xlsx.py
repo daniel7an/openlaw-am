@@ -19,9 +19,12 @@ PCT, NUM = "0%", "0.0"
 
 
 def run_label(meta: dict, metas: list[dict]) -> str:
+    model = meta.get("answer_model", "").split("/")[-1]
+    if meta.get("mode") == "web_direct":
+        return f"web {model}"  # no-RAG closed-model row: no k, no index
     label = f"k={meta.get('top_k', '?')}"
     if len({m.get("answer_model") for m in metas}) > 1:
-        label += f" {meta.get('answer_model', '').split('/')[-1]}"
+        label += f" {model}"
     return label
 
 
@@ -80,18 +83,17 @@ def main() -> None:
         ("search mode / alpha", lambda p: f"{p['meta'].get('search_mode')} / {p['meta'].get('alpha')}"),
         ("top_k", lambda p: p["meta"].get("top_k")),
     ]
+    # hit@k, exact-citation-match and hallucinated-citation-rate are computed and
+    # stored in the run files but deliberately not reported here (team decision
+    # 2026-08-09).
     pct_metrics = [
-        *[(k, lambda p, kk=k: p["summary"]["retrieval"].get(kk)) for k in hit_keys],
         ("citation recall (vs gold)", lambda p: p["summary"]["citation_recall_mean"]),
         ("citation precision (vs gold)", lambda p: p["summary"]["citation_precision_vs_gold_mean"]),
-        ("exact citation match", lambda p: p["summary"]["exact_citation_match_rate"]),
-        ("hallucinated citation rate", lambda p: p["summary"]["hallucinated_citation_rate_mean"]),
         ("judge accuracy (1/0)", lambda p: p["summary"]["judge_fully_correct_rate"]),
     ]
     num_metrics = [
         ("questions judged", lambda p: p["summary"]["n_judged"]),
         ("citations per answer", lambda p: p["summary"]["citations_per_answer_mean"]),
-        ("tokens per question", lambda p: p["summary"]["tokens_mean"]),
         ("latency s per question", lambda p: p["summary"]["latency_s_mean"]),
     ]
 
@@ -110,19 +112,19 @@ def main() -> None:
 
     # --- By difficulty --------------------------------------------------------
     ws = wb.create_sheet("By difficulty")
-    ws.append(["run", "difficulty", "n", "hit@5", "citation recall", "exact match",
-               "judge mean", "n judged"])
+    ws.append(["run", "difficulty", "n", "citation recall", "judge mean", "n judged"])
     for label, p in zip(labels, payloads):
         for diff, d in p["summary"]["by_difficulty"].items():
-            ws.append([label, diff, d["n"], d["hit@5"], d["citation_recall"],
-                       d["exact_citation_match"], d["judge_correctness_mean"], d["n_judged"]])
-            for cell in ws[ws.max_row][3:7]:
+            ws.append([label, diff, d["n"], d["citation_recall"],
+                       d["judge_correctness_mean"], d["n_judged"]])
+            for cell in ws[ws.max_row][3:5]:
                 cell.number_format = PCT
-    style_header(ws, {"A": 14, "B": 10, "D": 10, "E": 14, "F": 12, "G": 12})
+    style_header(ws, {"A": 22, "B": 10, "D": 14, "E": 12})
 
     # --- Per-question sheet per run -------------------------------------------
     for label, p in zip(labels, payloads):
-        ws = wb.create_sheet(f"Q {label}"[:31])
+        safe = "".join("-" if ch in "[]:*?/\\" else ch for ch in f"Q {label}")
+        ws = wb.create_sheet(safe[:31])
         hk = own_hit_key(p["meta"], p["rows"])
         ws.append(["id", "difficulty", "question (EN)", "expected", "cited", hk,
                    "citation recall", "exact", "hallucinated", "judge", "judge rationale",
@@ -133,7 +135,7 @@ def main() -> None:
                 r["id"], r["difficulty"], r.get("question_english", ""),
                 ", ".join(c["expected_articles"]), ", ".join(c["cited_articles"]),
                 int(bool(r["retrieval"].get(hk))), c["citation_recall"],
-                int(c["exact_citation_match"]), ", ".join(c["hallucinated_citations"]),
+                int(c["exact_citation_match"]), ", ".join(c["hallucinated_citations"] or []),
                 j.get("correctness"), (j.get("rationale") or "")[:250],
                 r["total_tokens"], round(r["latency_s"], 1),
             ])

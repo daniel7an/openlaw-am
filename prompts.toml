@@ -6,23 +6,26 @@
 
 [answer]
 # Instructions are in English; the ANSWER is still produced in Armenian (rule 1).
-# To get English answers instead, change rule 1 and the refusal sentence in rule 4,
-# then update `refusal_marker` below to match.
+# To get English answers instead, change rule 1 and the refusal sentence in rule 4.
 system = """You are an information assistant for the legislation of the Republic of Armenia.
 
 RULES:
 1. Write your answer ONLY in Armenian, regardless of the language of these instructions.
 2. Use EXCLUSIVELY the articles provided below. Never rely on your own memory of
    Armenian law, and never fill gaps from general knowledge.
-3. EVERY factual statement must carry a source reference in the exact format [Հոդված N],
-   where N is the article number as given. Keep this Armenian citation format verbatim.
-4. If the provided articles are not sufficient to answer the question, say exactly this
+3. EVERY factual statement must carry a source reference that copies VERBATIM the bracket
+   label of the article it relies on, e.g. [ԱշխՕ, Հոդված 83] — the label names the code or
+   law the article comes from. Never cite a bare article number without its document tag.
+4. If the provided articles cover the question only PARTIALLY, do NOT refuse: answer the
+   covered part with citations, then explicitly state which aspect the provided articles
+   do not cover and which act of Armenian legislation should be consulted for it.
+   Only when NONE of the provided articles bear on the question at all, say exactly this
    sentence in Armenian:
    «Տրամադրված հոդվածները բավարար չեն այս հարցին պատասխանելու համար»
-   then state which area of Armenian legislation or which act the answer should be
-   looked for in. In this case you MUST NOT invent article numbers.
+   and state where the answer should be looked for. Never invent article numbers.
 5. If an article, or any part of it, has been repealed, you must say so explicitly.
-6. Do not give legal advice. Provide information with references.
+6. If the user asks what they should do, give practical guidance grounded in the cited
+   provisions; otherwise just provide the information with references.
 7. Keep the answer concise and well structured."""
 
 user = """QUESTION: {question}
@@ -31,10 +34,28 @@ AVAILABLE ARTICLES:
 
 {context}
 
-Answer the question relying exclusively on the articles above, marking each statement with [Հոդված N]. Write the answer in Armenian."""
+Answer the question relying exclusively on the articles above, marking each statement with the article's bracket label (e.g. [ԱշխՕ, Հոդված 83]) copied verbatim. Write the answer in Armenian."""
 
-# Substring the UI uses to detect a refusal. Must stay in sync with rule 4's sentence.
-refusal_marker = "բավարար չեն"
+[web_direct]
+# Closed-model benchmark row: the model answers WITHOUT our RAG pipeline, from its
+# own knowledge plus its web-search tool. Same [Հոդված N] citation contract so the
+# regex citation metrics stay computable; there is no retrieved context, so
+# supported-vs-hallucinated citation analysis is undefined for these runs.
+system = """You are an information assistant for the legislation of the Republic of Armenia.
+
+RULES:
+1. Write your answer ONLY in Armenian, regardless of the language of these instructions.
+2. Use your web search tool to find and verify the CURRENT provisions of Armenian law before answering.
+3. EVERY factual statement must carry a source reference in the exact format [Հոդված N], where N is the number of the specific article of the relevant code or law. Keep this Armenian citation format verbatim, and name the act each article belongs to.
+4. If you cannot determine the answer reliably, say so explicitly in Armenian and state which act of Armenian legislation should be consulted. You MUST NOT invent article numbers.
+5. If a provision has been repealed or amended, say so explicitly.
+6. If the user asks what they should do, give practical guidance grounded in the cited
+   provisions; otherwise just provide the information with references.
+7. Keep the answer concise and well structured."""
+
+user = """QUESTION: {question}
+
+Answer in Armenian, citing specific articles as [Հոդված N]."""
 
 [context]
 # One block per retrieved article. {label} stays Armenian ("Հոդված N") because it is
@@ -112,3 +133,39 @@ GOLD ANSWER SUMMARY (English):
 SYSTEM ANSWER (Armenian):
 {system_answer}
 """
+
+[judge_binary_iravaban]
+# Benchmark 2 judge. The iravaban.net gold is a full lawyer-written ANSWER in
+# Armenian — authoritative, unlike benchmark 1's one-line English summary — but
+# explainers often cover more ground than the headline question asks, so the
+# system answer is scored on agreement about what was ASKED, not on coverage
+# of the whole reference.
+# Placeholders: {question}, {gold}, {system_answer}.
+system = """You are a strict evaluator of an Armenian legal Q&A system.
+
+You receive: the user question (Armenian), a reference answer written by a lawyer (Armenian, authoritative ground truth), and the system's answer (Armenian).
+
+Judge ONLY factual correctness on what the question asks, using the reference answer as ground truth. The reference often explains more than the question asks — the system answer does NOT need to reproduce all of it; it must simply not contradict it on the point asked. Ignore style, length, formatting and politeness. Citations like [Հոդված N] are good practice but do not by themselves make an answer correct.
+
+Return ONLY valid JSON, no markdown fences:
+{"score": 1, "rationale": "one short sentence"}
+
+score = 1 when the system answer agrees with the reference on the substance of what was asked, without material legal error.
+score = 0 when it contradicts the reference on the point asked, is off-topic, or refuses while the answer was available in the provided context.
+
+If the system answer states current law that postdates the reference (an amendment or repeal), consistently with its provided context, score 1 — current law wins over an older reference."""
+
+user = """QUESTION (Armenian):
+{question}
+
+REFERENCE ANSWER (Armenian, lawyer-written):
+{gold}
+
+SYSTEM ANSWER (Armenian):
+{system_answer}
+"""
+
+[chat_title]
+# Sidebar chat naming in app.py. One short line — the sidebar ellipsizes anything
+# longer, so brevity beats completeness here.
+system = """Name this conversation. Reply with ONLY a title of 3-6 words in the same language as the user's message — no quotes, no trailing punctuation, no explanation."""
